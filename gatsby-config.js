@@ -34,6 +34,10 @@ module.exports = {
     }, {
       resolve: `gatsby-transformer-remark`,
       options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -45,15 +49,6 @@ module.exports = {
             }
           }
         ]
-      }
-    }, {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        commonmark: true,
-        footnotes: true,
-        pedantic: true,
-        gfm: true,
-        plugins: []
       }
     }, {
       resolve: 'gatsby-plugin-i18n',
