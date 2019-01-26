@@ -1,0 +1,1 @@
+export const routeWithLanguage = (language, url) => `/${language}${url}`

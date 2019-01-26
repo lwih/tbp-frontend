@@ -1,0 +1,46 @@
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.duration-500 {
+  -webkit-animation-duration: .42s;
+  animation-duration: .42s; }
+
+.AppMobile .ResultsContainer {
+  padding: 10px 0; }
+
+.AppDesktop .ResultsContainer {
+  width: 100%;
+  max-width: 960px !important;
+  margin: 0 auto;
+  padding: 0; }
+
+.ResultsLoadMoreButton {
+  width: 248px;
+  height: 48px;
+  border: none;
+  border-radius: 100px;
+  background-color: #00cbe2;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 2.0;
+  text-align: center;
+  color: #ffffff;
+  margin: 40px;
+  cursor: pointer;
+  outline: none; }
+  .ResultsLoadMoreButton:hover {
+    border-color: #1ab2c4;
+    background-color: #1ab2c4; }
+
+.Results-Error {
+  margin: 0 auto;
+  padding: 40px; }

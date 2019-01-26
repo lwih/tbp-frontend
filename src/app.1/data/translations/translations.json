@@ -1,0 +1,94 @@
+{
+  "de-DE": {
+    "title": "The Better Play",
+    "search": {
+      "search": "Suchen",
+      "placeholder": "Was für ein Spielzeug suchst du?",
+      "loadingPlaceholder": "Laden...",
+      "noResultsFound": "Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.",
+      "searchPromptText": "Tippe ein Schlagwort ein..."
+    },
+    "results": {
+      "headline": "Andere Vorschläge",
+      "headlinePrefix": "Vorschläge",
+      "loadMore": "Mehr zeigen",
+      "technicalError": "technical error",
+      "noResultsFound": "Keine Resultate gefunden"
+    },
+    "product": {
+      "goToDetails": "Zum Produkt",
+      "goToAffShop": "Zum Produkt",
+      "hoverImage": "Mehr zeigen",
+      "nextProduct": "Weiter",
+      "prevProduct": "Zurück"
+    },
+    "cookies": {
+      "bannerText": "Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.",
+      "buttonText": "Ok"
+    },
+    "age": {
+      "title": "Alter",
+      "month": "Monat",
+      "months": "Monate",
+      "year": "Jahr",
+      "years": "Jahre",
+      "allAges": "Alle Altersklassen"
+    },
+    "categories": {
+      "title": "Kategorien",
+      "allCategories": "Alle Kategorien"
+    },
+    "filters": {
+      "title": "Filter"
+    },
+    "navigation": {
+      "goBack": "Zurück"
+    }
+  },
+  "en-US": {
+    "title": "The Better Play",
+    "search": {
+      "search": "Search",
+      "placeholder": "What kind of toys are you looking for?",
+      "loadingPlaceholder": "Loading...",
+      "noResultsFound": "No results found, please type in something else.",
+      "searchPromptText": "Type to search"
+    },
+    "results": {
+      "headline": "Other suggestions",
+      "headlinePrefix": "Results",
+      "loadMore": "Show More",
+      "technicalError": "technical error",
+      "noResultsFound": "No results found"
+    },
+    "product": {
+      "goToDetails": "Go to product",
+      "goToAffShop": "Buy on Amazon",
+      "hoverImage": "See more",
+      "nextProduct": "next",
+      "prevProduct": "prev"
+    },
+    "cookies": {
+      "bannerText": "This Website is using Cookies, to enable you to have a better experience on our Website.",
+      "buttonText": "Ok"
+    },
+    "age": {
+      "title": "Age",
+      "month": "month",
+      "months": "months",
+      "year": "year",
+      "years": "years",
+      "allAges": "All ages"
+    },
+    "categories": {
+      "title": "Categories",
+      "allCategories": "All Categories"
+    },
+    "filters": {
+      "title": "Filter"
+    },
+    "navigation": {
+      "goBack": "Zurück"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.AgeContainer {
+  min-height: 40px;
+  margin-bottom: 20px;
+  padding: 5px 10px; }
+
+.AgeItem {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #dcdcdf;
+  color: #00cbe2;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-left: 5px;
+  margin-top: 5px;
+  vertical-align: top;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+  height: 32px; }
+  .AgeItem:hover {
+    border-color: #3f51b5; }
+  .AgeItem.AgeItem-Active {
+    border-color: #00cbe2;
+    background-color: #00cbe2;
+    color: white; }

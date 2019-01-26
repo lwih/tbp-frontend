@@ -1,0 +1,71 @@
+.image-gallery {
+  width: 450px;
+  max-width: 450px;
+  margin: 0 auto; }
+
+.DetailsDesktop .image-gallery-image {
+  min-height: 350px;
+  height: 350px; }
+
+.DetailsDesktop .image-gallery-swipe {
+  min-height: 350px; }
+
+.DetailsMobile .image-gallery {
+  width: 85%;
+  max-width: 85%;
+  min-height: 250px;
+  margin: 0 auto; }
+
+.DetailsMobile .image-gallery-swipe {
+  min-height: 200px; }
+
+.image-gallery-swipe {
+  border: solid 1px #dcdcdf; }
+
+.image-gallery-slide {
+  display: flex;
+  justify-content: center; }
+
+.image-gallery-image {
+  text-align: center;
+  display: flex; }
+  .image-gallery-image img {
+    align-self: center;
+    max-width: 100%;
+    width: auto;
+    max-height: 350px;
+    margin: 0 auto; }
+
+.image-gallery-thumbnails-wrapper {
+  margin-top: 30px; }
+
+.image-gallery-thumbnail + .image-gallery-thumbnail {
+  margin-left: 5px; }
+
+.image-gallery-thumbnail {
+  border: solid 1px #dcdcdf;
+  width: auto; }
+  .image-gallery-thumbnail.active {
+    border: solid 1px #ff4572; }
+  .image-gallery-thumbnail img {
+    height: 40px;
+    width: auto;
+    max-width: 100px; }
+
+.AppMobile .image-gallery {
+  max-width: 280px;
+  min-width: 280px;
+  margin: 0 auto; }
+
+.AppMobile .image-gallery-image {
+  width: 60%;
+  min-height: 200px;
+  min-width: 150px;
+  margin: 0 auto; }
+
+.AppMobile .image-gallery-thumbnails-wrapper {
+  width: 60%;
+  margin: 0 auto; }
+
+.AppMobile .image-gallery-thumbnail {
+  min-width: 40px; }
