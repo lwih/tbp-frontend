@@ -4,6 +4,7 @@ import {navigate} from 'gatsby'
 import {Flex, Box} from '@rebass/grid'
 import PrimaryButton from '../../../design-system/Buttons/PrimaryButton'
 import Price from '../../components/Price'
+import _get from 'lodash/get'
 
 function escapeHTML(data) {
     return {__html: data}
@@ -16,7 +17,7 @@ class Result extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.thebetterplay.com/product/${this.props.item.id}?image_sizes=tiny,large`)
+        fetch(`https://api.thebetterplay.com/product/${_get(this.props.item, 'id')}?image_sizes=tiny,large`)
             .then(response => response.json())
             .then(result => {
                 this.setState({result})
@@ -25,7 +26,7 @@ class Result extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (this.props.item && this.props.item !== nextProps.item) {
-            fetch(`https://api.thebetterplay.com/product/${nextProps.item.id}?image_sizes=tiny,large`)
+            fetch(`https://api.thebetterplay.com/product/${_get(nextProps.item, 'id')}?image_sizes=tiny,large`)
                 .then(response => response.json())
                 .then(result => {
                     this.setState({result})

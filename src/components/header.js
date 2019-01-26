@@ -7,7 +7,7 @@ import {Flex, Box} from '@rebass/grid'
 const HeaderComponent = ({siteTitle, className, children}) => (
     <Box className={className} justifyContent="center">
         <Flex width={1} className="Header-Background" justifyContent="center">
-            <Box className="Header">
+            <Box className="Header" width={1}>
                 <Flex>
                     <Box>
                         <img
@@ -17,7 +17,7 @@ const HeaderComponent = ({siteTitle, className, children}) => (
                     </Box>
                     <Box>{siteTitle}</Box>
                 </Flex>
-                <Box className="Header">
+                <Box className="Header" width={1}>
                     {children}
                 </Box>
             </Box>
@@ -53,7 +53,6 @@ const Header = styled(HeaderComponent)`
         }
 
         .Header {
-            width: 1000px;
             z-index: 1;
             position: relative;
         }

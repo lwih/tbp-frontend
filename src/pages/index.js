@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import {Link, navigate} from 'gatsby'
 import AppLayout from '../layouts/app-layout'
 import Header from '../components/header'
 import SEO from '../components/seo'
@@ -7,7 +7,7 @@ import Search from '../app/modules/search/Search'
 import Results from '../app/modules/results/Results';
 import {Flex, Box} from '@rebass/grid';
 
-const AppPage = () => (
+const AppPage = (props) => (
     <AppLayout>
         <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/>
         <Header siteTitle={'The Better Play'}>
@@ -24,8 +24,12 @@ const AppPage = () => (
                     age_from: 0,
                     age_until: 1200,
                     q: 'lego'
-                }}/>
-                <h2>category preview musik</h2>
+                }}
+                    onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                    state: {
+                        selectedItem: item
+                    }
+                }))}/>
                 <Results
                     hideLoadMore={false}
                     itemsAmount={4}
@@ -33,7 +37,12 @@ const AppPage = () => (
                     age_from: 0,
                     age_until: 1200,
                     q: 'musik'
-                }}/>
+                }}
+                    onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                    state: {
+                        selectedItem: item
+                    }
+                }))}/>
             </Box>
         </Flex>
 

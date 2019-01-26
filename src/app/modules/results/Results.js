@@ -4,6 +4,7 @@ import {navigate} from 'gatsby'
 import Product from '../../components/Product';
 import {Flex, Box} from '@rebass/grid';
 import _slice from 'lodash/slice'
+import _get from 'lodash/get'
 
 class Results extends React.Component {
 
@@ -13,7 +14,7 @@ class Results extends React.Component {
 
     componentDidMount() {
         const url = `https://api.thebetterplay.com/product/search?${this.props.searchParams.category
-            ? `c=${this.props.searchParams.category.name}`
+            ? `c=${_get(this.props.searchParams, 'category.name')}`
             : ''}${this.props.searchParams.q
                 ? `&q=${this.props.searchParams.q}`
                 : ''}&image_sizes=medium&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
@@ -28,9 +29,8 @@ class Results extends React.Component {
     componentWillReceiveProps(nextProps) {
 
         if (this.props.searchParams && this.props.searchParams !== nextProps.searchParams) {
-            debugger
             const url = `https://api.thebetterplay.com/product/search?${nextProps.searchParams.category
-                ? `c=${nextProps.searchParams.category}`
+                ? `c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
                     ? `&q=${nextProps.searchParams.q}`
                     : ''}&image_sizes=medium&age_until=${nextProps.searchParams.age_until}&age_from=${nextProps.searchParams.age_from}`
@@ -61,7 +61,7 @@ class Results extends React.Component {
                         1, 1 / 2,
                         1 / 4
                     ]}>
-                        <Product product={result}/>
+                        <Product product={result} onSelectItem={this.props.onSelectItem}/>
                     </Box>
                 ))}
             </Flex>

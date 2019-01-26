@@ -6,6 +6,7 @@ import PrimaryButton from '../../design-system/Buttons/PrimaryButton';
 import Price from './Price';
 import Truncate from 'react-truncate';
 import ProductImage from './ProductImage';
+import {ExternalLink} from '../../design-system/Links/ExternalLink';
 // import {withRouter} from 'react-router' import {getShortenedLocale} from
 // '../../data/translations/translations' import Flexbox from 'flexbox-react'
 // import Translate from 'react-translate-component' import Truncate from
@@ -17,12 +18,24 @@ import ProductImage from './ProductImage';
 
 const showMobileProduct = (product, onSelect) => {
     return (
-        <Flex>
-            <Box>
+        <Flex flexDirection="row">
+            <Box width={1 / 3}>
                 <ProductImage images={product.imageUrls} size="medium" hover={false}/>
-                <Truncate lines={1}>
-                    {product.name}
-                </Truncate>
+            </Box>
+            <Box width={2 / 3}>
+                <Flex flexDirection="column">
+                    <Box>
+                        <Truncate lines={2}>
+                            {product.name}
+                        </Truncate>
+                    </Box>
+                    <Box>
+                        <Price price={product.price.displayPrice}/>
+                    </Box>
+                    <Box>
+                        <PrimaryButton onClick={e => onSelect(product)}>Zum Product</PrimaryButton>
+                    </Box>
+                </Flex>
             </Box>
         </Flex>
     // <Flexbox flexBasis="100%" flexWrap="wrap" onClick={() => select(product.id)}>
@@ -55,7 +68,7 @@ const showDesktopProduct = (product, onSelect) => {
                 <Price price={product.price.displayPrice}/>
             </Box>
             <Box>
-                <PrimaryButton>Zum Product</PrimaryButton>
+                <PrimaryButton onClick={e => onSelect(product.id)}>Zum Product</PrimaryButton>
             </Box>
         </Flex>
     // <Flexbox flexBasis="100%" flexWrap="wrap" maxWidth="170px"
@@ -79,9 +92,14 @@ class Product extends React.Component {
             .select(this.props.product.id)
     }
 
-    _routeToProduct(id) {
-        const url = `/de/app/details?id=${id}`
-        navigate(url)
+    _routeToProduct(item) {
+        const url = `/app/details?id=${item.id}`
+        debugger
+        navigate(url, {
+            state: {
+                selectedItem: item
+            }
+        })
     }
 
     render() {
@@ -91,7 +109,7 @@ class Product extends React.Component {
                     ? showMobileProduct(this.props.product, (id) => this._routeToProduct(id))
                     : showDesktopProduct(this.props.product, () => this._select())
 } */}
-                {showDesktopProduct(this.props.product, () => this._select())}
+                {showMobileProduct(this.props.product, (item) => this.props.onSelectItem(item))}
             </Flex>
         )
     }

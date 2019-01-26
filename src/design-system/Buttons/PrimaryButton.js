@@ -4,6 +4,7 @@ import {colors, radii} from '../theme'
 const PrimaryButton = styled.button `
     background-color: ${colors.primaryCTA};
     border-radius: ${radii[3]}px;
+    border: 2px solid ${colors.primaryCTA};
     height: 32px;
     width: 100%;
     outline: 0;
@@ -11,7 +12,6 @@ const PrimaryButton = styled.button `
     text-align: center;
     color: ${colors.white};
     text-decoration: none;
-    padding-top: 10px;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
