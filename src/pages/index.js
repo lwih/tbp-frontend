@@ -16,12 +16,23 @@ const AppPage = () => (
 
         <Flex my={4} width={1} justifyContent="center">
             <Box width={1}>
+                <h2>category preview lego</h2>
                 <Results
                     hideLoadMore={false}
+                    itemsAmount={4}
                     searchParams={{
                     age_from: 0,
                     age_until: 1200,
-                    term: 'lego'
+                    q: 'lego'
+                }}/>
+                <h2>category preview musik</h2>
+                <Results
+                    hideLoadMore={false}
+                    itemsAmount={4}
+                    searchParams={{
+                    age_from: 0,
+                    age_until: 1200,
+                    q: 'musik'
                 }}/>
             </Box>
         </Flex>

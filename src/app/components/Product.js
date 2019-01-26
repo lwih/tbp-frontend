@@ -4,6 +4,8 @@ import {Flex, Box} from '@rebass/grid'
 import {isMobile} from 'mobile-detect'
 import PrimaryButton from '../../design-system/Buttons/PrimaryButton';
 import Price from './Price';
+import Truncate from 'react-truncate';
+import ProductImage from './ProductImage';
 // import {withRouter} from 'react-router' import {getShortenedLocale} from
 // '../../data/translations/translations' import Flexbox from 'flexbox-react'
 // import Translate from 'react-translate-component' import Truncate from
@@ -17,7 +19,10 @@ const showMobileProduct = (product, onSelect) => {
     return (
         <Flex>
             <Box>
-                modiile {product.name}
+                <ProductImage images={product.imageUrls} size="medium" hover={false}/>
+                <Truncate lines={1}>
+                    {product.name}
+                </Truncate>
             </Box>
         </Flex>
     // <Flexbox flexBasis="100%" flexWrap="wrap" onClick={() => select(product.id)}>
@@ -26,9 +31,9 @@ const showMobileProduct = (product, onSelect) => {
     // <Flexbox flexBasis="2%" flexWrap="wrap"></Flexbox>   <Flexbox flexBasis="58%"
     // flexWrap="wrap">     <Flexbox flexBasis="100%" className="ProductName">
     // <Truncate lines={1}>         {product.name}       </Truncate>     </Flexbox>
-    // <Flexbox flexBasis="100%" justifyContent="flex-start" marginTop="5px"> <Price
-    //         price={product.price         ? product.price.displayPrice : ''}/>
-    // </Flexbox>     <Flexbox flexBasis="100%" justifyContent="center"
+    // <Flexbox flexBasis="100%" justifyContent="flex-start" marginTop="5px">
+    // <Price         price={product.price         ? product.price.displayPrice :
+    // ''}/> </Flexbox>     <Flexbox flexBasis="100%" justifyContent="center"
     // marginTop="5px">       <div className="ProductButtonLink">         <button
     // className="ProductButton">       <Translate content="product.goToDetails"/>
     // </button> </div>     </Flexbox>   </Flexbox> </Flexbox>
@@ -39,10 +44,12 @@ const showDesktopProduct = (product, onSelect) => {
     return (
         <Flex flexDirection="column">
             <Box>
-                image
+                <ProductImage images={product.imageUrls} size="medium" hover={true}/>
             </Box>
             <Box>
-                {product.name}
+                <Truncate lines={2}>
+                    {product.name}
+                </Truncate>
             </Box>
             <Box>
                 <Price price={product.price.displayPrice}/>

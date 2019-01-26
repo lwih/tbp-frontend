@@ -1,28 +1,28 @@
 import React from 'react';
-import './ProductImage.css'
+// import './ProductImage.css'
 import placeholderImage from '../../images/product-placeholder.jpg'
 import _get from 'lodash/get'
 import _first from 'lodash/first'
-import counterpart from 'counterpart'
-import Flexbox from 'flexbox-react'
+import {Flex, Box} from '@rebass/grid'
 
-const ProductImage = ({images, size, hover, link}) => {
+const ProductImage = ({images, size, hover}) => {
 
-  const imageUrl = images ? _first(_get(images, size)) : placeholderImage
+  const imageUrl = images
+    ? _first(_get(images, size))
+    : placeholderImage
   const withHover = hover && 'ProductImageContainer-HoverCover';
 
   return (
-    <Flexbox>
+    <Flex>
       <div
         className={`ProductImageContainer ${withHover}`}
-        data-content={counterpart('product.hoverImage')}>
-          <div className="ProductImage-AlignWrapper">
-            <img src={imageUrl} alt="" className="ProductImage"/>
-          </div>
+        data-content={'blablabla'}>
+        <div className="ProductImage-AlignWrapper">
+          <img src={imageUrl} alt="" className="ProductImage"/>
+        </div>
       </div>
-    </Flexbox>
+    </Flex>
   )
 }
-
 
 export default ProductImage;

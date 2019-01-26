@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Flexbox from 'flexbox-react'
 import Translate from 'react-translate-component'
 import Results from '../connected/Results'
@@ -9,22 +9,35 @@ import Categories from '../connected/Categories'
 import ResultsHeadline from '../connected/ResultsHeadline'
 import CookieBannerBar from '../presentational/CookieBannerBar'
 import Filter from '../presentational/Filter'
-import { isDeviceConsideredMobile } from '../../utils/appUtils'
-import { Div } from 'glamorous'
+import {isDeviceConsideredMobile} from '../../utils/appUtils'
+import {Div} from 'glamorous'
 
 class HomePage extends Component {
 
   render() {
 
     const hardcodedCategories = [
-      [{name: 'Puzzles'}],
-      [{name: 'Spiele'}]
+      [
+        {
+          name: 'Puzzles'
+        }
+      ],
+      [
+        {
+          name: 'Spiele'
+        }
+      ]
     ]
 
     return (
-      <Flexbox flex="flex" flexBasis="100%" flexWrap="wrap" className="HomePageContainer" minHeight="90vh">
+      <Flexbox
+        flex="flex"
+        flexBasis="100%"
+        flexWrap="wrap"
+        className="HomePageContainer"
+        minHeight="90vh">
         <Flexbox flex="flex" flexBasis="100%" flexWrap="wrap" className="">
-            <Search />
+          <Search/>
         </Flexbox>
 
         {/* { hardcodedCategories.map(c => (
@@ -42,25 +55,24 @@ class HomePage extends Component {
           </Flexbox>
         ))} */}
 
-        { 
-          isDeviceConsideredMobile() ? 
-          <Filter /> :
-          (
+        {isDeviceConsideredMobile()
+          ? <Filter/>
+          : (
             <div>
-              <Ages />
-              <Categories />
+              <Ages/>
+              <Categories/>
             </div>
           )
-        }
+}
 
         <Div marginTop="20px">
-          <Details />                
-        </Div>             
-        
-        { !isDeviceConsideredMobile() && <ResultsHeadline showPrefixText={false} /> }
-        <Results hideLoadMore={false} />
+          <Details/>
+        </Div>
 
-        <CookieBannerBar />
+        {!isDeviceConsideredMobile() && <ResultsHeadline showPrefixText={false}/>}
+        < hideLoadMore={false}/>
+
+        <CookieBannerBar/>
       </Flexbox>
     )
   }
