@@ -35,9 +35,7 @@ const ResultsPage = (props) => (
         </Flex>
         <Flex my={4} width={1} justifyContent="center">
             <Box width={1}>
-                <Results
-                    hideLoadMore={false}
-                    searchParams={_get(props.location.state, 'search')}/>
+                <Results hideLoadMore={false} searchParams={_get(props.location.state.search)}/>
             </Box>
         </Flex>
 
