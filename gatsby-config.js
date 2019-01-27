@@ -80,6 +80,13 @@ module.exports = {
         // create only fields (optional) sampleRate: 5, siteSpeedSampleRate: 10,
         // cookieDomain: "example.com"
       }
+    }, {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Nunito']
+        }
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality To
     // learn more, visit: https://gatsby.app/offline 'gatsby-plugin-offline', make

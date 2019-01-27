@@ -6,6 +6,9 @@ import SEO from '../components/seo'
 import Search from '../app/modules/search/Search'
 import Results from '../app/modules/results/Results';
 import {Flex, Box} from '@rebass/grid';
+import AppContainer from '../components/AppContainer';
+import LinkList from '../components/link-list';
+import Footer from '../components/Footer';
 
 const AppPage = (props) => (
     <AppLayout>
@@ -14,7 +17,7 @@ const AppPage = (props) => (
             <Search/>
         </Header>
 
-        <Flex my={4} width={1} justifyContent="center">
+        <AppContainer py={4} width={1}>
             <Box width={1}>
                 <h2>category preview lego</h2>
                 <Results
@@ -44,10 +47,11 @@ const AppPage = (props) => (
                     }
                 }))}/>
             </Box>
-        </Flex>
-
-        <Link to="/">Go to page home</Link>
-        <Link to="/seo/">Go to page SEO</Link>
+            <Box>
+                <LinkList/>
+            </Box>
+        </AppContainer>
+        <Footer/>
     </AppLayout>
 )
 

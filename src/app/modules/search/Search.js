@@ -2,6 +2,7 @@ import React from 'react'
 import AsyncSelect from 'react-select/lib/Async'
 import {navigate} from 'gatsby'
 import _isString from 'lodash/isString'
+import _get from 'lodash/get'
 
 const defaultOptions = [
     {
@@ -66,10 +67,12 @@ class Search extends React.Component {
         if (this.props.value !== nextProps.value) {
             debugger
             this.setState({
-                value: {
-                    id: "",
-                    name: nextProps.value
-                }
+                value: _get(nextProps.value, 'name')
+                    ? {
+                        id: "",
+                        name: _get(nextProps.value, 'name')
+                    }
+                    : {}
             })
         }
     }
@@ -131,7 +134,6 @@ class Search extends React.Component {
                 selectedItem: newValue
             }
         }
-        debugger
         navigate('/app/results', {state})
     }
 

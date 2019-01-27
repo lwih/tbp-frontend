@@ -1,9 +1,13 @@
 import React from 'react'
 import {navigate} from 'gatsby';
 import Select from 'react-select'
+import _get from 'lodash/get'
+import _last from 'lodash/last'
+import _find from 'lodash/find'
+import _matches from 'lodash/matches'
 
-const MIN_AGE = 1200
-const MAX_AGE = 1200
+export const MIN_AGE = 0
+export const MAX_AGE = 1200
 
 const ageRanges = [
     {
@@ -79,14 +83,18 @@ const displayFormattedAge = range => {
 
 class Ages extends React.Component {
 
-    _updateAges = (e) => {
-        const values = e
-            .target
-            .value
-            .split('-')
-        const newSearch = Object.assign({}, this.props.locationState.search, {
-            age_from: values[0],
-            age_until: values[1],
+    state = {
+        selectedRange: _find(ageRanges, _matches({
+            age_from: _get(this.props.locationState, 'search.age_from'),
+            age_until: _get(this.props.locationState, 'search.age_until')
+        }))
+    }
+
+    _updateAges = (selectedRange) => {
+        this.setState({selectedRange})
+
+        const newSearch = Object.assign({}, _get(this.props.locationState, 'search'), {
+            ...selectedRange,
             id: undefined
         })
         const state = Object.assign({}, this.props.locationState, {
@@ -99,17 +107,13 @@ class Ages extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <select onChange={(e) => this._updateAges(e)}>
-                    {ageRanges.map((ageRange) => {
-                        return (
-                            <option
-                                key={`${ageRange.age_from}-${ageRange.age_until}`}
-                                value={`${ageRange.age_from}-${ageRange.age_until}`}>
-                                {displayFormattedAge(ageRange)}
-                            </option>
-                        )
-                    })}
-                </select>
+                <Select
+                    value={this.state.selectedRange}
+                    defaultValue={_last(ageRanges)}
+                    options={ageRanges}
+                    getOptionLabel={option => displayFormattedAge(option)}
+                    getOptionValue={option => `${option.age_from}-${option.age_until}`}
+                    onChange={this._updateAges}/>
             </React.Fragment>
         )
     }

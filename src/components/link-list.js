@@ -2,8 +2,23 @@ import React from "react"
 import {StaticQuery, graphql, Link} from 'gatsby'
 import {routeWithLanguage} from '../utils/routeHelper'
 
-export default({data}) => {
-  console.log(data)
+export const query = graphql `
+  query {
+    allMarkdownRemark {
+      edges {
+        node{
+          frontmatter {
+            title
+            path
+            language
+          }
+        }
+      }
+    }
+  }
+`
+
+const LinkList = ({data}) => {
   return (<StaticQuery
     query={query}
     render={data => (
@@ -22,18 +37,4 @@ export default({data}) => {
   )}/>)
 }
 
-export const query = graphql `
-  query {
-    allMarkdownRemark {
-      edges {
-        node{
-          frontmatter {
-            title
-            path
-            language
-          }
-        }
-      }
-    }
-  }
-`
+export default LinkList

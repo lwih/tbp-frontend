@@ -12,8 +12,6 @@ const HomeLayout = ({children}) => (
         render={data => (
         <React.Fragment>
             <Header siteTitle={data.site.siteMetadata.title}/>
-            <div>search bar</div>
-            <div>usp</div>
             <div
                 style={{
                 margin: `0 auto`,

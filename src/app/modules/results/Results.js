@@ -13,17 +13,27 @@ class Results extends React.Component {
     }
 
     componentDidMount() {
-        const url = `https://api.thebetterplay.com/product/search?${this.props.searchParams.category
-            ? `c=${_get(this.props.searchParams, 'category.name')}`
-            : ''}${this.props.searchParams.q
-                ? `&q=${this.props.searchParams.q}`
-                : ''}&image_sizes=medium&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
-        fetch(url)
-            .then(response => response.json())
-            .then(results => {
-                // debugger
-                this.setState({results: results.products})
-            })
+        if (this.props.searchParams) {
+            const url = `https://api.thebetterplay.com/product/search?${this.props.searchParams.category
+                ? `c=${_get(this.props.searchParams, 'category.name')}`
+                : ''}${this.props.searchParams.q
+                    ? `&q=${this.props.searchParams.q}`
+                    : ''}&image_sizes=medium&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
+            fetch(url)
+                .then(response => response.json())
+                .then(results => {
+                    // debugger
+                    this.setState({results: results.products})
+                })
+        } else {
+            const url = `https://api.thebetterplay.com/product/search?&image_sizes=medium&age_until=1200&age_from=0`
+            fetch(url)
+                .then(response => response.json())
+                .then(results => {
+                    // debugger
+                    this.setState({results: results.products})
+                })
+        }
     }
 
     componentWillReceiveProps(nextProps) {

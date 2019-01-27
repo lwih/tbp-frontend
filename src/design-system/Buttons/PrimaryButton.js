@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import {colors, radii} from '../theme'
 
 const PrimaryButton = styled.button `
-    background-color: ${colors.primaryCTA};
+    background-color: ${colors.sortOfPink};
     border-radius: ${radii[3]}px;
-    border: 2px solid ${colors.primaryCTA};
+    border: 2px solid ${colors.sortOfPink};
     height: 32px;
     width: 100%;
     outline: 0;

@@ -9,6 +9,8 @@ import {Flex, Box} from '@rebass/grid'
 import Ages from '../../app/components/Ages';
 import Categories from '../../app/components/Categories';
 import _get from 'lodash/get'
+import {navigate} from 'gatsby';
+import Footer from '../../components/Footer';
 
 const ResultsPage = (props) => (
     <AppLayout >
@@ -37,9 +39,16 @@ const ResultsPage = (props) => (
             <Box width={1}>
                 <Results
                     hideLoadMore={false}
-                    searchParams={_get(props.location.state, 'search')}/>
+                    searchParams={_get(props.location.state, 'search')}
+                    onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                    state: {
+                        selectedItem: item
+                    }
+                }))}/>
             </Box>
         </Flex>
+
+        <Footer/>
 
     </AppLayout>
 )

@@ -1,6 +1,12 @@
 import React from 'react'
 import {navigate} from 'gatsby';
 import Select from 'react-select'
+import _get from 'lodash/get'
+
+const defaultCategory = {
+    id: '*',
+    name: 'Alle Kategorien'
+}
 
 const categories = [
     {
@@ -41,11 +47,14 @@ const categories = [
 
 class Categories extends React.Component {
 
-    _updateCategories = e => {
-        debugger
-        const value = e.target.value
+    state = {
+        selectedCategory: _get(this.props.locationState, 'search.category')
+    }
+
+    _updateCategories = selectedCategory => {
+        this.setState({selectedCategory})
         const newSearch = Object.assign({}, this.props.locationState.search, {
-            category: value,
+            category: selectedCategory,
             id: undefined
         })
         const state = Object.assign({}, this.props.locationState, {
@@ -58,15 +67,13 @@ class Categories extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <select onChange={(e) => this._updateCategories(e)}>
-                    {categories.map((cat) => {
-                        return (
-                            <option key={`${cat.id}`} value={`${cat.name}`}>
-                                {cat.name}
-                            </option>
-                        )
-                    })}
-                </select>
+                <Select
+                    value={this.state.selectedCategory}
+                    defaultValue={defaultCategory}
+                    options={categories}
+                    getOptionLabel={option => option.name}
+                    getOptionValue={option => option.name}
+                    onChange={this._updateCategories}/>
             </React.Fragment>
         )
     }

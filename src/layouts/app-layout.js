@@ -11,7 +11,6 @@ const AppLayout = ({children}) => (<StaticQuery
         <div>
             {children}
         </div>
-        <div>footer</div>
     </React.Fragment>
 )}/>)
 
