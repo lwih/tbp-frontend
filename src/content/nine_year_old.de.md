@@ -1,7 +1,8 @@
 ---
+pageType: "seo"
 title: "Spielzeug für neunjähriges Kind"
 date: 2017-09-20T16:14:09+02:00
-slug: "/spielzeug/neunjaehriges-kind"
+slug: "neunjaehriges-kind"
 path: "/de/spielzeug/neunjaehriges-kind"
 language: "de"
 draft: false
@@ -15,7 +16,6 @@ weight: 9
 
 Mit neun Jahren nimmt das Spielen allmählich differenzierte Formen an. Das Denken des Kindes wird systematischer und geordneter und auch das Konzentrationsvermögen nimmt zu. Es kann ein Eifer entstehen, der zu Erfolgserlebnissen oder auch zur Überforderung führt, zumindest aber werden die Kinder in diesem Alter deutlich leistungsfähiger. Sie mögen mentale Herausforderungen. Auch ihr Spektrum in Sachen Spielzeug erweitert sich und vor allem auch Sport, Bewegung und das Spielen im Freien kann grosse Freude bereiten. Sie lieben Wettbewerbe und vergleichen sich auch in den schulischen Leistungen manchmal mit den Anderen. Die Peergroup gewinnt immer mehr an Bedeutung; Die Meinungen und die Akzeptanz im Freundeskreis sind ihnen besonders wichtig. Schulkinder pflegen den Sozialen Austausch mit Gleichgesinnten und entdecken immer wieder neue gemeinsame Spielmöglichkeiten. Dadurch lernen sie vieles für die sinnvolle Freizeitgestaltung und für das Leben dazu. Gleichzeitig fangen Kinder in diesem Alter an, sich mit den Erwachsenen zu vergleichen und lieben es wenn sie den einen oder andern Freiraum erhalten, z.B. eine kurze Weile am Tablet der Eltern surfen zu dürfen. Allgemein erweitert sich der Horizont des Kindes - beim Spielen sowie in den Bereichen des täglichen Lebens.
 
-<img src="https://avatars2.githubusercontent.com/u/33005771?s=40&v=4" alt="Spielzeug für achtjähriges Kind" >
 
 <h2>Welches Spielzeug ist hilfreich und förderlich für die Entwicklung im 10. Lebensjahr?</h2>
 

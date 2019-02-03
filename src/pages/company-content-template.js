@@ -4,48 +4,24 @@ import {graphql, navigate} from "gatsby"
 import ContentLayout from '../layouts/content-layout'
 import Header from '../components/header';
 import Search from '../app/modules/search/Search';
-import AppContainer from '../components/app-container'
+import AppContainer from '../components/app-container';
+import {Box} from '@rebass/grid';
 import Results from '../app/modules/results/Results';
 import SEO from '../components/seo';
+import Footer from '../components/footer';
 import _get from 'lodash/get'
-import {Box} from '@rebass/grid'
 
 export default function Template(props) {
     const {markdownRemark: post} = props.data
-    const frontmatterAppData = _get(props.data, 'markdownRemark.frontmatter.appData')
-    let appData = {
-        age_from: 0,
-        age_until: 1200
-    }
-    try {
-        JSON.parse(frontmatterAppData)
-    } catch (e) {}
 
     return (
         <ContentLayout>
             <SEO title="SEO" keywords={[`gatsby`, `application`, `react`]}/>
 
-            <Header siteTitle={'The Better Play'}>
-                <Search/>
-            </Header>
+            <Header siteTitle={'The Better Play'}></Header>
 
-            <AppContainer py={4} width={1} justifyContent="center">
+            <div>
                 <Box width={1}>
-                    <h2>category preview lego</h2>
-                    <Results
-                        hideLoadMore={false}
-                        itemsAmount={4}
-                        searchParams={{
-                        age_from: appData.age_from,
-                        age_until: appData.age_until,
-                        q: ''
-                    }}
-                        onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                        state: {
-                            selectedItem: item
-                        }
-                    }))}/>
-
                     <div>
                         <h1>{post.frontmatter.title}</h1>
                         <div
@@ -54,13 +30,13 @@ export default function Template(props) {
                         }}/>
                     </div>
                 </Box>
-            </AppContainer>
+            </div>
         </ContentLayout>
     )
 }
 
 export const pageQuery = graphql `
-    query ContentPages($path: String!) {
+    query CompanyPages($path: String!) {
         markdownRemark(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {

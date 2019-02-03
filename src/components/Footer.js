@@ -3,37 +3,56 @@ import styled from 'styled-components'
 import {Box, Flex} from '@rebass/grid';
 import InternalLink from '../design-system/Links/InternalLink';
 import {colors} from '../design-system/theme';
+import FooterList from './footer-list';
+
+const FooterLogo = styled.img `
+max-width: 300px;
+`
 
 const FooterComponent = (props) => (
     <Flex
+        p={4}
         className={props.className}
         flexDirection="column"
         justifyContent="center">
         <Box>
             <InternalLink to="/">
-                <img
+                <FooterLogo
                     className="Header-Logo"
                     src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
                     alt="the better play"/>
             </InternalLink>
         </Box>
-        <Box>
+        <Box alignSelf="center">
             Inspiration fur gutes spielzeug
         </Box>
-        <Box>
-            facebook
+
+        <Box alignSelf="flex-end" mt={3}>
+            <FooterList/>
         </Box>
-        <Box>
-            copyrights
+        <Box alignSelf="flex-end">
+            Copyright © {new Date().getFullYear()}
         </Box>
-        <Box>
-            links
+        <Box alignSelf="flex-end">
+            <a
+                href="https://www.facebook.com/THE-BETTER-PLAY-311913689294308/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                    class=""
+                    src="https://d33wubrfki0l68.cloudfront.net/5fda456dd840cf150471834ff9f39e7c2a8c0fcd/b4de1/images/icon-f.svg"
+                    alt="Facebook"
+                    width="20px"/>
+            </a>
         </Box>
     </Flex>
 )
 
 const Footer = styled(FooterComponent)`
     background: ${colors.teal};
+    color: ${colors.halfGrey};
+font-size: 14px;
+
 `
 
 export default Footer

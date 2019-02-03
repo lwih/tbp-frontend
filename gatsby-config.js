@@ -1,4 +1,5 @@
 module.exports = {
+  // pathPrefix: 'de',
   siteMetadata: {
     title: `The Better Play`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -49,14 +50,6 @@ module.exports = {
             }
           }
         ]
-      }
-    }, {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'de',
-        langKeyDefault: 'de',
-        useLangKeyLayout: true,
-        langs: ['en', 'de']
       }
     }, {
       resolve: `gatsby-plugin-styled-components`,

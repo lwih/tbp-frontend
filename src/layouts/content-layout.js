@@ -7,23 +7,24 @@ import {StaticQuery, graphql} from 'gatsby'
 
 import Header from '../components/header'
 import './layout.css'
+import LinkList from '../components/link-list';
+import Footer from '../components/footer';
 
-const ContentLayout = ({children}) => (<StaticQuery
-    query={graphql `query A { site { siteMetadata { title } } }`}
-    render={data => (
-    <React.Fragment>
-        <div
-            style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0
-        }}>
-            {children}
-        </div>
-        {/* <script type="text/javascript"> window.tbpApp = { "age_from": "108", "age_until": "120" } </script> */}
-    </React.Fragment>
-)}/>)
+const ContentLayout = ({children}) => (
+    <StaticQuery
+        query={graphql `query A { site { siteMetadata { title } } }`}
+        render={data => (
+        <React.Fragment>
+            <div style={{
+                margin: `0 auto`
+            }}>
+                {children}
+            </div>
+            <LinkList/>
+            <Footer/>
+        </React.Fragment>
+    )}/>
+)
 
 ContentLayout.propTypes = {
     children: PropTypes.node.isRequired

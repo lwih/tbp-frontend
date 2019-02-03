@@ -4,18 +4,20 @@ exports.createPages = ({actions, graphql}) => {
     const {createPage} = actions
 
     const ContentPageTemplate = path.resolve(`src/pages/content-template.js`)
+    const CompanyContentPageTemplate = path.resolve(`src/pages/company-content-template.js`)
 
     return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
+        sort: { order: ASC, fields: [frontmatter___weight] }
       ) {
         edges {
           node {
             frontmatter {
                 path
                 language
+                pageType
+                weight
             }
           }
         }
@@ -23,16 +25,16 @@ exports.createPages = ({actions, graphql}) => {
     }
   `).then(result => {
 
-        debugger
         if (result.errors) {
             return Promise.reject(result.errors)
         }
+
         result
             .data
             .allMarkdownRemark
             .edges
+            .filter(edge => edge.node.frontmatter.pageType === 'seo')
             .forEach(({node}) => {
-                debugger
                 createPage({
                     path: `${node.frontmatter.path}`,
                     component: ContentPageTemplate,
@@ -40,11 +42,18 @@ exports.createPages = ({actions, graphql}) => {
                         locale: 'de'
                     }
                 })
+            })
+        result
+            .data
+            .allMarkdownRemark
+            .edges
+            .filter(edge => edge.node.frontmatter.pageType === 'company')
+            .forEach(({node}) => {
                 createPage({
                     path: `${node.frontmatter.path}`,
-                    component: ContentPageTemplate,
+                    component: CompanyContentPageTemplate,
                     context: {
-                        locale: 'en'
+                        locale: 'de'
                     }
                 })
             })

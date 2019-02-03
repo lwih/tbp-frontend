@@ -4,7 +4,7 @@ import {Link, navigate} from 'gatsby'
 import CMSLayout from '../layouts/content-layout'
 import SEO from '../components/seo'
 import Search from '../app/modules/search/Search';
-import AppContainer from '../components/AppContainer';
+import AppContainer from '../components/app-container';
 import Header from '../components/header';
 import {Box} from '@rebass/grid';
 import Results from '../app/modules/results/Results';
