@@ -47,10 +47,10 @@ export default function Template(props) {
                     }))}/>
 
                     <div>
-                        <h1>{post.frontmatter.title}</h1>
+                        <h1>{_get(post, 'frontmatter.title')}</h1>
                         <div
                             dangerouslySetInnerHTML={{
-                            __html: post.html
+                            __html: _get(post, 'html')
                         }}/>
                     </div>
                 </Box>
