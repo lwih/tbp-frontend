@@ -3,6 +3,27 @@ import {navigate} from 'gatsby';
 import Select from 'react-select'
 import _get from 'lodash/get'
 
+const styles = {
+    control: (base) => ({
+        ...base,
+        borderRadius: '4px',
+        minHeight: '40px'
+    }),
+    container: (base) => ({
+        ...base
+    }),
+    input: (base) => ({
+        ...base,
+        width: '100%',
+        borderRadius: '0'
+    }),
+    menu: (base) => ({
+        ...base,
+        margin: '0',
+        borderRadius: '0 0 4px 4px'
+    })
+}
+
 const defaultCategory = {
     id: '*',
     name: 'Alle Kategorien'
@@ -73,7 +94,8 @@ class Categories extends React.Component {
                     options={categories}
                     getOptionLabel={option => option.name}
                     getOptionValue={option => option.name}
-                    onChange={this._updateCategories}/>
+                    onChange={this._updateCategories}
+                    styles={styles}/>
             </React.Fragment>
         )
     }

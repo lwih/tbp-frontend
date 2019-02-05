@@ -45,8 +45,6 @@ const DetailsPage = (props) => {
                     }))}/>
                 </Box>
             </Flex>
-
-            <Footer/>
         </AppLayout>
     )
 }

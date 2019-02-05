@@ -35,10 +35,10 @@ const ResultsPage = (props) => (
         <Flex my={2} width={1} justifyContent="center">
             <Box width={1}>
                 <Flex>
-                    <Box width={1 / 2} px={2}>
+                    <Box width={1 / 2} pl={2} pr={1}>
                         <Ages locationState={props.location.state}/>
                     </Box>
-                    <Box width={1 / 2} px={2}>
+                    <Box width={1 / 2} pr={2} pl={1}>
                         <Categories locationState={props.location.state}/>
                     </Box>
                 </Flex>
@@ -56,9 +56,6 @@ const ResultsPage = (props) => (
                 }))}/>
             </Box>
         </Flex>
-
-        <Footer/>
-
     </AppLayout>
 )
 

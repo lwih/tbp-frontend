@@ -7,6 +7,27 @@ import _find from 'lodash/find'
 import _matches from 'lodash/matches'
 import {Flex} from '@rebass/grid';
 
+const styles = {
+    control: (base) => ({
+        ...base,
+        borderRadius: '4px',
+        minHeight: '40px'
+    }),
+    container: (base) => ({
+        ...base
+    }),
+    input: (base) => ({
+        ...base,
+        width: '100%',
+        borderRadius: '0'
+    }),
+    menu: (base) => ({
+        ...base,
+        margin: '0',
+        borderRadius: '0 0 4px 4px'
+    })
+}
+
 export const MIN_AGE = 0
 export const MAX_AGE = 1200
 
@@ -114,7 +135,8 @@ class Ages extends React.Component {
                     options={ageRanges}
                     getOptionLabel={option => displayFormattedAge(option)}
                     getOptionValue={option => `${option.age_from}-${option.age_until}`}
-                    onChange={this._updateAges}/>
+                    onChange={this._updateAges}
+                    styles={styles}/>
             </React.Fragment>
         )
     }
