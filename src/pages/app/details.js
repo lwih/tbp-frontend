@@ -8,7 +8,7 @@ import Search from '../../app/modules/search/Search';
 import {Flex, Box} from '@rebass/grid';
 import Results from '../../app/modules/results/Results';
 import Result from '../../app/modules/result/Result';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer';
 
 const DetailsPage = (props) => {
     return (
