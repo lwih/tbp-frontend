@@ -6,8 +6,13 @@ import LinkList from '../components/link-list'
 import './layout.css'
 import Footer from '../components/footer';
 
-export const homeLayoutQuery = graphql `
+const homeLayoutQuery = graphql `
   query {
+    site { 
+        siteMetadata { 
+            title 
+        } 
+    }
     allMarkdownRemark {
       edges {
         node{

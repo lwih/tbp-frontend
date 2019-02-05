@@ -10,8 +10,13 @@ import './layout.css'
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 
-export const companyContentQuery = graphql `
+const companyContentQuery = graphql `
   query {
+    site { 
+        siteMetadata { 
+            title 
+        } 
+    }
     allMarkdownRemark {
       edges {
         node{
