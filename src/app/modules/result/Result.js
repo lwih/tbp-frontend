@@ -7,7 +7,7 @@ import _get from 'lodash/get'
 import _toArray from 'lodash/toArray'
 import _merge from 'lodash/merge'
 import Card from '../../../design-system/Cards/card';
-import Price from '../../../design-system/Price/Price';
+import Price from '../../../design-system/Price/price';
 import Gallery from '../../../design-system/Galleries/gallery';
 import ExternalLink from '../../../design-system/Links/external-link';
 import Skeleton from '../../../design-system/Skeletons/skeleton';
