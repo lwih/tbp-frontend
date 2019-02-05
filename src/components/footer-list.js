@@ -6,11 +6,12 @@ import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link'
 import {companyPages, sortPagesByWeight} from '../utils/pageHelpers';
 import {colors} from '../design-system/theme';
+import _get from 'lodash/get'
 
 const FooterList = ({data}) => {
     return (
         <Flex flexDirection="column" justifyContent="flex-end">
-            {sortPagesByWeight(companyPages(data.allMarkdownRemark.edges)).map((page, index) => {
+            {sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges')).map((page, index) => {
                 return (
                     <Box alignSelf="flex-end" key={index}>
                         <InternalLink
