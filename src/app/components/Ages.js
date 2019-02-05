@@ -6,6 +6,7 @@ import _last from 'lodash/last'
 import _find from 'lodash/find'
 import _matches from 'lodash/matches'
 import {Flex} from '@rebass/grid';
+import {colors} from '../../design-system/theme';
 
 const styles = {
     control: (base) => ({
@@ -14,7 +15,8 @@ const styles = {
         minHeight: '40px'
     }),
     container: (base) => ({
-        ...base
+        ...base,
+        background: colors.white
     }),
     input: (base) => ({
         ...base,

@@ -5,6 +5,7 @@ import React from 'react'
 import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
+import Skeleton from '../design-system/Skeletons/skeleton';
 
 const HeaderComponent = ({siteTitle, className, children}) => (
     <Box className={className} justifyContent="center">
@@ -15,7 +16,7 @@ const HeaderComponent = ({siteTitle, className, children}) => (
                         alignSelf="center"
                         className="Header-Logo-Container"
                         style={{
-                        minHeight: '36px'
+                        minHeight: '45px'
                     }}>
                         <InternalLink to="/">
                             <img
@@ -24,14 +25,19 @@ const HeaderComponent = ({siteTitle, className, children}) => (
                                 alt={siteTitle}/>
                         </InternalLink>
                     </Box>
-                    <Box alignSelf="center" className="Header-title">Inspiration für gutes Spielzeug</Box>
+                    <Box alignSelf="center" className="Header-title">
+                        Inspiration für gutes Spielzeug
+                    </Box>
                 </Flex>
                 <Flex>
-                    {!!children && (
-                        <Box className="Header" width={1} mt={3}>
-                            {children}
-                        </Box>
-                    )}
+                    <Box className="Header" width={1} mt={3}>
+                        {!!children
+                            ? (
+                                <React.Fragment>{children}</React.Fragment>
+                            )
+                            : (<Skeleton height="32px" color="transparent"/>)
+}
+                    </Box>
                 </Flex>
             </Box>
         </Flex>

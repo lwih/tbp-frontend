@@ -2,6 +2,7 @@ import React from 'react'
 import {navigate} from 'gatsby';
 import Select from 'react-select'
 import _get from 'lodash/get'
+import {colors} from '../../design-system/theme';
 
 const styles = {
     control: (base) => ({
@@ -10,7 +11,8 @@ const styles = {
         minHeight: '40px'
     }),
     container: (base) => ({
-        ...base
+        ...base,
+        background: colors.white
     }),
     input: (base) => ({
         ...base,

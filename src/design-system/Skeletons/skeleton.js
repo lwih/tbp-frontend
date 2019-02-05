@@ -5,7 +5,7 @@ import {colors} from '../theme';
 const SkeletonComponent = (props) => <div {...props}/>
 
 const Skeleton = styled(SkeletonComponent)`
-    background: ${colors.paleGrey};
+    background: ${props => props.color};
     width: ${props => props.width};
     height: ${props => props.height};
     animation: react-placeholder-pulse 1.2s infinite;
@@ -22,5 +22,10 @@ const Skeleton = styled(SkeletonComponent)`
         }
       }
 `
+
+Skeleton.defaultProps = {
+    color: colors.paleGrey,
+    width: '100%'
+}
 
 export default Skeleton
