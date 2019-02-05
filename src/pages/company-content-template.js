@@ -1,7 +1,7 @@
 import React from "react"
 import {Helmet} from "react-helmet"
 import {graphql, navigate} from "gatsby"
-import ContentLayout from '../layouts/content-layout'
+import CompanyContentLayout from '../layouts/company-content-layout'
 import Header from '../components/header';
 import Search from '../app/modules/search/Search';
 import AppContainer from '../components/app-container';
@@ -15,7 +15,7 @@ export default function Template(props) {
     const {markdownRemark: post} = props.data
 
     return (
-        <ContentLayout>
+        <CompanyContentLayout>
             <SEO title="SEO" keywords={[`gatsby`, `application`, `react`]}/>
 
             <Header siteTitle={'The Better Play'}></Header>
@@ -31,7 +31,7 @@ export default function Template(props) {
                     </div>
                 </Box>
             </div>
-        </ContentLayout>
+        </CompanyContentLayout>
     )
 }
 

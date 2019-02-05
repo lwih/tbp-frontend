@@ -1,7 +1,7 @@
 import React from "react"
 import {Helmet} from "react-helmet"
 import {graphql, navigate} from "gatsby"
-import ContentLayout from '../layouts/content-layout'
+import ContentLayout from '../layouts/company-content-layout'
 import Header from '../components/header';
 import Search from '../app/modules/search/Search';
 import AppContainer from '../components/app-container'

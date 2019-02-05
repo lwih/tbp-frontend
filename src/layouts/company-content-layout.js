@@ -10,7 +10,7 @@ import './layout.css'
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 
-export const contentQuery = graphql `
+export const companyContentQuery = graphql `
   query {
     allMarkdownRemark {
       edges {
@@ -28,9 +28,9 @@ export const contentQuery = graphql `
   }
 `
 
-const ContentLayout = ({children}) => (
+const CompanyContentLayout = ({children}) => (
     <StaticQuery
-        query={contentQuery}
+        query={companyContentQuery}
         render={data => (
         <React.Fragment>
             <div style={{
@@ -38,14 +38,13 @@ const ContentLayout = ({children}) => (
             }}>
                 {children}
             </div>
-            <LinkList data={data}/>
             <Footer data={data}/>
         </React.Fragment>
     )}/>
 )
 
-ContentLayout.propTypes = {
+CompanyContentLayout.propTypes = {
     children: PropTypes.node.isRequired
 }
 
-export default ContentLayout
+export default CompanyContentLayout

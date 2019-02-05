@@ -7,44 +7,21 @@ import InternalLink from '../design-system/Links/internal-link'
 import {companyPages, sortPagesByWeight} from '../utils/pageHelpers';
 import {colors} from '../design-system/theme';
 
-export const query = graphql `
-  query {
-    allMarkdownRemark {
-      edges {
-        node{
-          frontmatter {
-            title
-            path
-            language
-            weight
-            pageType
-          }
-        }
-      }
-    }
-  }
-`
-
 const FooterList = ({data}) => {
-
-  return (<StaticQuery
-    query={query}
-    render={data => {
     return (
-      <Flex flexDirection="column" justifyContent="flex-end">
-        {sortPagesByWeight(companyPages(data.allMarkdownRemark.edges)).map((page, index) => {
-          return (
-            <Box alignSelf="flex-end" key={index}>
-              <InternalLink
-                color={colors.lightBlue}
-                key={page.node.frontmatter.path + index}
-                to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
-            </Box>
-          )
-        })}
-      </Flex>
+        <Flex flexDirection="column" justifyContent="flex-end">
+            {sortPagesByWeight(companyPages(data.allMarkdownRemark.edges)).map((page, index) => {
+                return (
+                    <Box alignSelf="flex-end" key={index}>
+                        <InternalLink
+                            color={colors.lightBlue}
+                            key={page.node.frontmatter.path + index}
+                            to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
+                    </Box>
+                )
+            })}
+        </Flex>
     )
-  }}/>)
 }
 
 export default FooterList

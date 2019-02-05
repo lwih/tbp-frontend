@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, navigate} from 'gatsby'
 
-import CMSLayout from '../layouts/content-layout'
+import CMSLayout from '../layouts/company-content-layout'
 import SEO from '../components/seo'
 import Search from '../app/modules/search/Search';
 import AppContainer from '../components/app-container';

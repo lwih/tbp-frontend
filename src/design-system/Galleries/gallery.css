@@ -24,6 +24,12 @@
   border: 1px solid #d74669;
 }
 
+.image-gallery-thumbnails-container img {
+  height: 40px;
+    width: auto;
+    max-width: 100px;
+}
+
 /* 
 .image-gallery {
   width: 450px;

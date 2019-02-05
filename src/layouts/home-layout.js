@@ -6,9 +6,27 @@ import LinkList from '../components/link-list'
 import './layout.css'
 import Footer from '../components/footer';
 
+export const homeLayoutQuery = graphql `
+  query {
+    allMarkdownRemark {
+      edges {
+        node{
+          frontmatter {
+            title
+            path
+            language
+            weight
+            pageType
+          }
+        }
+      }
+    }
+  }
+`
+
 const HomeLayout = ({children}) => (
     <StaticQuery
-        query={graphql `query SiteTitleQuery { site { siteMetadata { title } } }`}
+        query={homeLayoutQuery}
         render={data => (
         <React.Fragment>
             <Header siteTitle={data.site.siteMetadata.title}/>
@@ -21,8 +39,8 @@ const HomeLayout = ({children}) => (
             }}>
                 {children}
             </div>
-            <LinkList/>
-            <Footer/>
+            <LinkList data={data}/>
+            <Footer data={data}/>
         </React.Fragment>
     )}/>
 )

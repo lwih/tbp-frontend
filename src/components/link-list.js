@@ -6,24 +6,6 @@ import {Flex} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link'
 import {seoPages, sortPagesByWeight} from '../utils/pageHelpers';
 
-export const query = graphql `
-  query {
-    allMarkdownRemark {
-      edges {
-        node{
-          frontmatter {
-            title
-            path
-            language
-            weight
-            pageType
-          }
-        }
-      }
-    }
-  }
-`
-
 const LinkListBackground = styled.div `
   width: 100%;
   text-align: center;
@@ -51,28 +33,23 @@ const LinkListContent = styled.div `
 `
 
 const LinkList = ({data}) => {
-
-  return (<StaticQuery
-    query={query}
-    render={data => {
     return (
-      <LinkListBackground>
-        <LinkListBackgroundImage>
-          <LinkListContent>
-            <Flex flexDirection="column" p={4}>
-              {sortPagesByWeight(seoPages(data.allMarkdownRemark.edges)).map((page, index) => {
-                return (
-                  <InternalLink
-                    key={page.node.frontmatter.path + index}
-                    to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
-                )
-              })}
-            </Flex>
-          </LinkListContent>
-        </LinkListBackgroundImage>
-      </LinkListBackground>
+        <LinkListBackground>
+            <LinkListBackgroundImage>
+                <LinkListContent>
+                    <Flex flexDirection="column" p={4}>
+                        {sortPagesByWeight(seoPages(data.allMarkdownRemark.edges)).map((page, index) => {
+                            return (
+                                <InternalLink
+                                    key={page.node.frontmatter.path + index}
+                                    to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
+                            )
+                        })}
+                    </Flex>
+                </LinkListContent>
+            </LinkListBackgroundImage>
+        </LinkListBackground>
     )
-  }}/>)
 }
 
 export default LinkList

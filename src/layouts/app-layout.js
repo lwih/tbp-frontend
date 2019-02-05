@@ -6,16 +6,34 @@ import Footer from '../components/footer';
 import './layout.css'
 import LinkList from '../components/link-list';
 
+export const appLayoutQuery = graphql `
+  query {
+    allMarkdownRemark {
+      edges {
+        node{
+          frontmatter {
+            title
+            path
+            language
+            weight
+            pageType
+          }
+        }
+      }
+    }
+  }
+`
+
 const AppLayout = ({children}) => (
     <StaticQuery
-        query={graphql `query B { site { siteMetadata { title } } }`}
+        query={appLayoutQuery}
         render={data => (
         <React.Fragment>
             <div>
                 {children}
             </div>
-            <LinkList/>
-            <Footer/>
+            <LinkList data={data}/>
+            <Footer data={data}/>
         </React.Fragment>
     )}/>
 )
