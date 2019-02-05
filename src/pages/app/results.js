@@ -10,7 +10,7 @@ import Ages from '../../app/components/Ages';
 import Categories from '../../app/components/Categories';
 import _get from 'lodash/get'
 import {navigate} from 'gatsby';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer';
 
 const ResultsPage = (props) => (
     <AppLayout >
