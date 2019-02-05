@@ -51,6 +51,7 @@ const Footer = styled(FooterComponent)`
     background: ${colors.teal};
     color: ${colors.halfGrey};
     font-size: 14px;
+    box-shadow: 0px 0px 2px 2px ${colors.darkGrey};
 `
 
 export default Footer

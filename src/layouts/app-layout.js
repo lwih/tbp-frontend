@@ -37,7 +37,6 @@ const AppLayout = ({children}) => (
             <div>
                 {children}
             </div>
-            <LinkList data={data}/>
             <Footer data={data}/>
         </React.Fragment>
     )}/>

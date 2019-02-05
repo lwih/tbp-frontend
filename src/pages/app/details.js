@@ -9,16 +9,19 @@ import {Flex, Box} from '@rebass/grid';
 import Results from '../../app/modules/results/Results';
 import Result from '../../app/modules/result/Result';
 import Footer from '../../components/footer';
+import TernaryButton from '../../design-system/Buttons/ternary-button';
+import InternalLink from '../../design-system/Links/internal-link';
 
 const DetailsPage = (props) => {
     return (
         <AppLayout>
             <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/>
             <Header siteTitle={'The Better Play'}>
-                {/* <Search
-                    value={props.location.state && props.location.state.selectedItem
-                    ? _get(props.location.state, 'selectedItem')
-                    : _get(props.location.state, 'search.q')}/> */}
+                <Flex>
+                    <Box width={1 / 5}>
+                        <TernaryButton onClick={() => navigate('/app/results')}>{'< Zurück'}</TernaryButton>
+                    </Box>
+                </Flex>
             </Header>
             <Flex my={2} width={1} justifyContent="center">
                 <Box width={1}>

@@ -31,6 +31,7 @@
     "glamorous": "^5.0.0",
     "history": "^4.7.2",
     "mobile-detect": "^1.4.3",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-cookie-banner": "^4.0.0",

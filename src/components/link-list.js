@@ -5,12 +5,15 @@ import {routeWithLanguage} from '../utils/routeHelper'
 import {Flex} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link'
 import {seoPages, sortPagesByWeight} from '../utils/pageHelpers';
+import {colors} from '../design-system/theme';
 
 const LinkListBackground = styled.div `
   width: 100%;
   text-align: center;
   line-height: 2;
   position: relative;
+  border-top: 1px solid ${colors.sortOfPinkLight};
+  box-shadow: 0px 0px 2px 2px ${colors.sortOfPinkLight};
 `
 const LinkListBackgroundImage = styled.div `
   &::after {

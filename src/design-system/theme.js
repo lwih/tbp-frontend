@@ -1,10 +1,17 @@
+import {darken, rgba} from 'polished'
+
 export const colors = {
     white: '#ffffff',
     sortOfPink: '#d74669',
+    sortOfPinkLight: '#d7466924',
     teal: '#20282f',
+    darkGrey: darken(0.4, '#f2f3f5'),
     paleGrey: '#f2f3f5',
     halfGrey: 'rgba(255, 255, 255, 0.5)',
-    lightBlue: '#00cbe2'
+    lightBlue: '#00cbe2',
+    deepPurple: '#2a079b',
+    greenBlue: '#1ab2c4',
+    vanillaYellow: rgba('#fff1cf', 0.5)
 }
 
 export const spaces = {

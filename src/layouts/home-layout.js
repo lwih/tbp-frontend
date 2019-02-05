@@ -5,6 +5,7 @@ import Header from '../components/header'
 import LinkList from '../components/link-list'
 import './layout.css'
 import Footer from '../components/footer';
+import Search from '../app/modules/search/Search';
 
 const homeLayoutQuery = graphql `
   query {
@@ -34,13 +35,15 @@ const HomeLayout = ({children}) => (
         query={homeLayoutQuery}
         render={data => (
         <React.Fragment>
-            <Header siteTitle={data.site.siteMetadata.title}/>
+            <Header siteTitle={data.site.siteMetadata.title}>
+                <Search/>
+            </Header>
             <div
                 style={{
                 margin: `0 auto`,
                 maxWidth: 960,
                 padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0
+                padding: '8px 0'
             }}>
                 {children}
             </div>
