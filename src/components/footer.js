@@ -29,7 +29,7 @@ const FooterComponent = (props) => (
         </Box>
 
         <Box alignSelf="flex-end" mt={3}>
-            <FooterList data={props.data}/>
+            {/* <FooterList data={props.data}/> */}
         </Box>
         <Box alignSelf="flex-end">
             Copyright © {new Date().getFullYear()}

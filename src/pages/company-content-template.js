@@ -45,5 +45,23 @@ export const pageQuery = graphql `
                 appData
             }
         }
+        site { 
+            siteMetadata { 
+                title 
+            } 
+        }
+        allMarkdownRemark {
+          edges {
+            node{
+              frontmatter {
+                title
+                path
+                language
+                weight
+                pageType
+              }
+            }
+          }
+        }
     }
 `

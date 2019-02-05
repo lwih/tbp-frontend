@@ -9,9 +9,10 @@ import {colors} from '../design-system/theme';
 import _get from 'lodash/get'
 
 const FooterList = ({data}) => {
+    debugger
     return (
         <Flex flexDirection="column" justifyContent="flex-end">
-            {sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges')).map((page, index) => {
+            {sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges'))).map((page, index) => {
                 return (
                     <Box alignSelf="flex-end" key={index}>
                         <InternalLink
