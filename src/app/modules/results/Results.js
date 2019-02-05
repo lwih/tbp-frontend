@@ -57,16 +57,25 @@ class Results extends React.Component {
         // debugger
 
         const {itemsAmount} = this.props
-        const results = itemsAmount
-            ? _slice(this.state.results, 0, itemsAmount)
-            : this.state.results
+        let results = [
+            {},
+            {},
+            {},
+            {},
+            {}, {}, {}, {}, {}, {}, {}
+        ]
+
+        if (this.state.results.length) {
+            results = itemsAmount
+                ? _slice(this.state.results, 0, itemsAmount)
+                : this.state.results
+        }
+
         return (
             <Flex flexWrap="wrap">
                 {results.map(result => (
                     <Box
                         key={result.id}
-                        my={2}
-                        my={3}
                         width={[
                         1, 1 / 2,
                         1 / 4

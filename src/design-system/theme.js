@@ -7,4 +7,25 @@ export const colors = {
     lightBlue: '#00cbe2'
 }
 
-export const radii = [2, 4, 8, 100]
+export const spaces = {
+    0: 0,
+    1: 1,
+    2: 2,
+    4: 4,
+    8: 8,
+    16: 16,
+    32: 32
+}
+
+export const radii = {
+    2: 2,
+    4: 4,
+    8: 8,
+    100: 100
+}
+
+export const fontWeights = {
+    'light': 300,
+    'medium': 400,
+    'heavy': 700
+}

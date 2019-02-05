@@ -1,4 +1,31 @@
 .image-gallery {
+  display: flex;
+  justify-content: center;
+  max-height: 250px;
+}
+.image-gallery-content {
+  max-width: 100%;
+}
+.image-gallery-content.fullscreen {
+  align-self: center;
+}
+.image-gallery-content.fullscreen img{
+  max-height: none;
+}
+
+.image-gallery-image {
+  text-align: center;
+}
+.image-gallery-image img {
+  max-height: 200px;
+  width: auto;
+}
+.image-gallery-thumbnail.active {
+  border: 1px solid #d74669;
+}
+
+/* 
+.image-gallery {
   width: 450px;
   max-width: 450px;
   margin: 0 auto; }
@@ -68,4 +95,4 @@
   margin: 0 auto; }
 
 .AppMobile .image-gallery-thumbnail {
-  min-width: 40px; }
+  min-width: 40px; } */

@@ -2,13 +2,41 @@ import React from 'react'
 import Select from 'react-select'
 import {navigate} from 'gatsby'
 import {Flex, Box} from '@rebass/grid'
-import PrimaryButton from '../../../design-system/Buttons/PrimaryButton'
-import Price from '../../components/Price'
+import PrimaryButton from '../../../design-system/Buttons/primary-button'
 import _get from 'lodash/get'
+import _toArray from 'lodash/toArray'
+import _merge from 'lodash/merge'
+import Card from '../../../design-system/Cards/card';
+import Price from '../../../design-system/Price/Price';
+import Gallery from '../../../design-system/Galleries/gallery';
+import ExternalLink from '../../../design-system/Links/external-link';
+import Skeleton from '../../../design-system/Skeletons/skeleton';
 
 function escapeHTML(data) {
     return {__html: data}
 }
+
+const SkeletonComponent = (
+    <Card>
+        <Flex width={1} flexDirection="column">
+            <Box m={2}>
+                <Skeleton height="48px" width="100%"/>
+            </Box>
+            <Box m={2}>
+                <Skeleton height="250px" width="100%"/>
+            </Box>
+            <Box mt={3} alignSelf="flex-end">
+                <Skeleton height="24px" width="100%"/>
+            </Box>
+            <Box m={2}>
+                <Skeleton height="32px" width="100%"/>
+            </Box>
+            <Box m={2}>
+                <Skeleton height="128px" width="100%"/>
+            </Box>
+        </Flex>
+    </Card>
+)
 
 class Result extends React.Component {
 
@@ -35,36 +63,48 @@ class Result extends React.Component {
     }
 
     render() {
-        return !!this.state.result && (
-            <Flex width={1} flexDirection="column" bg="#eee">
-                <Box>
-                    {this.state.result.name}
-                </Box>
-                <Box>
-                    <Price
-                        price={this.state.result.price
-                        ? this.state.result.price.displayPrice
-                        : ''}/>
-                </Box>
-                <Box>
-                    {(!!this.state.result.description) && this.state.result.description.map((d, i) => (
-                        <Flex
-                            key={`description-${i}`}
-                            margin="5px"
-                            dangerouslySetInnerHTML={escapeHTML('-&nbsp;' + d)}></Flex>
-                    ))
+        let imagesForGallery = []
+        if (!!this.state.result) {
+            const flattenImagesBySize = (images, size, target) => (images && _get(images, size).map(image => ({[target]: image})))
+            imagesForGallery = _toArray(_merge(flattenImagesBySize(this.state.result.imageUrls, 'tiny', 'thumbnail'), flattenImagesBySize(this.state.result.imageUrls, 'large', 'original')))
+        }
+
+        return !!this.state.result
+            ? (
+                <Card>
+                    <Flex width={1} flexDirection="column">
+                        <Box m={2}>
+                            <b>
+                                {this.state.result.name}
+                            </b>
+
+                        </Box>
+                        <Box m={2}>
+                            <Gallery images={imagesForGallery}/>
+                        </Box>
+                        <Box mt={3} alignSelf="flex-end"></Box>
+                        <Box m={2}>
+                            <Price
+                                price={this.state.result.price
+                                ? this.state.result.price.displayPrice
+                                : ''}/>
+                            <ExternalLink href={this.state.result.deeplinkUrl} target="_blank">
+                                <PrimaryButton>Zum product</PrimaryButton>
+                            </ExternalLink>
+                        </Box>
+                        <Box m={2}>
+                            {(!!this.state.result.description) && this.state.result.description.map((d, i) => (
+                                <Flex
+                                    key={`description-${i}`}
+                                    margin="5px"
+                                    dangerouslySetInnerHTML={escapeHTML('-&nbsp;' + d)}></Flex>
+                            ))
 }
-                </Box>
-
-                {/* {this.state.result.term} */}
-                {/* {this.state.result.category}
-                {this.state.result.id} */}
-
-                <a href={this.state.result.deeplinkUrl} target="_blank">
-                    <PrimaryButton>Zum product</PrimaryButton>
-                </a>
-            </Flex>
-        )
+                        </Box>
+                    </Flex>
+                </Card>
+            )
+            : SkeletonComponent
     }
 }
 

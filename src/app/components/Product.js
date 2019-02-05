@@ -1,89 +1,7 @@
 import React from 'react'
 import {navigate} from 'gatsby';
 import {Flex, Box} from '@rebass/grid'
-import {isMobile} from 'mobile-detect'
-import PrimaryButton from '../../design-system/Buttons/PrimaryButton';
-import Price from './Price';
-import Truncate from 'react-truncate';
-import ProductImage from './ProductImage';
-import {ExternalLink} from '../../design-system/Links/ExternalLink';
-// import {withRouter} from 'react-router' import {getShortenedLocale} from
-// '../../data/translations/translations' import Flexbox from 'flexbox-react'
-// import Translate from 'react-translate-component' import Truncate from
-// 'react-truncate'; import Price from './Price' import {Link} from
-// 'react-router-dom' import ProductButton from './ProductButton' import
-// ProductImage from './ProductImage' import {isDeviceConsideredMobile} from
-// '../../utils/appUtils' import {detailsUrl} from '../../data/urls' import
-// './Product.css'
-
-const showMobileProduct = (product, onSelect) => {
-    return (
-        <Flex flexDirection="row">
-            <Box width={1 / 3}>
-                <ProductImage images={product.imageUrls} size="medium" hover={false}/>
-            </Box>
-            <Box width={2 / 3}>
-                <Flex flexDirection="column">
-                    <Box>
-                        <Truncate lines={2}>
-                            {product.name}
-                        </Truncate>
-                    </Box>
-                    <Box>
-                        <Price price={product.price.displayPrice}/>
-                    </Box>
-                    <Box>
-                        <PrimaryButton onClick={e => onSelect(product)}>Zum Product</PrimaryButton>
-                    </Box>
-                </Flex>
-            </Box>
-        </Flex>
-    // <Flexbox flexBasis="100%" flexWrap="wrap" onClick={() => select(product.id)}>
-    //   <Flexbox flexBasis="40%" justifyContent="center">     <ProductImage
-    // images={product.imageUrls} size="medium" hover={false}/>   </Flexbox>
-    // <Flexbox flexBasis="2%" flexWrap="wrap"></Flexbox>   <Flexbox flexBasis="58%"
-    // flexWrap="wrap">     <Flexbox flexBasis="100%" className="ProductName">
-    // <Truncate lines={1}>         {product.name}       </Truncate>     </Flexbox>
-    // <Flexbox flexBasis="100%" justifyContent="flex-start" marginTop="5px">
-    // <Price         price={product.price         ? product.price.displayPrice :
-    // ''}/> </Flexbox>     <Flexbox flexBasis="100%" justifyContent="center"
-    // marginTop="5px">       <div className="ProductButtonLink">         <button
-    // className="ProductButton">       <Translate content="product.goToDetails"/>
-    // </button> </div>     </Flexbox>   </Flexbox> </Flexbox>
-    )
-}
-
-const showDesktopProduct = (product, onSelect) => {
-    return (
-        <Flex flexDirection="column">
-            <Box>
-                <ProductImage images={product.imageUrls} size="medium" hover={true}/>
-            </Box>
-            <Box>
-                <Truncate lines={2}>
-                    {product.name}
-                </Truncate>
-            </Box>
-            <Box>
-                <Price price={product.price.displayPrice}/>
-            </Box>
-            <Box>
-                <PrimaryButton onClick={e => onSelect(product.id)}>Zum Product</PrimaryButton>
-            </Box>
-        </Flex>
-    // <Flexbox flexBasis="100%" flexWrap="wrap" maxWidth="170px"
-    // marginBottom="10px">   <Flexbox flexBasis="100%" justifyContent="center"
-    // onClick={select}>     <ProductImage images={product.imageUrls} size="medium"
-    // hover={true}/>   </Flexbox>   <Flexbox flexBasis="100%"
-    // className="ProductName" marginTop="10px">     <Truncate lines={2}>
-    // {product.name}     </Truncate>   </Flexbox>   <Flexbox flexBasis="50%"
-    // justifyContent="flex-start" marginTop="5px">     <Price price={product.price
-    // ? product.price.displayPrice       : ''}/> </Flexbox>   <Flexbox
-    // flexBasis="90%" justifyContent="center" marginTop="5px">     <ProductButton
-    // onClick={select} translationKey="product.goToDetails"/>   </Flexbox>
-    // </Flexbox>
-    )
-}
+import MobileResultListItem from '../../design-system/Results/result-list-item';
 
 class Product extends React.Component {
     _select() {
@@ -104,12 +22,14 @@ class Product extends React.Component {
 
     render() {
         return (
-            <Flex justifyContent="center" className="Product" p={3}>
+            <Flex justifyContent="center">
                 {/* {isMobile()
                     ? showMobileProduct(this.props.product, (id) => this._routeToProduct(id))
                     : showDesktopProduct(this.props.product, () => this._select())
 } */}
-                {showMobileProduct(this.props.product, (item) => this.props.onSelectItem(item))}
+                <MobileResultListItem
+                    product={this.props.product}
+                    onSelect={(item) => this.props.onSelectItem(item)}/>
             </Flex>
         )
     }

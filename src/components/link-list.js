@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {StaticQuery, graphql, Link} from 'gatsby'
 import {routeWithLanguage} from '../utils/routeHelper'
 import {Flex} from '@rebass/grid'
-import InternalLink from '../design-system/Links/InternalLink'
+import InternalLink from '../design-system/Links/internal-link'
 import {seoPages, sortPagesByWeight} from '../utils/pageHelpers';
 
 export const query = graphql `

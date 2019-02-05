@@ -5,6 +5,7 @@ import _get from 'lodash/get'
 import _last from 'lodash/last'
 import _find from 'lodash/find'
 import _matches from 'lodash/matches'
+import {Flex} from '@rebass/grid';
 
 export const MIN_AGE = 0
 export const MAX_AGE = 1200

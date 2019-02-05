@@ -21,21 +21,30 @@ const ResultsPage = (props) => (
                 ? _get(props.location.state, 'selectedItem')
                 : _get(props.location.state, 'search.q')}/>
         </Header>
-        <Flex my={4} width={1} justifyContent="center">
-            <Box width={2 / 3}>
-                {props.location.state && props.location.state.selectedItem
-                    ? (<Result item={_get(props.location.state, 'selectedItem')}/>)
-                    : null}
-            </Box>
 
-        </Flex>
-        <Flex my={4} width={1} justifyContent="center">
+        {props.location.state && props.location.state.selectedItem
+            ? (
+                <Flex my={2} width={1} justifyContent="center">
+                    <Box width={1}>
+                        <Result item={_get(props.location.state, 'selectedItem')}/>
+                    </Box>
+                </Flex>
+            )
+            : null}
+
+        <Flex my={2} width={1} justifyContent="center">
             <Box width={1}>
-                <Ages locationState={props.location.state}/>
-                <Categories locationState={props.location.state}/>
+                <Flex>
+                    <Box width={1 / 2} px={2}>
+                        <Ages locationState={props.location.state}/>
+                    </Box>
+                    <Box width={1 / 2} px={2}>
+                        <Categories locationState={props.location.state}/>
+                    </Box>
+                </Flex>
             </Box>
         </Flex>
-        <Flex my={4} width={1} justifyContent="center">
+        <Flex my={2} width={1} justifyContent="center">
             <Box width={1}>
                 <Results
                     hideLoadMore={false}

@@ -65,7 +65,6 @@ class Search extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
-            debugger
             this.setState({
                 value: _get(nextProps.value, 'name')
                     ? {

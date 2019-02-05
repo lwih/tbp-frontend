@@ -20,12 +20,17 @@ const DetailsPage = (props) => {
                     ? _get(props.location.state, 'selectedItem')
                     : _get(props.location.state, 'search.q')}/> */}
             </Header>
-            <Flex my={4} width={1} justifyContent="center">
-                <Box width={2 / 3}>
+            <Flex my={2} width={1} justifyContent="center">
+                <Box width={1}>
                     <Result item={_get(props.location.state, 'selectedItem')}/>
                 </Box>
             </Flex>
-            <Flex my={4} width={1} justifyContent="center">
+            <Flex my={4} width={1} justifyContent="center" flexDirection="column">
+                <Box width={1} mx={3}>
+                    <h3 style={{
+                        marginBottom: 0
+                    }}>Alternative results</h3>
+                </Box>
                 <Box width={1}>
                     <Results
                         hideLoadMore={false}

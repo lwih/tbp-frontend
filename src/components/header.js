@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {Flex, Box} from '@rebass/grid'
-import InternalLink from '../design-system/Links/InternalLink';
+import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
 
 const HeaderComponent = ({siteTitle, className, children}) => (
@@ -11,7 +11,12 @@ const HeaderComponent = ({siteTitle, className, children}) => (
         <Flex width={1} className="Header-Background" justifyContent="center">
             <Box className="Header" width={1}>
                 <Flex flexDirection="column" justifyContent="center">
-                    <Box alignSelf="center" className="Header-Logo-Container">
+                    <Box
+                        alignSelf="center"
+                        className="Header-Logo-Container"
+                        style={{
+                        minHeight: '36px'
+                    }}>
                         <InternalLink to="/">
                             <img
                                 className="Header-Logo"

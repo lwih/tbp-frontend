@@ -1,5 +1,4 @@
 import React from 'react';
-// import './ProductImage.css'
 import placeholderImage from '../../images/product-placeholder.jpg'
 import _get from 'lodash/get'
 import _first from 'lodash/first'
@@ -13,12 +12,19 @@ const ProductImage = ({images, size, hover}) => {
   const withHover = hover && 'ProductImageContainer-HoverCover';
 
   return (
-    <Flex>
+    <Flex justifyContent="center">
       <div
         className={`ProductImageContainer ${withHover}`}
         data-content={'blablabla'}>
         <div className="ProductImage-AlignWrapper">
-          <img src={imageUrl} alt="" className="ProductImage"/>
+          <img
+            style={{
+            maxHeight: '100px',
+            width: 'auto'
+          }}
+            src={imageUrl}
+            alt=""
+            className="ProductImage"/>
         </div>
       </div>
     </Flex>

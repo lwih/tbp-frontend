@@ -19,7 +19,7 @@ const AppPage = (props) => (
 
         <AppContainer p={0} width={1}>
             <Box width={1}>
-                <h2>category preview lego</h2>
+                {/* <h2>category preview lego</h2> */}
                 <Results
                     hideLoadMore={false}
                     itemsAmount={4}

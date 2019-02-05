@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Box, Flex} from '@rebass/grid';
-import InternalLink from '../design-system/Links/InternalLink';
+import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
 import FooterList from './footer-list';
+import ExternalLink from '../design-system/Links/external-link';
 
 const FooterLogo = styled.img `
 max-width: 300px;
@@ -34,16 +35,14 @@ const FooterComponent = (props) => (
             Copyright © {new Date().getFullYear()}
         </Box>
         <Box alignSelf="flex-end">
-            <a
+            <ExternalLink
                 href="https://www.facebook.com/THE-BETTER-PLAY-311913689294308/"
-                target="_blank"
-                rel="noopener noreferrer">
+                target="_blank">
                 <img
-                    class=""
                     src="https://d33wubrfki0l68.cloudfront.net/5fda456dd840cf150471834ff9f39e7c2a8c0fcd/b4de1/images/icon-f.svg"
                     alt="Facebook"
                     width="20px"/>
-            </a>
+            </ExternalLink>
         </Box>
     </Flex>
 )
@@ -51,8 +50,7 @@ const FooterComponent = (props) => (
 const Footer = styled(FooterComponent)`
     background: ${colors.teal};
     color: ${colors.halfGrey};
-font-size: 14px;
-
+    font-size: 14px;
 `
 
 export default Footer
