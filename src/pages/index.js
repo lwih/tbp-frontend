@@ -10,6 +10,7 @@ import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import Card from '../design-system/Cards/card';
 import Results from '../app/modules/results/Results'
+import USP from '../components/ups';
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -19,40 +20,10 @@ const AppPage = (props) => (
         </Header>
         <AppContainer p={0} width={1}>
             <Flex flexDirection="column">
-                <Box width={1} p={2}>
-                    <Card>
-                        <Flex flexDirection="column">
-                            <Box>
-                                <Flex>
-                                    <Box pr={2} width={75}>
-                                        <b>Qualitat</b>
-                                    </Box>
-                                    <Box>Gute Spielsachen für Kinder</Box>
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex>
-                                    <Box pr={2} width={75}>
-                                        <b>Neutral</b>
-                                    </Box>
-                                    <Box>
-                                        Kein Gender Marketing, Spass für alle
-                                    </Box>
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex>
-                                    <Box pr={2} width={75}>
-                                        <b>Easy</b>
-                                    </Box>
-                                    <Box>Tolle Geschenke schnell gefunden</Box>
-                                </Flex>
-                            </Box>
-                        </Flex>
-                    </Card>
-                </Box>
-                <Box>
-                    {/* <h2>category preview lego</h2> */}
+                {/* <Box width={1} p={2}>
+                    <USP/>
+                </Box> */}
+                <Box mt={1}>
                     <Results
                         hideLoadMore={false}
                         searchParams={{

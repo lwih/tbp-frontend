@@ -35,7 +35,9 @@ const DetailsPage = (props) => {
             </Header>
             <Flex my={2} width={1} justifyContent="center">
                 <Box width={1} p={2}>
-                    <Result item={_get(props.location.state, 'selectedItem')}/>
+                    <Result
+                        location={props.location}
+                        item={_get(props.location.state, 'selectedItem')}/>
                 </Box>
             </Flex>
             <Flex my={4} width={1} justifyContent="center" flexDirection="column">

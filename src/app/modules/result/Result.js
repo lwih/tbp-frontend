@@ -45,11 +45,17 @@ class Result extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.thebetterplay.com/product/${_get(this.props.item, 'id')}?image_sizes=tiny,large`)
-            .then(response => response.json())
-            .then(result => {
-                this.setState({result})
-            })
+        debugger
+        if (!_get(this.props.location.state, 'search')) {
+            navigate('/')
+        } else {
+            fetch(`https://api.thebetterplay.com/product/${_get(this.props.item, 'id')}?image_sizes=tiny,large`)
+                .then(response => response.json())
+                .then(result => {
+                    this.setState({result})
+                })
+        }
+
     }
 
     componentWillReceiveProps(nextProps) {

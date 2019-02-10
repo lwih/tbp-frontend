@@ -38,9 +38,7 @@ const HomeLayout = ({children}) => (
             <div
                 style={{
                 margin: `0 auto`,
-                maxWidth: 960,
-                padding: `0px 1.0875rem 1.45rem`,
-                padding: '8px 0'
+                maxWidth: 960
             }}>
                 {children}
             </div>
