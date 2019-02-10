@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["seven-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "84", "age_until": "96"}'
+appData: '{"q":"", "age_from": "84", "age_until": "96"}'
 weight: 7
 ---
 
@@ -17,6 +17,7 @@ weight: 7
 Das Spielen ist für alle Kinder immer die größte Freude. Ob allein oder in einer Gruppe - es heißt nicht umsonst "man lernt im Spiel". Das Kind hat inzwischen die Kleinkindzeit seit Langem hinter sich gelassen und strebt teilweise nach den Fähigkeiten der älteren Geschwister oder der Erwachsenen. Das Kind hat nun wesentlich mehr Ausdauer beim Spielen und fokussiert sich zunehmend auf sein Lieblingsspielzeug. Wettkämpfe mit Gleichgesinnten werden gerne ausgetragen. Kinder mit sieben Jahren vergleichen sich gerne auch mit ihren Altersgenossen, besonders, was die mentalen Fähigkeiten anbelangt. Auch die Förderung der Fingerfertigkeiten ist von entscheidender Bedeutung bei der Wahl des passenden Spielzeugs für das Kind. Merkt das Kind Fortschritte bei seinen Fertigkeiten und Aktionen, erkennt es seine Talente und hat es dadurch Selbstbestätigung, wächst der Spaßfaktor noch mehr und somit wird auch das Talent noch mehr gefördert. 7-jährige Kinder sind sehr gesellig, ziehen sich aber auch gerne mal an einen eigenen geschützten Lieblingsort oder Platz zum Spielen zurück.
 
 {{< img src="images/spielzeug-siebenjaehriges-kind.jpg" alt="Spielzeug für siebenjähriges Kind" >}}
+![Spielzeug für siebenjähriges Kind](https://d33wubrfki0l68.cloudfront.net/85eb227bc8228d5a27cdb8d239f4ad5639dde059/0cdb4/images/spielzeug-siebenjaehriges-kind.jpg "")
  <blockquote>
   <p><em>Foto von Aaron Burden via</em> <a href="https://unsplash.com/photos/1zR3WNSTnvY">unsplash</a></p>
 </blockquote>

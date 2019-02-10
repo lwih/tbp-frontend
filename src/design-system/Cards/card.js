@@ -9,9 +9,9 @@ const Card = styled.div `
     background: ${colors.white};
     border-radius: ${radii['8']}px;
     border: 1px solid ${ '#d7466924'};
-    margin: ${spaces['4']}px ${spaces['8']}px;
     padding: ${spaces['16']}px;
     width: 100%;
+    max-width: 100%;
 `
 
 export default Card;

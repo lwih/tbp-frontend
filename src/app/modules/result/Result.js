@@ -16,7 +16,7 @@ function escapeHTML(data) {
     return {__html: data}
 }
 
-const SkeletonComponent = (
+export const ResultSkeletonComponent = (
     <Card>
         <Flex width={1} flexDirection="column">
             <Box m={2}>
@@ -82,16 +82,29 @@ class Result extends React.Component {
                         <Box m={2}>
                             <Gallery images={imagesForGallery}/>
                         </Box>
-                        <Box mt={3} alignSelf="flex-end"></Box>
-                        <Box m={2}>
-                            <Price
-                                price={this.state.result.price
-                                ? this.state.result.price.displayPrice
-                                : ''}/>
-                            <ExternalLink href={this.state.result.deeplinkUrl} target="_blank">
-                                <PrimaryButton>Zum product</PrimaryButton>
-                            </ExternalLink>
+                        <Box my={4} mx={2}>
+                            <Flex>
+                                <Box
+                                    width={1 / 3}
+                                    alignSelf="center"
+                                    pr={2}
+                                    style={{
+                                    textAlign: 'right'
+                                }}>
+                                    <Price
+                                        size="huge"
+                                        price={this.state.result.price
+                                        ? this.state.result.price.displayPrice
+                                        : ''}/>
+                                </Box>
+                                <Box width={2 / 3}>
+                                    <ExternalLink href={this.state.result.deeplinkUrl} target="_blank">
+                                        <PrimaryButton size="small">Zum product</PrimaryButton>
+                                    </ExternalLink>
+                                </Box>
+                            </Flex>
                         </Box>
+
                         <Box m={2}>
                             {(!!this.state.result.description) && this.state.result.description.map((d, i) => (
                                 <Flex
@@ -104,7 +117,7 @@ class Result extends React.Component {
                     </Flex>
                 </Card>
             )
-            : SkeletonComponent
+            : ResultSkeletonComponent
     }
 }
 

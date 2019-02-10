@@ -12,6 +12,7 @@ const styles = {
     }),
     container: (base) => ({
         ...base,
+        borderRadius: '4px',
         background: colors.white
     }),
     input: (base) => ({

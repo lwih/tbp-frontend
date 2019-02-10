@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["weihnachtsgeschenke-spielzeug-kinder"]
 categories: ["occasion"]
-appData: '{"age_from": "0", "age_until": "1200"}'
+appData: '{"q":"", "age_from": "0", "age_until": "1200"}'
 weight: 13
 
 ---
@@ -27,7 +27,7 @@ Wenn du bereits eine Idee hast, wonach du suchst, wirst du bei uns genauso fünd
 
 Hier einige Vorschläge, mit denen du an Weihnachten bestimmt nie falsch liegst: Wie wäre es mit Bausteinen oder Baukästen? Aus scheinbar simplen Holzklötzen und -formen können Türme, Boote, Häuser oder ganze Paläste entstehen, Gartenanlage inklusive.. Der kindlichen Phantasie sind hier keine Grenzen gesetzt.. Plüschtiere und Puppen sind auch immer beliebt, genauso wie Brettspiele oder Bücher mit spannenden Geschichten, Je nach Alter zum selber lesen, zum Vorlesen oder zum selbst erkunden und erleben. Ein Evergreen unter den Weihnachtsgeschenken sind natürlich auch Brettspiele und Puzzles. Sie bereiten nicht nur den Kindern Freude, sondern auch den Eltern und Grosseltern.
 
-{{< img src="images/spielzeug-weihnachtsgeschenk.jpg" alt="Spielzeug für Weihnachtsgeschenk" >}}
+![Spielzeug für Weihnachtsgeschenk](https://d33wubrfki0l68.cloudfront.net/70e732e7907dcd58ee12076f961713fbdf1282b2/6123a/images/spielzeug-weihnachtsgeschenk.jpg "")
  <blockquote>
   <p><em>Foto von Kari Shea via</em> <a href="https://unsplash.com/photos/VfWkdMue5Jc">unsplash</a></p>
 </blockquote>

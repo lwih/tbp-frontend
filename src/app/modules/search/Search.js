@@ -121,6 +121,7 @@ class Search extends React.Component {
                 },
                 selectedItem: undefined
             }
+            navigate('/app/results', {state})
         } else {
             state = {
                 search: {
@@ -132,8 +133,9 @@ class Search extends React.Component {
                 },
                 selectedItem: newValue
             }
+            navigate('/app/details', {state})
+
         }
-        navigate('/app/results', {state})
     }
 
     render() {

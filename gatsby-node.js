@@ -3,8 +3,8 @@ const path = require("path")
 exports.createPages = ({actions, graphql}) => {
     const {createPage} = actions
 
-    const ContentPageTemplate = path.resolve(`src/pages/content-template.js`)
-    const CompanyContentPageTemplate = path.resolve(`src/pages/company-content-template.js`)
+    const ContentPageTemplate = path.resolve(`src/pages/content-template-page.js`)
+    const CompanyContentPageTemplate = path.resolve(`src/pages/company-content-template-page.js`)
 
     return graphql(`
     {
@@ -18,6 +18,7 @@ exports.createPages = ({actions, graphql}) => {
                 language
                 pageType
                 weight
+                appData
             }
           }
         }
@@ -39,7 +40,10 @@ exports.createPages = ({actions, graphql}) => {
                     path: `${node.frontmatter.path}`,
                     component: ContentPageTemplate,
                     context: {
-                        locale: 'de'
+                        locale: 'de',
+                        appData: {
+                            search: JSON.parse(node.frontmatter.appData)
+                        }
                     }
                 })
             })

@@ -7,7 +7,15 @@ import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
 import Skeleton from '../design-system/Skeletons/skeleton';
 
-const HeaderComponent = ({siteTitle, className, children}) => (
+export const HeaderTitle = ({title}) => (
+    <Flex justifyContent="center">
+        <h1 style={{
+            color: colors.white
+        }}>{title}</h1>
+    </Flex>
+)
+
+const HeaderComponent = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
         <Flex width={1} className="Header-Background" justifyContent="center">
             <Box className="Header" width={1}>
@@ -22,11 +30,11 @@ const HeaderComponent = ({siteTitle, className, children}) => (
                             <img
                                 className="Header-Logo"
                                 src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
-                                alt={siteTitle}/>
+                                alt={title}/>
                         </InternalLink>
                     </Box>
                     <Box alignSelf="center" className="Header-title">
-                        Inspiration für gutes Spielzeug
+                        {title}
                     </Box>
                 </Flex>
                 <Flex>
@@ -45,13 +53,13 @@ const HeaderComponent = ({siteTitle, className, children}) => (
 )
 
 HeaderComponent.propTypes = {
-    siteTitle: PropTypes.string,
+    title: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.any
 }
 
 HeaderComponent.defaultProps = {
-    siteTitle: ``
+    title: 'Inspiration für gutes Spielzeug'
 }
 
 const Header = styled(HeaderComponent)`

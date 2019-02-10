@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["three-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "36", "age_until": "48"}'
+appData: '{"q":"", "age_from": "36", "age_until": "48"}'
 weight: 3
 ---
 
@@ -17,6 +17,7 @@ weight: 3
 Mit drei Jahren sind viele Kinder schon in der Kita, Kindergarten oder kennen allenfalls eine Form der ausserhäuslichen Betreuung. Ihr Kind wendet sich Gleichaltrigen zu, kommuniziert und spielt mit ihnen. Kinder von drei Jahren fangen an, zu fragen, machen Rollenspiele und beginnen ihre Persönlichkeit zu formen. Auch der Sinn für das Kreative wächst. Das Kind baut sich seine eigene Welt aus Figuren oder Püppchen, Bausteinen oder Modelliermasse. Das Malen und Singen wird plötzlich interessant. Die Kommunikation mit Kindern gleichen Alters gewinnt an Bedeutung. Das Kind imitiert nicht mehr nur die Eltern, sondern auch die Umwelt und fängt an, eine eigenständige Persönlichkeit zu entwickeln. Gerade Kleinkinder sind richtige Energiebündel und wollen in Bewegung sein; sie üben die Feinmotorik und der Koordination ihrer Bewegungen. Nach diesen Kriterien sollte auch das Spielzeug für das Kind ausgewählt werden. Natürlich muss der Spaßfaktor vorhanden sein, denn sonst liegt das Spielzeug binnen kurzer Zeit wohl ungebraucht im Regal.
 
 {{< img src="images/spielzeug-dreijaehriges-kind.jpg" alt="Spielzeug für dreijähriges Kind" >}}
+![Spielzeug für dreijähriges Kind](https://d33wubrfki0l68.cloudfront.net/80601fa5ada6b22af2cd2d31a6730af0e64228e5/c98be/images/spielzeug-dreijaehriges-kind.jpg "")
  <blockquote>
   <p><em>Foto von Wendy Aros-Routman via</em> <a href="https://unsplash.com/photos/DuIPj3lqItY">unsplash</a></p>
 </blockquote>

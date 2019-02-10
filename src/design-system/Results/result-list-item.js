@@ -70,7 +70,7 @@ const MobileResultListItemComponent = ({product, onSelect, className}) => {
                                         <Price price={product.price.displayPrice}/>
                                     </Box>
                                     <Box mt={2}>
-                                        <PrimaryButton onClick={e => onSelect(product)}>Zum Product</PrimaryButton>
+                                        <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Product</PrimaryButton>
                                     </Box>
                                 </Flex>
                             </Box>

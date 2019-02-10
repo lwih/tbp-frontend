@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["six-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "72", "age_until": "84"}'
+appData: '{"q":"", "age_from": "72", "age_until": "84"}'
 weight: 6
 ---
 
@@ -18,6 +18,7 @@ Auch Schulanfänger spielen weiterhin sehr gern. Ein Kind von sechs Jahren lernt
 
 
 {{< img src="images/spielzeug-sechsjaehriges-kind.jpg" alt="Spielzeug für sechsjähriges Kind" >}}
+![Spielzeug für sechsjähriges Kind](https://d33wubrfki0l68.cloudfront.net/246f17776499b46a6db5a6ae38e3dfc350a083ab/1d5ea/images/spielzeug-sechsjaehriges-kind.jpg "")
  <blockquote>
   <p><em>Foto von Hans-Peter Gauster via</em> <a href="https://unsplash.com/photos/3y1zF4hIPCg">unsplash</a></p>
 </blockquote>

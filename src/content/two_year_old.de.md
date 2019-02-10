@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["two-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "24", "age_until": "36"}'
+appData: '{"q":"", "age_from": "24", "age_until": "36"}'
 weight: 2
 ---
 <h2> Im Kleinkindalter angekommen - welches Spielzeug dient der Entwicklung am besten?</h2>
@@ -16,6 +16,7 @@ weight: 2
 Gerade für Kleinkinder ist Spielen das Schönste. Das Kind fängt an, nicht nur die Funktion des Spielzeugs, sondern auch das Spielzeug selbst zu ergründen. Es versucht, Teile auseinander zu nehmen und wieder zusammenzusetzen. Es möchte am liebsten alles auf einmal machen und versucht auf seine unbeholfene Art, zu helfen. Plötzlich beobachten die Eltern, wie das Kind beginnt, sie nachzuahmen. Das Kind fängt an, im Kreise herumzutanzen und dabei Töne von sich zu geben. Das Kleinkind entwickelt ein Interesse daran, Blätter, Eicheln und andere Dinge vom Boden aufzuheben und zu sammeln, die Natur und die Umwelt wahrzunehmen und tastet seine Umgebung ab. Ob bei handwerklichen Arbeiten oder bei der Gartenarbeit – das Kind schaut fasziniert zu und möchte helfen. Hier geben Pufferformen für den Sandkasten dem Kleinkind die Möglichkeit, das Anrühren des Teiges und das Kuchenbacken nachzuahmen. Für Kleinkinder sollten Spielzeuge ausgewählt werden, welche die Entwicklung solcher Interessen fördern. So erlernt das Kind beim Spielen Fingerfertigkeit und Sozialkompetenz.
 
 {{< img src="images/spielzeug-zweijaehriges-kind.jpg" alt="Spielzeug für zweijähriges Kind" >}}
+![Spielzeug für zweijähriges Kind](https://d33wubrfki0l68.cloudfront.net/035f1417cf667d045c7c73bcff0dc2eb34f3060e/8fc9c/images/spielzeug-zweijaehriges-kind.jpg "")
  <blockquote>
   <p><em>Foto von Daiga Ellaby via</em> <a href="https://unsplash.com/photos/ldOzKqZa6wg">unsplash</a></p>
 </blockquote>

@@ -16,6 +16,7 @@ const styles = {
     }),
     container: (base) => ({
         ...base,
+        borderRadius: '4px',
         background: colors.white
     }),
     input: (base) => ({
@@ -82,24 +83,24 @@ const ageRanges = [
 const formatMonthOrYear = (age, withText = true) => {
     if (age < 12) {
         return `${age} ${withText
-            ? 'months'
+            ? 'Monate'
             : ''}`
     } else if (age >= 12 && age < 24) {
         return `${age / 12} ${withText
-            ? 'year'
+            ? 'Jahr'
             : ''}`
     } else {
         return `${age / 12} ${withText
-            ? 'years'
+            ? 'Jahre'
             : ''}`
     }
 }
 
 const displayFormattedAge = range => {
     if (range.age_until === MAX_AGE) {
-        return 'all ages'
+        return 'Alle Altersklassen'
     } else if (range.age_from === 0) {
-        return formatMonthOrYear(range.age_from, false) + ' - ' + range.age_until + ' months' // erk
+        return formatMonthOrYear(range.age_from, false) + ' - ' + range.age_until + ' Monate' // erk
     } else {
         return formatMonthOrYear(range.age_from)
     }
@@ -109,15 +110,15 @@ class Ages extends React.Component {
 
     state = {
         selectedRange: _find(ageRanges, _matches({
-            age_from: _get(this.props.locationState, 'search.age_from'),
-            age_until: _get(this.props.locationState, 'search.age_until')
+            age_from: parseInt(_get(this.props.search, 'age_from'), 10),
+            age_until: parseInt(_get(this.props.search, 'age_until'), 10)
         }))
     }
 
     _updateAges = (selectedRange) => {
         this.setState({selectedRange})
 
-        const newSearch = Object.assign({}, _get(this.props.locationState, 'search'), {
+        const newSearch = Object.assign({}, this.props.search, {
             ...selectedRange,
             id: undefined
         })

@@ -16,7 +16,7 @@ const FooterComponent = (props) => (
         className={props.className}
         flexDirection="column"
         justifyContent="center">
-        <Box>
+        <Box alignSelf="center">
             <InternalLink to="/">
                 <FooterLogo
                     className="Header-Logo"

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import {colors, radii} from '../theme'
+import Button from './button';
 
-const SecondaryButton = styled.button `
+const SecondaryButton = styled(Button)`
     background-color: ${colors.greenBlue};
     border-radius: ${radii['100']}px;
     border: 2px solid ${colors.greenBlue};
@@ -20,5 +21,7 @@ const SecondaryButton = styled.button `
         transition: all .5s;
     }
 `
+
+SecondaryButton.displayName = 'SecondaryButton'
 
 export default SecondaryButton

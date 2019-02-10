@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["nine-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "108", "age_until": "120"}'
+appData: '{"q":"", "age_from": "108", "age_until": "120"}'
 weight: 9
 ---
 

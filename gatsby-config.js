@@ -2,8 +2,8 @@ module.exports = {
   // pathPrefix: 'de',
   siteMetadata: {
     title: `The Better Play`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    description: `Inspiration für gutes Spielzeug`,
+    author: `@lhache`
   },
   plugins: [
 

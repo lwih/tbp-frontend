@@ -11,7 +11,7 @@ import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 
 const contentQuery = graphql `
-  query {
+  query ContentLayoutQuery {
     site { 
         siteMetadata { 
             title 
@@ -33,7 +33,7 @@ const contentQuery = graphql `
   }
 `
 
-const ContentLayout = ({children}) => (
+const ContentLayout = (props) => (
     <StaticQuery
         query={contentQuery}
         render={data => (
@@ -41,7 +41,8 @@ const ContentLayout = ({children}) => (
             <div style={{
                 margin: `0 auto`
             }}>
-                {children}
+                {/* <props.children {...props}/> */}
+                {props.children}
             </div>
             <LinkList data={data}/>
             <Footer data={data}/>

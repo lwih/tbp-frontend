@@ -35,9 +35,6 @@ const HomeLayout = ({children}) => (
         query={homeLayoutQuery}
         render={data => (
         <React.Fragment>
-            <Header siteTitle={data.site.siteMetadata.title}>
-                <Search/>
-            </Header>
             <div
                 style={{
                 margin: `0 auto`,

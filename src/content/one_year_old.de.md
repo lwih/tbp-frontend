@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["one-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "12", "age_until": "24"}'
+appData: '{"q":"", "age_from": "12", "age_until": "24"}'
 weight: 1
 ---
 
@@ -17,7 +17,7 @@ weight: 1
 
 Spielen macht Spaß. Im Alter von einem Jahr verlässt Ihr Kind bereits die Babyphase. Das Kind beginnt, selbstständiger zu werden und sich frei zu bewegen. Jetzt ist Spielzeug angesagt, welches hin- und hergezogen werden kann, um die Motorik des Kindes zu fördern. Kinder im Alter von einem Jahr lernen, kleine Dinge zu tragen und z.B. den Löffel selbst zu halten. Sie entdecken ständig Neues und machen erste Gehversuche. Kinder dieses Alters erzeugen gern Geräusche mit Gegenständen oder experimentieren mit eigenen Lauten. Ob Junge oder Mädchen – jedes Kind entdeckt von Tag zu Tag Neues und fängt an, neugierig zu werden. Das Stapeln von Klötzen und anderen Dingen fördert das logische Denken und die Mobilität des Kindes. Bei der Wahl des Spielzeugs sollte auch an die Entwicklung der Feinmotorik gedacht werden; das Kind beginnt, sich immer mehr im Greifen und Fassen von Dingen zu üben. Daher sollte es ein Spielzeug sein, welches dem Kind Freude bereitet und gleichzeitig die feinmotorische Entwicklung fördert.
 
- {{< img src="images/spielzeug_einjaehriges_kind.jpg" alt="Spielzeug für einjähriges Kind" >}}
+ ![Spielzeug für einjähriges Kind](https://d33wubrfki0l68.cloudfront.net/7eca825684c797479abc94e4ad573d687f1d30ab/ff9bf/images/spielzeug_einjaehriges_kind.jpg "")
  <blockquote>
   <p><em>Foto von Jelleke Vanooteghem via</em> <a href="https://unsplash.com/photos/uNWuSF4WwXc">unsplash</a></p>
 </blockquote>

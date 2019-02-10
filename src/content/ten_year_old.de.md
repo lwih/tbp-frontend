@@ -8,7 +8,7 @@ language: "de"
 draft: false
 tags: ["ten-year-olds"]
 categories: ["age"]
-appData: '{"age_from": "120", "age_until": "132"}'
+appData: '{"q":"", "age_from": "120", "age_until": "132"}'
 weight: 10
 ---
 
@@ -17,6 +17,7 @@ weight: 10
 Auch wenn in Ihrem Kind ein Stück weit schon ein "kleiner Erwachsener" steckt, steht das Spielen noch immer im Fokus Ihres Nachwuchses. Durch den Schulunterricht und die Vorliebe für bestimmte Fächer werden Interessen geweckt, deren Förderung durch ein gutes Spielzeug sehr nützlich ist. Jetzt ist es von besonderer Bedeutung, dem Kind ein Spielzeug zu schenken, welches neben der Freude an seiner Benutzung beim Sprössling auch den Hang zur Kreativität, die Geschicklichkeit, die Persönlichkeitsfindung und die für das Leben notwendige Sozialkompetenz fördert. Dies gilt für beide Geschlechter und dient der Vorbereitung für das Leben. Die erste zweistellige Zahl befreit das Kind von den Merkmalen eines kleinen Kindes und gibt ihm das Gefühl, nun langsam auf das Jungendalter zuzusteuern. Dementsprechend verändern sich die Interessen und Vorlieben. Während vorher zum großen Teil das Spielzeug dazu diente, durch das Berühren und Greifen ein Gefühl für die Dinge und Übung in der Feinmotorik zu bekommen, animieren Spielsachen für größere Kinder, nicht mit dem Spielzeug selbst, sondern mit kreativen Gebilden jeglicher Art, die man selbst erschaffen hat, zu spielen, wie z. B. ein selbst aus Bausteinen gebauten Auto. Dies zeigt sich auch in der Wahl seines Spielzeugs, welches nicht mehr primär die nun inzwischen voll entwickelte Feinmotorik, sondern die Experimentierlust, die Findung und Bestätigung kreativer Neigungen sowie die Selbstständigkeit und Eigeninitiative des Kindes fördert.
 
 {{< img src="images/spielzeug-zehnjaehriges-kind.jpg" alt="Spielzeug für zehnjähriges Kind" >}}
+![Spielzeug für zehnjähriges Kind](https://d33wubrfki0l68.cloudfront.net/db465159a6611a92b8cac54dee0c649d28e23018/9c7d8/images/spielzeug-zehnjaehriges-kind.jpg "")
  <blockquote>
   <p><em>Foto von Michał Parzuchowski via</em> <a href="https://unsplash.com/photos/6D1lESi9ssU">unsplash</a></p>
 </blockquote>

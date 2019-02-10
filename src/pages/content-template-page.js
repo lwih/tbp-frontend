@@ -8,9 +8,13 @@ import AppContainer from '../components/app-container'
 import Results from '../app/modules/results/Results';
 import SEO from '../components/seo';
 import _get from 'lodash/get'
-import {Box} from '@rebass/grid'
+import {Box, Flex} from '@rebass/grid'
+import Ages from '../app/components/Ages';
+import Categories from '../app/components/Categories';
+import Card from '../design-system/Cards/card';
 
 export default function Template(props) {
+    debugger
     const {markdownRemark: post} = props.data
     const frontmatterAppData = _get(props.data, 'markdownRemark.frontmatter.appData')
     let appData = {
@@ -29,16 +33,39 @@ export default function Template(props) {
                 <Search/>
             </Header>
 
-            <AppContainer py={4} width={1} justifyContent="center">
+            <AppContainer py={2} width={1} justifyContent="center">
+                <Box width={1} p={2}>
+                    <Card>
+                        <Flex justifyContent="center">
+                            <h3
+                                style={{
+                                marginBottom: 0
+                            }}>{_get(post, 'frontmatter.title')}</h3>
+
+                        </Flex>
+                    </Card>
+                </Box>
+                <Flex my={2} width={1} justifyContent="center">
+                    <Box width={1}>
+                        <Flex>
+                            <Box width={1 / 2} pl={2} pr={1}>
+                                <Ages
+                                    locationState={props.location.state}
+                                    search={props.pageContext.appData.search}/>
+                            </Box>
+                            <Box width={1 / 2} pr={2} pl={1}>
+                                <Categories locationState={props.location.state}/>
+                            </Box>
+                        </Flex>
+                    </Box>
+                </Flex>
                 <Box width={1}>
-                    <h2>category preview lego</h2>
                     <Results
                         hideLoadMore={false}
-                        itemsAmount={4}
                         searchParams={{
-                        age_from: appData.age_from,
-                        age_until: appData.age_until,
-                        q: ''
+                        age_from: props.pageContext.appData.search.age_from,
+                        age_until: props.pageContext.appData.search.age_until,
+                        q: props.pageContext.appData.search.q
                     }}
                         onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
                         state: {
@@ -46,13 +73,13 @@ export default function Template(props) {
                         }
                     }))}/>
 
-                    <div>
-                        <h1>{_get(post, 'frontmatter.title')}</h1>
+                    <Box p={3}>
+
                         <div
                             dangerouslySetInnerHTML={{
                             __html: _get(post, 'html')
                         }}/>
-                    </div>
+                    </Box>
                 </Box>
             </AppContainer>
         </ContentLayout>
@@ -68,24 +95,6 @@ export const pageQuery = graphql `
                 title
                 appData
             }
-        }
-        site { 
-            siteMetadata { 
-                title 
-            } 
-        }
-        allMarkdownRemark {
-          edges {
-            node{
-              frontmatter {
-                title
-                path
-                language
-                weight
-                pageType
-              }
-            }
-          }
         }
     }
 `

@@ -7,6 +7,7 @@ import _slice from 'lodash/slice'
 import _get from 'lodash/get'
 import PrimaryButton from '../../../design-system/Buttons/primary-button';
 import SecondaryButton from '../../../design-system/Buttons/secondary-button';
+import Card from '../../../design-system/Cards/card';
 
 class Results extends React.Component {
 
@@ -41,7 +42,10 @@ class Results extends React.Component {
 
     componentWillReceiveProps(nextProps, nextState) {
         if (this.props.searchParams && this.props.searchParams !== nextProps.searchParams) {
-            const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}&${nextProps.searchParams.category
+            // const url =
+            // `https://api.thebetterplay.com/product/search?offset=${this.state.offset *
+            // 20}&${nextProps.searchParams.category
+            const url = `https://api.thebetterplay.com/product/search?offset=${ 0}&${nextProps.searchParams.category
                 ? `c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
                     ? `&q=${nextProps.searchParams.q}`
@@ -92,6 +96,18 @@ class Results extends React.Component {
             results = itemsAmount
                 ? _slice(this.state.results, 0, itemsAmount)
                 : this.state.results
+        } else {
+            return (
+                <Box p={2}>
+                    <Card>
+                        <Flex py={6} justifyContent="center">
+                            <Box>
+                                Keine Resultate gefunden :(
+                            </Box>
+                        </Flex>
+                    </Card>
+                </Box>
+            )
         }
 
         return (
@@ -99,6 +115,8 @@ class Results extends React.Component {
                 {results.map(result => (
                     <Box
                         key={result.id}
+                        px={2}
+                        py={1}
                         width={[
                         1, 1 / 2,
                         1 / 4
@@ -106,7 +124,7 @@ class Results extends React.Component {
                         <Product product={result} onSelectItem={this.props.onSelectItem}/>
                     </Box>
                 ))}
-                {!this.props.hideLoadMore && (
+                {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
                     <Box m={4}>
                         <Flex justifyContent="center">
                             <Box width={3 / 5}>
