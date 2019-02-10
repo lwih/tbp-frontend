@@ -12,13 +12,13 @@ import Card from '../Cards/card';
 import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
 
-const SkeletonCard = (
+export const SkeletonCard = (props) => (
     <Card>
         <Flex flexDirection="row">
             <Box width={1}>
                 <Flex width={1}>
                     <Box width={1 / 3} alignSelf="center">
-                        <Skeleton height="110px" width="100%"/>
+                        <Skeleton height="96px" width="100%"/>
                     </Box>
                     <Box width={2 / 3} pl={3}>
                         <Flex
@@ -27,13 +27,18 @@ const SkeletonCard = (
                             height: '100%'
                         }}>
                             <Box>
-                                <Skeleton height="24px" width="100%"/>
+                                <Skeleton height="22px" width="100%"/>
                             </Box>
-                            <Box mt="auto" alignSelf="flex-end">
-                                <Skeleton height="24px" width="100%"/>
-                            </Box>
-                            <Box mt={2}>
-                                <Skeleton height="32px" width="100%"/>
+
+                            <Box mt={3} width={1}>
+                                <Flex width={1} flexDirection="column">
+                                    <Box alignSelf="flex-end">
+                                        <Skeleton height="22px" width="40px"/>
+                                    </Box>
+                                    <Box width={1} mt={1}>
+                                        <Skeleton height="32px" width="100%"/>
+                                    </Box>
+                                </Flex>
                             </Box>
                         </Flex>
                     </Box>
@@ -45,7 +50,7 @@ const SkeletonCard = (
 
 const MobileResultListItemComponent = ({product, onSelect, className}) => {
     return _isEmpty(product)
-        ? SkeletonCard
+        ? SkeletonCard({})
         : (
             <Card>
                 <Flex flexDirection="row" className={className}>

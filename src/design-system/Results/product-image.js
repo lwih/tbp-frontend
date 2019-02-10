@@ -16,16 +16,24 @@ const ProductImage = ({images, size, hover}) => {
       <div
         className={`ProductImageContainer ${withHover}`}
         data-content={'blablabla'}>
-        <div className="ProductImage-AlignWrapper">
-          <img
-            style={{
-            maxHeight: '100px',
-            width: 'auto'
-          }}
-            src={imageUrl}
-            alt=""
-            className="ProductImage"/>
-        </div>
+        <Flex
+          className="ProductImage-AlignWrapper"
+          alignItems="center"
+          style={{
+          minHeight: '100px'
+        }}>
+          <Box>
+            <img
+              style={{
+              maxHeight: '100px',
+              width: 'auto'
+            }}
+              src={imageUrl}
+              alt=""
+              className="ProductImage"/>
+          </Box>
+
+        </Flex>
       </div>
     </Flex>
   )

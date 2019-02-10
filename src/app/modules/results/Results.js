@@ -8,15 +8,18 @@ import _get from 'lodash/get'
 import PrimaryButton from '../../../design-system/Buttons/primary-button';
 import SecondaryButton from '../../../design-system/Buttons/secondary-button';
 import Card from '../../../design-system/Cards/card';
+import {SkeletonCard} from '../../../design-system/Results/result-list-item';
 
 class Results extends React.Component {
 
     state = {
         results: [],
-        offset: 0
+        offset: 0,
+        isFetching: false
     }
 
     componentDidMount() {
+        this.setState({isFetching: true})
         if (this.props.searchParams) {
             const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}&${this.props.searchParams.category
                 ? `c=${_get(this.props.searchParams, 'category.name')}`
@@ -27,6 +30,7 @@ class Results extends React.Component {
                 .then(response => response.json())
                 .then(results => {
                     // debugger
+                    this.setState({isFetching: false})
                     this.setState({results: results.products})
                 })
         } else {
@@ -36,6 +40,7 @@ class Results extends React.Component {
                 .then(results => {
                     // debugger
                     this.setState({results: results.products})
+                    this.setState({isFetching: false})
                 })
         }
     }
@@ -45,6 +50,7 @@ class Results extends React.Component {
             // const url =
             // `https://api.thebetterplay.com/product/search?offset=${this.state.offset *
             // 20}&${nextProps.searchParams.category
+            this.setState({isFetching: true})
             const url = `https://api.thebetterplay.com/product/search?offset=${ 0}&${nextProps.searchParams.category
                 ? `c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
@@ -54,6 +60,7 @@ class Results extends React.Component {
                 .then(response => response.json())
                 .then(results => {
                     // debugger
+                    this.setState({isFetching: false})
                     this.setState({results: results.products})
                 })
         }
@@ -62,6 +69,7 @@ class Results extends React.Component {
     onLoadMore = () => {
         const newOffset = this.state.offset + 1
         this.setState({offset: newOffset})
+        this.setState({isFetching: true})
         const url = `https://api.thebetterplay.com/product/search?offset=${newOffset * 20}&${this.props.searchParams.category
             ? `c=${_get(this.props.searchParams, 'category.name')}`
             : ''}${this.props.searchParams.q
@@ -71,6 +79,7 @@ class Results extends React.Component {
             .then(response => response.json())
             .then(results => {
                 // debugger
+                this.setState({isFetching: false})
                 this.setState({
                     results: [
                         ...this.state.results,
@@ -91,6 +100,24 @@ class Results extends React.Component {
             {},
             {}, {}, {}, {}, {}, {}, {}
         ]
+        if (this.state.isFetching && this.state.offset === 0) {
+            return (
+                <Flex flexWrap="wrap" flexDirection="column">
+                    {results.map(result => (
+                        <Box
+                            key={result.id}
+                            px={2}
+                            py={1}
+                            width={[
+                            1, 1 / 2,
+                            1 / 4
+                        ]}>
+                            <SkeletonCard/>
+                        </Box>
+                    ))}
+                </Flex>
+            )
+        }
 
         if (this.state.results.length) {
             results = itemsAmount
