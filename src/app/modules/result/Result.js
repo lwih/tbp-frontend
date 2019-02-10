@@ -45,8 +45,7 @@ class Result extends React.Component {
     }
 
     componentDidMount() {
-        debugger
-        if (!_get(this.props.location.state, 'search')) {
+        if (!_get(this.props.location.state, 'search') && !_get(this.props, 'item')) {
             navigate('/')
         } else {
             fetch(`https://api.thebetterplay.com/product/${_get(this.props.item, 'id')}?image_sizes=tiny,large`)

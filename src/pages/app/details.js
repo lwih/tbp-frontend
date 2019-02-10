@@ -16,7 +16,6 @@ import Ages from '../../app/components/Ages';
 import Categories from '../../app/components/Categories';
 
 const DetailsPage = (props) => {
-    debugger
     return (
         <AppLayout>
             <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/>
