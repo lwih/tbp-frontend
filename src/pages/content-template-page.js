@@ -51,7 +51,7 @@ export default function Template(props) {
                             <Box width={1 / 2} pl={2} pr={1}>
                                 <Ages
                                     locationState={props.location.state}
-                                    search={props.pageContext.appData.search}/>
+                                    search={_get(props.pageContext, 'appData.search')}/>
                             </Box>
                             <Box width={1 / 2} pr={2} pl={1}>
                                 <Categories locationState={props.location.state}/>
@@ -63,9 +63,9 @@ export default function Template(props) {
                     <Results
                         hideLoadMore={false}
                         searchParams={{
-                        age_from: props.pageContext.appData.search.age_from,
-                        age_until: props.pageContext.appData.search.age_until,
-                        q: props.pageContext.appData.search.q
+                        age_from: _get(props.pageContext, 'appData.search.age_from'),
+                        age_until: _get(props.pageContext, 'appData.search.age_until'),
+                        q: _get(props.pageContext, 'appData.search.q')
                     }}
                         onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
                         state: {

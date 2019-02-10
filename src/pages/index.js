@@ -9,7 +9,7 @@ import AppContainer from '../components/app-container';
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import Card from '../design-system/Cards/card';
-const Results = React.lazy(() => import ('../app/modules/results/Results'));
+import Results from '../app/modules/results/Results'
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -53,20 +53,18 @@ const AppPage = (props) => (
                 </Box>
                 <Box>
                     {/* <h2>category preview lego</h2> */}
-                    <React.Suspense fallback={< div > Loading ...</div>}>
-                        <Results
-                            hideLoadMore={false}
-                            searchParams={{
-                            age_from: 0,
-                            age_until: 1200,
-                            q: ''
-                        }}
-                            onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                            state: {
-                                selectedItem: item
-                            }
-                        }))}/>
-                    </React.Suspense>
+                    <Results
+                        hideLoadMore={false}
+                        searchParams={{
+                        age_from: 0,
+                        age_until: 1200,
+                        q: ''
+                    }}
+                        onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                        state: {
+                            selectedItem: item
+                        }
+                    }))}/>
                 </Box>
             </Flex>
         </AppContainer>

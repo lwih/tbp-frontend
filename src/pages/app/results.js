@@ -9,8 +9,8 @@ import Categories from '../../app/components/Categories';
 import _get from 'lodash/get'
 import {navigate} from 'gatsby';
 import Footer from '../../components/footer';
-const Results = React.lazy(() => import ('../../app/modules/results/Results'));
-const Result = React.lazy(() => import ('../../app/modules/result/Result'));
+import Results from '../../app/modules/results/Results'
+import Result from '../../app/modules/result/Result'
 
 const ResultsPage = (props) => {
     debugger;
@@ -40,7 +40,7 @@ const ResultsPage = (props) => {
                         <Flex>
                             <Box width={1 / 2} pl={2} pr={1}>
                                 <Ages
-                                    search={props.location.state.search}
+                                    search={_get(props.location.state, 'search')}
                                     locationState={props.location.state}/>
                             </Box>
                             <Box width={1 / 2} pr={2} pl={1}>
@@ -51,18 +51,15 @@ const ResultsPage = (props) => {
                 </Flex>
                 <Flex my={2} width={1} justifyContent="center">
                     <Box width={1}>
-                        <React.Suspense fallback={< div > Loading ...</div>}>
-                            <Results
-                                hideLoadMore={false}
-                                searchParams={_get(props.location.state, 'search')}
-                                onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                                state: {
-                                    search: _get(props.location.state, 'search'),
-                                    selectedItem: item
-                                }
-                            }))}/>
-                        </React.Suspense>
-
+                        <Results
+                            hideLoadMore={false}
+                            searchParams={_get(props.location.state, 'search')}
+                            onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                            state: {
+                                search: _get(props.location.state, 'search'),
+                                selectedItem: item
+                            }
+                        }))}/>
                     </Box>
                 </Flex>
             </React.Fragment>
