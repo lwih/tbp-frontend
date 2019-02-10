@@ -2,6 +2,7 @@ import React from 'react'
 import {navigate} from 'gatsby';
 import Select from 'react-select'
 import _get from 'lodash/get'
+import _isEmpty from 'lodash/isEmpty'
 import {colors} from '../../design-system/theme';
 
 const styles = {
@@ -73,6 +74,14 @@ class Categories extends React.Component {
 
     state = {
         selectedCategory: _get(this.props.locationState, 'search.category')
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (_get(this.props, 'locationState.search') !== _get(nextProps, 'locationState.search') && !_isEmpty(nextProps.locationState)) {
+            this.setState({
+                selectedCategory: _get(nextProps, 'locationState.search.category')
+            })
+        }
     }
 
     _updateCategories = selectedCategory => {

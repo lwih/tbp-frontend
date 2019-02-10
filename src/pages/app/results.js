@@ -13,7 +13,6 @@ import Results from '../../app/modules/results/Results'
 import Result from '../../app/modules/result/Result'
 
 const ResultsPage = (props) => {
-    debugger;
     return (
         <AppLayout >
             <React.Fragment>

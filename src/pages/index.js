@@ -10,7 +10,9 @@ import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import Card from '../design-system/Cards/card';
 import Results from '../app/modules/results/Results'
-import USP from '../components/ups';
+import Ages from '../app/components/Ages';
+import Categories from '../app/components/Categories';
+import _get from 'lodash/get'
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -19,10 +21,21 @@ const AppPage = (props) => (
             <Search/>
         </Header>
         <AppContainer p={0} width={1}>
+            <Flex my={2} width={1} justifyContent="center">
+                <Box width={1}>
+                    <Flex>
+                        <Box width={1 / 2} pl={2} pr={1}>
+                            <Ages
+                                locationState={props.location.state}
+                                search={_get(props.pageContext, 'appData.search')}/>
+                        </Box>
+                        <Box width={1 / 2} pr={2} pl={1}>
+                            <Categories locationState={props.location.state}/>
+                        </Box>
+                    </Flex>
+                </Box>
+            </Flex>
             <Flex flexDirection="column">
-                {/* <Box width={1} p={2}>
-                    <USP/>
-                </Box> */}
                 <Box mt={1}>
                     <Results
                         hideLoadMore={false}
@@ -39,7 +52,6 @@ const AppPage = (props) => (
                 </Box>
             </Flex>
         </AppContainer>
-
     </HomeLayout>
 )
 

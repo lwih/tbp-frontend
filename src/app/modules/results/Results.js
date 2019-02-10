@@ -9,11 +9,14 @@ import PrimaryButton from '../../../design-system/Buttons/primary-button';
 import SecondaryButton from '../../../design-system/Buttons/secondary-button';
 import Card from '../../../design-system/Cards/card';
 import {SkeletonCard} from '../../../design-system/Results/result-list-item';
+import WordCloud from '../../../design-system/WordClouds/wordcloud';
+import {MIN_AGE, MAX_AGE} from '../../components/Ages';
 
 class Results extends React.Component {
 
     state = {
         results: [],
+        categories: [],
         offset: 0,
         isFetching: false
     }
@@ -32,6 +35,7 @@ class Results extends React.Component {
                     // debugger
                     this.setState({isFetching: false})
                     this.setState({results: results.products})
+                    this.setState({categories: results.categories})
                 })
         } else {
             const url = `https://api.thebetterplay.com/product/search?&image_sizes=medium&age_until=1200&age_from=0`
@@ -40,16 +44,14 @@ class Results extends React.Component {
                 .then(results => {
                     // debugger
                     this.setState({results: results.products})
+                    this.setState({categories: results.categories})
                     this.setState({isFetching: false})
                 })
         }
     }
 
-    componentWillReceiveProps(nextProps, nextState) {
+    componentWillReceiveProps(nextProps) {
         if (this.props.searchParams && this.props.searchParams !== nextProps.searchParams) {
-            // const url =
-            // `https://api.thebetterplay.com/product/search?offset=${this.state.offset *
-            // 20}&${nextProps.searchParams.category
             this.setState({isFetching: true})
             const url = `https://api.thebetterplay.com/product/search?offset=${ 0}&${nextProps.searchParams.category
                 ? `c=${_get(nextProps.searchParams, 'category.name')}`
@@ -62,8 +64,22 @@ class Results extends React.Component {
                     // debugger
                     this.setState({isFetching: false})
                     this.setState({results: results.products})
+                    this.setState({categories: results.categories})
                 })
         }
+    }
+
+    onClickCloud = (category) => {
+        const a = this.props.searchParams
+        const newState = Object.assign({}, {
+            state: {
+                search: Object.assign({}, this.props.searchParams, {category}),
+                selectedItem: undefined
+            }
+        })
+        debugger
+
+        navigate('/app/results', newState)
     }
 
     onLoadMore = () => {
@@ -151,8 +167,9 @@ class Results extends React.Component {
                         <Product product={result} onSelectItem={this.props.onSelectItem}/>
                     </Box>
                 ))}
+
                 {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
-                    <Box m={4}>
+                    <Box m={3}>
                         <Flex justifyContent="center">
                             <Box width={3 / 5}>
                                 <SecondaryButton onClick={() => this.onLoadMore()}>Load more</SecondaryButton>
@@ -161,8 +178,24 @@ class Results extends React.Component {
                     </Box>
                 )
 }
+
+                {this.state.categories.length && (
+                    <Box p={3} mb={3}>
+                        <WordCloud
+                            clouds={this.state.categories}
+                            onClickCloud={category => this.onClickCloud(category)}/>
+                    </Box>
+                )}
             </Flex>
         )
+    }
+}
+
+Results.defaultProps = {
+    searchParams: {
+        age_from: MIN_AGE,
+        age_until: MAX_AGE,
+        q: ''
     }
 }
 

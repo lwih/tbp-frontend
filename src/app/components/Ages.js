@@ -5,6 +5,7 @@ import _get from 'lodash/get'
 import _last from 'lodash/last'
 import _find from 'lodash/find'
 import _matches from 'lodash/matches'
+import _isEmpty from 'lodash/isEmpty'
 import {Flex} from '@rebass/grid';
 import {colors} from '../../design-system/theme';
 
@@ -113,6 +114,15 @@ class Ages extends React.Component {
             age_from: parseInt(_get(this.props.search, 'age_from'), 10),
             age_until: parseInt(_get(this.props.search, 'age_until'), 10)
         }))
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (_get(this.props, 'locationState.search') !== _get(nextProps, 'locationState.search') && !_isEmpty(nextProps.locationState)) {
+            this.setState({
+                age_from: parseInt(_get(nextProps.search, 'age_from'), 10),
+                age_until: parseInt(_get(nextProps.search, 'age_until'), 10)
+            })
+        }
     }
 
     _updateAges = (selectedRange) => {
