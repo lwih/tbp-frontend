@@ -143,6 +143,7 @@ class Ages extends React.Component {
         return (
             <React.Fragment>
                 <Select
+                    isSearchable={false}
                     value={this.state.selectedRange}
                     defaultValue={_last(ageRanges)}
                     options={ageRanges}
