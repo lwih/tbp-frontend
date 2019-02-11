@@ -7,8 +7,8 @@ const Chip = styled.div `
     border: 1px solid ${colors.lightBlue};
     cursor: pointer;
     color: ${colors.white};
-    border-radius: ${radii['4']}px;
-    padding: ${spaces['2']}px ${spaces['8']}px;
+    border-radius: ${radii['16']}px;
+    padding: ${spaces['4']}px ${spaces['8']}px;
     font-size: ${fontSizes['14']}px;
 `
 

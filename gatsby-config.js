@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content/`
+        path: `${__dirname}/content/`
       }
     }, {
       resolve: `gatsby-source-filesystem`,
@@ -24,13 +24,13 @@ module.exports = {
     `gatsby-plugin-sharp`, {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `The Better Play`,
+        short_name: `tbp`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#d74669`,
+        theme_color: `#d74669`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       }
     }, {
       resolve: `gatsby-transformer-remark`,
@@ -77,7 +77,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Nunito']
+          families: ['Nunito:300,400,700:latin']
         }
       }
     },

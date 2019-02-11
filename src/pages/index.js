@@ -3,15 +3,15 @@ import {Link, navigate} from 'gatsby'
 import HomeLayout from '../layouts/home-layout'
 import Header from '../components/header'
 import SEO from '../components/seo'
-import Search from '../app/modules/search/Search'
+import Search from '../app/components/search'
 import {Box, Flex} from '@rebass/grid';
 import AppContainer from '../components/app-container';
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import Card from '../design-system/Cards/card';
-import Results from '../app/modules/results/Results'
-import Ages from '../app/components/Ages';
-import Categories from '../app/components/Categories';
+import Results from '../app/components/Results'
+import Ages from '../app/components/ages';
+import Categories from '../app/components/categories';
 import _get from 'lodash/get'
 
 const AppPage = (props) => (

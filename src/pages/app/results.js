@@ -2,15 +2,15 @@ import React from 'react'
 import Header from '../../components/header'
 import AppLayout from '../../layouts/app-layout'
 import SEO from '../../components/seo'
-import Search from '../../app/modules/search/Search'
+import Search from '../../app/components/search'
 import {Flex, Box} from '@rebass/grid'
-import Ages from '../../app/components/Ages';
-import Categories from '../../app/components/Categories';
+import Ages from '../../app/components/ages';
+import Categories from '../../app/components/categories';
 import _get from 'lodash/get'
 import {navigate} from 'gatsby';
 import Footer from '../../components/footer';
-import Results from '../../app/modules/results/Results'
-import Result from '../../app/modules/result/Result'
+import Results from '../../app/components/Results'
+import Result from '../../app/components/Result'
 
 const ResultsPage = (props) => {
     return (

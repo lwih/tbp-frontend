@@ -143,7 +143,6 @@ class Search extends React.Component {
             <div>
                 {/* options={groupedOptions(this.state.value)} */}
                 <AsyncSelect
-                    isLoading={true}
                     value={this.state.value}
                     loadOptions={this.promiseOptions}
                     defaultOptions={true}

@@ -3,18 +3,17 @@ import {Helmet} from "react-helmet"
 import {graphql, navigate} from "gatsby"
 import ContentLayout from '../layouts/company-content-layout'
 import Header from '../components/header';
-import Search from '../app/modules/search/Search';
+import Search from '../app/components/search';
 import AppContainer from '../components/app-container'
-import Results from '../app/modules/results/Results';
+import Results from '../app/components/Results';
 import SEO from '../components/seo';
 import _get from 'lodash/get'
 import {Box, Flex} from '@rebass/grid'
-import Ages from '../app/components/Ages';
-import Categories from '../app/components/Categories';
+import Ages from '../app/components/ages';
+import Categories from '../app/components/categories';
 import Card from '../design-system/Cards/card';
 
 export default function Template(props) {
-    debugger
     const {markdownRemark: post} = props.data
     const frontmatterAppData = _get(props.data, 'markdownRemark.frontmatter.appData')
     let appData = {

@@ -1,16 +1,16 @@
 import React from 'react'
 import Select from 'react-select'
 import {navigate} from 'gatsby'
-import Product from '../../components/Product';
+import Product from './product';
 import {Flex, Box} from '@rebass/grid';
 import _slice from 'lodash/slice'
 import _get from 'lodash/get'
-import PrimaryButton from '../../../design-system/Buttons/primary-button';
-import SecondaryButton from '../../../design-system/Buttons/secondary-button';
-import Card from '../../../design-system/Cards/card';
-import {SkeletonCard} from '../../../design-system/Results/result-list-item';
-import WordCloud from '../../../design-system/WordClouds/wordcloud';
-import {MIN_AGE, MAX_AGE} from '../../components/Ages';
+import PrimaryButton from '../../design-system/Buttons/primary-button';
+import SecondaryButton from '../../design-system/Buttons/secondary-button';
+import Card from '../../design-system/Cards/card';
+import {SkeletonCard} from '../../design-system/Results/result-list-item';
+import WordCloud from '../../design-system/WordClouds/wordcloud';
+import {MIN_AGE, MAX_AGE} from './ages';
 
 class Results extends React.Component {
 
@@ -169,7 +169,7 @@ class Results extends React.Component {
                 ))}
 
                 {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
-                    <Box m={3}>
+                    <Box p={3}>
                         <Flex justifyContent="center">
                             <Box width={3 / 5}>
                                 <SecondaryButton onClick={() => this.onLoadMore()}>Load more</SecondaryButton>
@@ -180,7 +180,7 @@ class Results extends React.Component {
 }
 
                 {this.state.categories.length && (
-                    <Box p={3} mb={3}>
+                    <Box p={3} mb={2}>
                         <WordCloud
                             clouds={this.state.categories}
                             onClickCloud={category => this.onClickCloud(category)}/>

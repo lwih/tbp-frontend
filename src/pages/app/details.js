@@ -4,16 +4,16 @@ import _get from 'lodash/get'
 import AppLayout from '../../layouts/app-layout'
 import SEO from '../../components/seo'
 import Header from '../../components/header';
-import Search from '../../app/modules/search/Search';
-import Results from '../../app/modules/results/Results'
-import Result from '../../app/modules/result/Result'
+import Search from '../../app/components/search';
+import Results from '../../app/components/Results'
+import Result from '../../app/components/Result'
 import {Flex, Box} from '@rebass/grid';
 import Footer from '../../components/footer';
 import TernaryButton from '../../design-system/Buttons/ternary-button';
 import InternalLink from '../../design-system/Links/internal-link';
-import {ResultSkeletonComponent} from '../../app/modules/result/Result';
-import Ages from '../../app/components/Ages';
-import Categories from '../../app/components/Categories';
+import {ResultSkeletonComponent} from '../../app/components/Result';
+import Ages from '../../app/components/ages';
+import Categories from '../../app/components/categories';
 
 const DetailsPage = (props) => {
     return (
@@ -40,7 +40,7 @@ const DetailsPage = (props) => {
                 </Box>
             </Flex>
             <Flex my={4} width={1} justifyContent="center" flexDirection="column">
-                <Box width={1} mx={3}>
+                <Box width={1} px={3}>
                     <h3 style={{
                         marginBottom: 0
                     }}>Similar toys</h3>

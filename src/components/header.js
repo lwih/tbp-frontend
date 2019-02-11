@@ -18,7 +18,7 @@ export const HeaderTitle = ({title}) => (
 const HeaderComponent = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
         <Flex width={1} className="Header-Background" justifyContent="center">
-            <Box className="Header" width={1}>
+            <Box className="Header" width={1} p={2}>
                 <Flex flexDirection="column" justifyContent="center">
                     <Box
                         alignSelf="center"
@@ -65,7 +65,6 @@ HeaderComponent.defaultProps = {
 const Header = styled(HeaderComponent)`
         background-image: linear-gradient(to top, #ff4572, #2a079b);
         position: relative;
-        padding: 10px;
 
         .Header-Background::after {
             background: url("https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png");

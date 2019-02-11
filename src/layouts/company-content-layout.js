@@ -12,7 +12,7 @@ import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import {Box} from '@rebass/grid';
 import SEO from '../components/seo';
-import Search from '../app/modules/search/Search';
+import Search from '../app/components/search';
 
 const companyContentQuery = graphql `
   query CompanyContentPages{
