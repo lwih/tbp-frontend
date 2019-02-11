@@ -16,7 +16,7 @@ const ResultsPage = (props) => {
     return (
         <AppLayout >
             <React.Fragment>
-                {/* <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/> */}
+                <SEO title="Spielzeuge" robots={[`noindex`, `nofollow`]}/>
                 <Header siteTitle={'The Better Play'}>
                     <Search
                         value={props.location.state && props.location.state.selectedItem
@@ -43,7 +43,9 @@ const ResultsPage = (props) => {
                                     locationState={props.location.state}/>
                             </Box>
                             <Box width={1 / 2} pr={2} pl={1}>
-                                <Categories locationState={props.location.state}/>
+                                <Categories
+                                    search={_get(props.location.state, 'search')}
+                                    locationState={props.location.state}/>
                             </Box>
                         </Flex>
                     </Box>

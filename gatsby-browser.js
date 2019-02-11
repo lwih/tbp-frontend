@@ -5,3 +5,16 @@
  */
 
 // You can delete this file if you're not using it
+exports.onRouteUpdate = ({location, prevLocation}) => {
+    console.log('new pathname', location.pathname)
+    console.log('old pathname', prevLocation
+        ? prevLocation.pathname
+        : null)
+
+    // Track pageview with google analytics
+    if (window.ga) {
+        debugger
+        window.ga(`set`, `page`, location.pathname + location.search + location.hash,)
+        window.ga(`send`, `pageview`)
+    }
+}

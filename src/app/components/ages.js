@@ -13,7 +13,8 @@ const styles = {
     control: (base) => ({
         ...base,
         borderRadius: '4px',
-        minHeight: '40px'
+        minHeight: '30px',
+        borderColor: colors.sortOfPinkLight
     }),
     container: (base) => ({
         ...base,
@@ -29,14 +30,25 @@ const styles = {
         ...base,
         margin: '0',
         borderRadius: '0 0 4px 4px'
+    }),
+    option: (base, state) => ({
+        ...base,
+        backgroundColor: state.isSelected
+            ? colors.greenBlue
+            : colors.white
     })
 }
 
 export const MIN_AGE = 0
 export const MAX_AGE = 1200
 
+const defaultRange = {
+    age_from: 0,
+    age_until: MAX_AGE
+}
+
 const ageRanges = [
-    {
+    defaultRange, {
         age_from: 0,
         age_until: 12
     }, {
@@ -75,9 +87,6 @@ const ageRanges = [
     }, {
         age_from: 144,
         age_until: 156
-    }, {
-        age_from: 0,
-        age_until: MAX_AGE
     }
 ]
 
@@ -145,7 +154,7 @@ class Ages extends React.Component {
                 <Select
                     isSearchable={false}
                     value={this.state.selectedRange}
-                    defaultValue={_last(ageRanges)}
+                    defaultValue={defaultRange}
                     options={ageRanges}
                     getOptionLabel={option => displayFormattedAge(option)}
                     getOptionValue={option => `${option.age_from}-${option.age_until}`}

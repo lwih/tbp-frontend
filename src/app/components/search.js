@@ -3,11 +3,49 @@ import AsyncSelect from 'react-select/lib/Async'
 import {navigate} from 'gatsby'
 import _isString from 'lodash/isString'
 import _get from 'lodash/get'
+import {MIN_AGE, MAX_AGE} from './ages';
+import {colors} from '../../design-system/theme';
+
+const styles = {
+    control: (base) => ({
+        ...base,
+        borderRadius: '4px',
+        minHeight: '40px',
+        borderColor: colors.sortOfPinkLight
+    }),
+    container: (base) => ({
+        ...base,
+        borderRadius: '4px',
+        background: colors.white
+    }),
+    input: (base) => ({
+        ...base,
+        width: '100%',
+        borderRadius: '0'
+    }),
+    menu: (base) => ({
+        ...base,
+        margin: '0',
+        borderRadius: '0 0 4px 4px'
+    }),
+    option: (base, state) => ({
+        ...base,
+        backgroundColor: state.isSelected
+            ? colors.greenBlue
+            : colors.white
+    })
+}
+
+export const defaultSearchParams = {
+    q: '',
+    age_from: MIN_AGE,
+    age_until: MAX_AGE
+}
 
 const defaultOptions = [
     {
         id: "*",
-        name: `Show all toys`
+        name: `Zeige alle Spielzeuge`
     }
 ]
 
@@ -16,29 +54,18 @@ const selectAllOption = (term) => term === ''
     : [
         {
             id: "*",
-            name: `Show all toys for '${_isString(term)
+            name: `Zeige alle Spielzeuge für '${_isString(term)
                 ? term
                 : term.name}'`
         }
     ]
-const productsOptions = [
-    {
-        id: "535905",
-        name: "Lego 42094 Technic Raupenlader, bunt",
-        category: 'cat1'
-    }, {
-        id: "86541",
-        name: "Ministeck 31448 - Leuchtturm, Steckplatten, ca. 9700 Steine und Zubehör",
-        category: 'cat2'
-    }
-]
 
 const groupedOptions = (term, options) => [
     {
         label: '',
         options: selectAllOption(term)
     }, {
-        label: 'Products',
+        label: 'Spielzeuge',
         options
     }
 ];
@@ -51,27 +78,28 @@ const formatGroupLabel = data => {
     );
 }
 
+const setValueInState = (value) => {
+    if (value) {
+        if (_isString(value)) {
+            return {id: '', name: value}
+        } else {
+            return value
+        }
+    } else {
+        return ''
+    }
+}
+
 class Search extends React.Component {
 
     state = {
-        value: this.props.value
-            ? _isString(this.props.value)
-                ? {
-                    id: '',
-                    name: this.props.value
-                }
-                : this.props.value : ''
+        value: setValueInState(this.props.value)
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
             this.setState({
-                value: _get(nextProps.value, 'name')
-                    ? {
-                        id: "",
-                        name: _get(nextProps.value, 'name')
-                    }
-                    : {}
+                value: setValueInState(nextProps.value)
             })
         }
     }
@@ -99,9 +127,6 @@ class Search extends React.Component {
         if (actionMeta.action === 'input-blur') {}
         if (actionMeta.action === 'input-change') {
             this.setState({value: newValue})
-            if (newValue !== "" && newValue.length > 2) {
-                // this     .props     .onChange(this.state.value)
-            }
         }
     }
 
@@ -114,35 +139,30 @@ class Search extends React.Component {
 
         if (newValue.id === '*') {
             state = {
-                search: {
-                    age_from: 0,
-                    age_until: 1200,
-                    q: this.state.value
-                },
+                search: Object.assign({}, defaultSearchParams, {q: this.state.value}),
                 selectedItem: undefined
             }
             navigate('/app/results', {state})
         } else {
             state = {
-                search: {
-                    age_from: 0,
-                    age_until: 1200,
-                    // q: this.state.value,
+                search: Object.assign({}, defaultSearchParams, {
                     id: newValue.id,
                     category: newValue.category
-                },
+                }),
                 selectedItem: newValue
             }
             navigate('/app/details', {state})
-
         }
     }
 
     render() {
         return (
             <div>
-                {/* options={groupedOptions(this.state.value)} */}
                 <AsyncSelect
+                    text=""
+                    noOptionsMessage={'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
+                    placeholder={'Was für ein Spielzeug suchst du?'}
+                    loadingMessage={'Laden...'}
                     value={this.state.value}
                     loadOptions={this.promiseOptions}
                     defaultOptions={true}
@@ -150,6 +170,7 @@ class Search extends React.Component {
                     getOptionValue={option => option.id}
                     formatGroupLabel={formatGroupLabel}
                     onChange={this.onChange}
+                    styles={styles}
                     onInputChange={this.onInputChange}/>
             </div>
         )

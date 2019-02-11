@@ -2,7 +2,8 @@ module.exports = {
   // pathPrefix: 'de',
   siteMetadata: {
     title: `The Better Play`,
-    description: `Inspiration für gutes Spielzeug`,
+    subtitle: `Inspiration für gutes Spielzeug`,
+    description: `Pädagogisch wertvolle Spielsachen ♥ Phantasie- und kreativitätsfördernd ♥ EU-produziert ♥ Jetzt hier finden!`,
     author: `@lhache`
   },
   plugins: [
@@ -55,14 +56,28 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {}
     }, {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "GTM-MXZ7F4G",
+        includeInDevelopment: true
+      }
+    }, {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: `oMT37Eg4IIq3AUshKfOTxOSWRBBWJETO`,
+        devKey: `oMT37Eg4IIq3AUshKfOTxOSWRBBWJETO`,
+        // whether you want to include analytics.page() optional; boolean that defaults
+        // to true if false, then don't forget to manually add it to your codebase
+        // manually!
+        trackPage: true
+      }
+    }, {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-106940289-1",
         // Puts tracking script in the head instead of the body
         head: false,
-        // Setting this parameter is optional
         anonymize: true,
-        // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
         exclude: [],

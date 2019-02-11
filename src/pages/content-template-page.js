@@ -1,5 +1,4 @@
 import React from "react"
-import {Helmet} from "react-helmet"
 import {graphql, navigate} from "gatsby"
 import ContentLayout from '../layouts/company-content-layout'
 import Header from '../components/header';
@@ -16,17 +15,14 @@ import Card from '../design-system/Cards/card';
 export default function Template(props) {
     const {markdownRemark: post} = props.data
     const frontmatterAppData = _get(props.data, 'markdownRemark.frontmatter.appData')
-    let appData = {
-        age_from: 0,
-        age_until: 1200
-    }
+
     try {
         JSON.parse(frontmatterAppData)
     } catch (e) {}
 
     return (
         <ContentLayout>
-            <SEO title="SEO" keywords={[`gatsby`, `application`, `react`]}/>
+            <SEO title={_get(post, 'frontmatter.title')}/>
 
             <Header siteTitle={'The Better Play'}>
                 <Search/>
@@ -53,7 +49,9 @@ export default function Template(props) {
                                     search={_get(props.pageContext, 'appData.search')}/>
                             </Box>
                             <Box width={1 / 2} pr={2} pl={1}>
-                                <Categories locationState={props.location.state}/>
+                                <Categories
+                                    locationState={props.location.state}
+                                    search={_get(props.pageContext, 'appData.search')}/>
                             </Box>
                         </Flex>
                     </Box>

@@ -16,7 +16,7 @@ import _get from 'lodash/get'
 
 const AppPage = (props) => (
     <HomeLayout>
-        <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/>
+        <SEO title="Willkommen"/>
         <Header>
             <Search/>
         </Header>
@@ -30,7 +30,9 @@ const AppPage = (props) => (
                                 search={_get(props.pageContext, 'appData.search')}/>
                         </Box>
                         <Box width={1 / 2} pr={2} pl={1}>
-                            <Categories locationState={props.location.state}/>
+                            <Categories
+                                locationState={props.location.state}
+                                search={_get(props.pageContext, 'appData.search')}/>
                         </Box>
                     </Flex>
                 </Box>

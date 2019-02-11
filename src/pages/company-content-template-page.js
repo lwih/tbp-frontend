@@ -15,6 +15,7 @@ export default function Template(props) {
     const {markdownRemark: post} = props.data
     return (
         <CompanyContentLayout>
+            <SEO title={_get(post, 'frontmatter.title')}/>
             <Header>
                 <HeaderTitle title={_get(post, 'frontmatter.title')}/>
             </Header>

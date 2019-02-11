@@ -18,7 +18,7 @@ import Categories from '../../app/components/categories';
 const DetailsPage = (props) => {
     return (
         <AppLayout>
-            <SEO title="App" keywords={[`gatsby`, `application`, `react`]}/>
+            <SEO title="Spielzeug" robots={[`noindex`, `nofollow`]}/>
             <Header siteTitle={'The Better Play'}>
                 <Flex>
                     <Box width={1 / 4}>
@@ -43,7 +43,7 @@ const DetailsPage = (props) => {
                 <Box width={1} px={3}>
                     <h3 style={{
                         marginBottom: 0
-                    }}>Similar toys</h3>
+                    }}>Ähnliche Spielzeuge</h3>
                 </Box>
                 <Flex my={2} width={1} justifyContent="center">
                     <Box width={1}>
@@ -54,7 +54,9 @@ const DetailsPage = (props) => {
                                     locationState={props.location.state}/>
                             </Box>
                             <Box width={1 / 2} pr={2} pl={1}>
-                                <Categories locationState={props.location.state}/>
+                                <Categories
+                                    search={_get(props.location.state, 'search')}
+                                    locationState={props.location.state}/>
                             </Box>
                         </Flex>
                     </Box>

@@ -4,12 +4,14 @@ import Select from 'react-select'
 import _get from 'lodash/get'
 import _isEmpty from 'lodash/isEmpty'
 import {colors} from '../../design-system/theme';
+import {defaultSearchParams} from './search';
 
 const styles = {
     control: (base) => ({
         ...base,
         borderRadius: '4px',
-        minHeight: '40px'
+        minHeight: '30px',
+        borderColor: colors.sortOfPinkLight
     }),
     container: (base) => ({
         ...base,
@@ -25,6 +27,12 @@ const styles = {
         ...base,
         margin: '0',
         borderRadius: '0 0 4px 4px'
+    }),
+    option: (base, state) => ({
+        ...base,
+        backgroundColor: state.isSelected
+            ? colors.greenBlue
+            : colors.white
     })
 }
 
@@ -73,7 +81,7 @@ const categories = [
 class Categories extends React.Component {
 
     state = {
-        selectedCategory: _get(this.props.locationState, 'search.category')
+        selectedCategory: _get(this.props.search, 'category')
     }
 
     componentWillReceiveProps(nextProps) {
@@ -86,7 +94,7 @@ class Categories extends React.Component {
 
     _updateCategories = selectedCategory => {
         this.setState({selectedCategory})
-        const newSearch = Object.assign({}, this.props.locationState.search, {
+        const newSearch = Object.assign({}, defaultSearchParams, this.props.search, {
             category: selectedCategory,
             id: undefined
         })
