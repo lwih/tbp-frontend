@@ -56,7 +56,7 @@ const MobileResultListItemComponent = ({product, onSelect, className}) => {
                 <Flex flexDirection="row" className={className}>
                     <Box width={1}>
                         <Flex width={1}>
-                            <Box width={1 / 3} alignSelf="center">
+                            <Box width={1 / 3} alignSelf="center" onClick={e => onSelect(product)}>
                                 <ProductImage images={product.imageUrls} size="medium" hover={false}/>
                             </Box>
                             <Box width={2 / 3} pl={3}>
