@@ -27,8 +27,10 @@ const FooterComponent = (props) => (
         <Box alignSelf="center">
             Inspiration fur gutes spielzeug
         </Box>
-
         <Box alignSelf="flex-end" mt={3}>
+            <InternalLink color={colors.lightBlue} to={'/contact'}>Kontakt</InternalLink>
+        </Box>
+        <Box alignSelf="flex-end">
             <FooterList data={props.data}/>
         </Box>
         <Box alignSelf="flex-end">

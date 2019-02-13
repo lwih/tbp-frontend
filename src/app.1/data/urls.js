@@ -1,6 +1,0 @@
-const urlPrefix = '/app'
-export const searchUrl = urlPrefix + '/search'
-export const resultsUrl = urlPrefix + '/results'
-export const detailsUrl = urlPrefix + '/details'
-export const landingPageUrl = '/spielzeug'
-export const prCampaignPageUrl = '/spielzeuge'
