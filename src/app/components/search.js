@@ -162,7 +162,6 @@ class Search extends React.Component {
                     text=""
                     noOptionsMessage={'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
                     placeholder={'Was für ein Spielzeug suchst du?'}
-                    loadingMessage={'Laden...'}
                     value={this.state.value}
                     loadOptions={this.promiseOptions}
                     defaultOptions={true}

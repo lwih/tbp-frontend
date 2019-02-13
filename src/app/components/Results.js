@@ -70,15 +70,12 @@ class Results extends React.Component {
     }
 
     onClickCloud = (category) => {
-        const a = this.props.searchParams
         const newState = Object.assign({}, {
             state: {
                 search: Object.assign({}, this.props.searchParams, {category}),
                 selectedItem: undefined
             }
         })
-        debugger
-
         navigate('/app/results', newState)
     }
 
@@ -119,9 +116,9 @@ class Results extends React.Component {
         if (this.state.isFetching && this.state.offset === 0) {
             return (
                 <Flex flexWrap="wrap" flexDirection="column">
-                    {results.map(result => (
+                    {results.map((result, index) => (
                         <Box
-                            key={result.id}
+                            key={index}
                             px={2}
                             py={1}
                             width={[
@@ -181,9 +178,7 @@ class Results extends React.Component {
 
                 {this.state.categories.length && (
                     <Box p={3} mb={2}>
-                        <WordCloud
-                            clouds={this.state.categories}
-                            onClickCloud={category => this.onClickCloud(category)}/>
+                        <WordCloud onClickCloud={category => this.onClickCloud(category)}/>
                     </Box>
                 )}
             </Flex>

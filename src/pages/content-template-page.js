@@ -71,7 +71,6 @@ export default function Template(props) {
                     }))}/>
 
                     <Box p={3}>
-
                         <div
                             dangerouslySetInnerHTML={{
                             __html: _get(post, 'html')
