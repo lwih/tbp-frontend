@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `The Better Play`,
     subtitle: `Inspiration für gutes Spielzeug`,
-    description: `Pädagogisch wertvolle Spielsachen ♥ Phantasie- und kreativitätsfördernd ♥ EU-produziert ♥ Jetzt hier finden!`,
+    description: `Pädagogisch wertvolle Spielsachen ♥ Phantasie- und kreativitätsfördernd ♥ Jetzt hier finden!`,
     author: `@lhache`
   },
   plugins: [

@@ -1,0 +1,30 @@
+.card-content {
+    width: 100%;
+    display: flex;
+  }
+  
+  .card-content > div:first-child {
+    width: 40%;
+  }
+  
+  .card-content > div:last-child {
+    width: 60%;
+    padding-left: 32px;
+  }
+  
+  @media all and (max-width: 960px) {
+    .card-content {
+      flex-direction: column;
+    }
+  
+    .card-content > div:first-child {
+      width: 100%;
+    }
+  
+    .card-content > div:last-child {
+      width: 100%;
+      padding-left: 0px;
+    }
+  
+  }
+  

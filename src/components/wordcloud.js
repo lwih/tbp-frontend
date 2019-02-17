@@ -1,17 +1,20 @@
 import React from 'react'
 import {Flex, Box} from '@rebass/grid';
-import Chip from '../Chips/chip';
+import Chip from '../design-system/Chips/chip';
 
 const clouds = [
     {
+        name: 'Bau und Konstruktionsspielzeug',
+        id: '03'
+    }, {
         name: 'Holzspielzeug',
         id: '01'
     }, {
         name: 'Bauklötze',
         id: '02'
     }, {
-        name: 'Bau und Konstruktionsspielzeug',
-        id: '03'
+        name: 'Spiele',
+        id: '08'
     }, {
         name: 'Musikinstrumente',
         id: '04'
@@ -25,23 +28,20 @@ const clouds = [
         name: 'Puzzles',
         id: '07'
     }, {
-        name: 'Spiele',
-        id: '08'
-    }, {
         name: 'Elektronisches Spielzeug',
         id: '09'
     }, {
         name: 'Basteln und Malen',
         id: '10'
     }, {
-        name: 'Experimentieren und Forschen',
-        id: '11'
-    }, {
         name: 'Sport und Outdoor',
         id: '12'
     }, {
         name: 'Fahrzeuge',
         id: '13'
+    }, {
+        name: 'Experimentieren und Forschen',
+        id: '11'
     }
 ]
 

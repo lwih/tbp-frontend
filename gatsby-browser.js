@@ -13,7 +13,6 @@ exports.onRouteUpdate = ({location, prevLocation}) => {
 
     // Track pageview with google analytics
     if (window.ga) {
-        debugger
         window.ga(`set`, `page`, location.pathname + location.search + location.hash,)
         window.ga(`send`, `pageview`)
     }

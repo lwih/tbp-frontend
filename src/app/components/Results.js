@@ -9,7 +9,7 @@ import PrimaryButton from '../../design-system/Buttons/primary-button';
 import SecondaryButton from '../../design-system/Buttons/secondary-button';
 import Card from '../../design-system/Cards/card';
 import {SkeletonCard} from '../../design-system/Results/result-list-item';
-import WordCloud from '../../design-system/WordClouds/wordcloud';
+import WordCloud from '../../components/wordcloud';
 import {MIN_AGE, MAX_AGE} from './ages';
 
 class Results extends React.Component {
@@ -151,37 +151,42 @@ class Results extends React.Component {
         }
 
         return (
-            <Flex flexWrap="wrap" flexDirection="column">
-                {results.map(result => (
-                    <Box
-                        key={result.id}
-                        px={2}
-                        py={1}
-                        width={[
-                        1, 1 / 2,
-                        1 / 4
-                    ]}>
-                        <Product product={result} onSelectItem={this.props.onSelectItem}/>
-                    </Box>
-                ))}
-
-                {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
-                    <Box p={3}>
-                        <Flex justifyContent="center">
-                            <Box width={3 / 5}>
-                                <SecondaryButton onClick={() => this.onLoadMore()}>Mehr zeigen</SecondaryButton>
-                            </Box>
-                        </Flex>
-                    </Box>
-                )
+            <React.Fragment>
+                <Flex flexWrap="wrap">
+                    {results.map(result => (
+                        <Box
+                            key={result.id}
+                            px={2}
+                            py={1}
+                            width={[
+                            1, 1 / 2,
+                            1 / 3
+                        ]}>
+                            <Product product={result} onSelectItem={this.props.onSelectItem}/>
+                        </Box>
+                    ))}
+                </Flex>
+                <Flex>
+                    {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
+                        <Box p={3} width={1}>
+                            <Flex justifyContent="center">
+                                <Box width={3 / 5}>
+                                    <SecondaryButton onClick={() => this.onLoadMore()}>Mehr zeigen</SecondaryButton>
+                                </Box>
+                            </Flex>
+                        </Box>
+                    )
 }
+                </Flex>
+                <Flex>
 
-                {this.state.categories.length && (
-                    <Box p={3} mb={2}>
-                        <WordCloud onClickCloud={category => this.onClickCloud(category)}/>
-                    </Box>
-                )}
-            </Flex>
+                    {this.state.categories.length && (
+                        <Box p={3} mb={2}>
+                            <WordCloud onClickCloud={category => this.onClickCloud(category)}/>
+                        </Box>
+                    )}
+                </Flex>
+            </React.Fragment>
         )
     }
 }
