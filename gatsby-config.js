@@ -7,7 +7,6 @@ module.exports = {
     author: `@lhache`
   },
   plugins: [
-
     `gatsby-plugin-react-helmet`, {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -52,12 +51,6 @@ module.exports = {
           }
         ]
       }
-    }, {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {}
-    }, {
-      resolve: `gatsby-plugin-emotion`,
-      options: {}
     }, {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {

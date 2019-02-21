@@ -105,10 +105,6 @@ class Search extends React.Component {
     }
 
     promiseOptions = input => {
-
-        // if (!_isArray(input)) {     if (input) {         queryParams =
-        // Object.assign({}, queryParams, {q: input})     } } const url =
-        // buildUrl(`$https://api.thebetterplay.com/product/suggest`, queryParams)
         const url = `https://api.thebetterplay.com/product/suggest?q=${input === ''
             ? 'toy'
             : input}`
@@ -132,9 +128,6 @@ class Search extends React.Component {
 
     // this is when selecting a product in the list
     onChange = (newValue, actionMeta) => {
-        // {   action: 'select-option' |'deselect-option' |'remove-value' | 'pop-value'
-        // |'set-value' |'clear' |'create-option'; } this     .props
-        // .onSelectItem(newValue)
         let state = {}
 
         if (newValue.id === '*') {
@@ -157,7 +150,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <AsyncSelect
                     text=""
                     noOptionsMessage={'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
@@ -171,7 +164,7 @@ class Search extends React.Component {
                     onChange={this.onChange}
                     styles={styles}
                     onInputChange={this.onInputChange}/>
-            </div>
+            </React.Fragment>
         )
     }
 }
