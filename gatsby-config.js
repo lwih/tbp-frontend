@@ -56,6 +56,9 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {}
     }, {
+      resolve: `gatsby-plugin-emotion`,
+      options: {}
+    }, {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: "GTM-MXZ7F4G",
