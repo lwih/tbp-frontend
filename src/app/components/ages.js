@@ -108,7 +108,7 @@ const formatMonthOrYear = (age, withText = true) => {
 
 const displayFormattedAge = range => {
     if (range.age_until === MAX_AGE) {
-        return 'Alle Altersklassen'
+        return 'Jedes Alter'
     } else if (range.age_from === 0) {
         return formatMonthOrYear(range.age_from, false) + ' - ' + range.age_until + ' Monate' // erk
     } else {

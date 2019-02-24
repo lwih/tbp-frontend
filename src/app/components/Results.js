@@ -115,7 +115,7 @@ class Results extends React.Component {
         ]
         if (this.state.isFetching && this.state.offset === 0) {
             return (
-                <Flex flexWrap="wrap" flexDirection="column">
+                <Flex flexWrap="wrap">
                     {results.map((result, index) => (
                         <Box
                             key={index}
@@ -160,7 +160,7 @@ class Results extends React.Component {
                             py={1}
                             width={[
                             1, 1 / 2,
-                            1 / 3
+                            1 / 4
                         ]}>
                             <Product product={result} onSelectItem={this.props.onSelectItem}/>
                         </Box>
@@ -170,7 +170,12 @@ class Results extends React.Component {
                     {!this.props.hideLoadMore && this.state.results.length && this.state.results.length % 20 === 0 && (
                         <Box p={3} width={1}>
                             <Flex justifyContent="center">
-                                <Box width={3 / 5}>
+                                <Box
+                                    width={[
+                                    3 / 5,
+                                    3 / 5,
+                                    2 / 10
+                                ]}>
                                     <SecondaryButton onClick={() => this.onLoadMore()}>Mehr zeigen</SecondaryButton>
                                 </Box>
                             </Flex>
@@ -178,10 +183,14 @@ class Results extends React.Component {
                     )
 }
                 </Flex>
-                <Flex>
-
+                <Flex justifyContent="center">
                     {this.state.categories.length && (
-                        <Box p={3} mb={2}>
+                        <Box
+                            width={[
+                            1, 2 / 3,
+                            1 / 3
+                        ]}
+                            mb={2}p={3} >
                             <WordCloud onClickCloud={category => this.onClickCloud(category)}/>
                         </Box>
                     )}

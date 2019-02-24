@@ -31,25 +31,23 @@ const homeLayoutQuery = graphql `
 `
 
 const HomeLayout = ({children}) => (
-    <StaticQuery
-        query={homeLayoutQuery}
-        render={data => (
-        <React.Fragment>
-            <div
-                style={{
-                margin: `0 auto`,
-                maxWidth: 960
-            }}>
-                {children}
-            </div>
-            <LinkList data={data}/>
-            <Footer data={data}/>
-        </React.Fragment>
-    )}/>
+  <StaticQuery
+    query={homeLayoutQuery}
+    render={data => (
+    <React.Fragment>
+      <div style={{
+        margin: `0 auto`
+      }}>
+        {children}
+      </div>
+      <LinkList data={data}/>
+      <Footer data={data}/>
+    </React.Fragment>
+  )}/>
 )
 
 HomeLayout.propTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 }
 
 export default HomeLayout

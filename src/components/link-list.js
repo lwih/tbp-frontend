@@ -2,10 +2,11 @@ import React from "react"
 import styled from 'styled-components'
 import {StaticQuery, graphql, Link} from 'gatsby'
 import {routeWithLanguage} from '../utils/routeHelper'
-import {Flex} from '@rebass/grid'
+import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link'
 import {seoPages, sortPagesByWeight} from '../utils/pageHelpers';
 import {colors} from '../design-system/theme';
+import WidthContainer from './width-container';
 
 const LinkListBackground = styled.div `
   width: 100%;
@@ -40,15 +41,24 @@ const LinkList = ({data}) => {
         <LinkListBackground>
             <LinkListBackgroundImage>
                 <LinkListContent>
-                    <Flex flexDirection="column" p={4}>
-                        {sortPagesByWeight(seoPages(data.allMarkdownRemark.edges)).map((page, index) => {
-                            return (
-                                <InternalLink
-                                    key={page.node.frontmatter.path + index}
-                                    to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
-                            )
-                        })}
-                    </Flex>
+                    <WidthContainer>
+                        <Flex p={4} flexWrap="wrap">
+                            {sortPagesByWeight(seoPages(data.allMarkdownRemark.edges)).map((page, index) => {
+                                return (
+                                    <Box
+                                        width={[
+                                        1, 1 / 2,
+                                        1 / 3
+                                    ]}>
+                                        <InternalLink
+                                            key={page.node.frontmatter.path + index}
+                                            to={page.node.frontmatter.path}>{page.node.frontmatter.title}
+                                        </InternalLink>
+                                    </Box>
+                                )
+                            })}
+                        </Flex>
+                    </WidthContainer>
                 </LinkListContent>
             </LinkListBackgroundImage>
         </LinkListBackground>

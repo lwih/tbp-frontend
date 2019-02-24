@@ -11,6 +11,7 @@ import Price from '../../design-system/Price/price';
 import Gallery from '../../design-system/Galleries/gallery';
 import ExternalLink from '../../design-system/Links/external-link';
 import Skeleton from '../../design-system/Skeletons/skeleton';
+import {isMobile} from 'react-device-detect';
 
 function escapeHTML(data) {
     return {__html: data}
@@ -36,6 +37,89 @@ export const ResultSkeletonComponent = (
             </Box>
         </Flex>
     </Card>
+)
+
+const ResultMobile = ({imagesForGallery, result}) => (
+    <Flex width={1} flexDirection="column">
+        <Box m={2}>
+            <b>
+                {result.name}
+            </b>
+        </Box>
+        <Box m={2}>
+            <Gallery images={imagesForGallery}/>
+        </Box>
+        <Box my={4} mx={2}>
+            <Flex>
+                <Box
+                    width={1 / 3}
+                    alignSelf="center"
+                    pr={2}
+                    style={{
+                    textAlign: 'right'
+                }}>
+                    <Price
+                        size="huge"
+                        price={result.price
+                        ? result.price.displayPrice
+                        : ''}/>
+                </Box>
+                <Box width={2 / 3}>
+                    <ExternalLink href={result.deeplinkUrl} target="_blank">
+                        <PrimaryButton size="small">Zum product</PrimaryButton>
+                    </ExternalLink>
+                </Box>
+            </Flex>
+        </Box>
+
+        <Box m={2}>
+            {(!!result.description) && result.description.map((d, i) => (
+                <Flex
+                    key={`description-${i}`}
+                    margin="5px"
+                    dangerouslySetInnerHTML={escapeHTML('-&nbsp;' + d)}></Flex>
+            ))
+}
+        </Box>
+    </Flex>
+)
+
+const ResultDesktop = ({imagesForGallery, result}) => (
+    <Flex p={4}>
+        <Box width={1 / 2} alignSelf="center">
+            <Gallery images={imagesForGallery}/>
+        </Box>
+        <Box width={1 / 2}>
+            <Flex flexDirection="column">
+                <Box mb={3}>
+                    <b>
+                        {result.name}
+                    </b>
+                </Box>
+                <Box my={3}>
+                    <Price
+                        size="huge"
+                        price={result.price
+                        ? result.price.displayPrice
+                        : ''}/>
+                </Box>
+                <Box my={3}>
+                    {(!!result.description) && result.description.map((d, i) => (
+                        <Flex
+                            key={`description-${i}`}
+                            margin="5px"
+                            dangerouslySetInnerHTML={escapeHTML('-&nbsp;' + d)}></Flex>
+                    ))
+}
+                </Box>
+                <Box width={1} alignSelf="center" mt={3}>
+                    <ExternalLink href={result.deeplinkUrl} target="_blank">
+                        <PrimaryButton size="small">Zum product</PrimaryButton>
+                    </ExternalLink>
+                </Box>
+            </Flex>
+        </Box>
+    </Flex>
 )
 
 class Result extends React.Component {
@@ -77,49 +161,10 @@ class Result extends React.Component {
         return !!this.state.result
             ? (
                 <Card>
-                    <Flex width={1} flexDirection="column">
-                        <Box m={2}>
-                            <b>
-                                {this.state.result.name}
-                            </b>
-
-                        </Box>
-                        <Box m={2}>
-                            <Gallery images={imagesForGallery}/>
-                        </Box>
-                        <Box my={4} mx={2}>
-                            <Flex>
-                                <Box
-                                    width={1 / 3}
-                                    alignSelf="center"
-                                    pr={2}
-                                    style={{
-                                    textAlign: 'right'
-                                }}>
-                                    <Price
-                                        size="huge"
-                                        price={this.state.result.price
-                                        ? this.state.result.price.displayPrice
-                                        : ''}/>
-                                </Box>
-                                <Box width={2 / 3}>
-                                    <ExternalLink href={this.state.result.deeplinkUrl} target="_blank">
-                                        <PrimaryButton size="small">Zum product</PrimaryButton>
-                                    </ExternalLink>
-                                </Box>
-                            </Flex>
-                        </Box>
-
-                        <Box m={2}>
-                            {(!!this.state.result.description) && this.state.result.description.map((d, i) => (
-                                <Flex
-                                    key={`description-${i}`}
-                                    margin="5px"
-                                    dangerouslySetInnerHTML={escapeHTML('-&nbsp;' + d)}></Flex>
-                            ))
+                    {isMobile
+                        ? <ResultMobile imagesForGallery={imagesForGallery} result={this.state.result}/>
+                        : <ResultDesktop imagesForGallery={imagesForGallery} result={this.state.result}/>
 }
-                        </Box>
-                    </Flex>
                 </Card>
             )
             : ResultSkeletonComponent

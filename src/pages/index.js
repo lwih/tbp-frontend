@@ -13,6 +13,7 @@ import Results from '../app/components/Results'
 import Ages from '../app/components/ages';
 import Categories from '../app/components/categories';
 import _get from 'lodash/get'
+import WidthContainer from '../components/width-container';
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -20,40 +21,43 @@ const AppPage = (props) => (
         <Header>
             <Search/>
         </Header>
-        <AppContainer p={0} width={1}>
-            <Flex my={2} width={1} justifyContent="center">
-                <Box width={1}>
-                    <Flex>
-                        <Box width={1 / 2} pl={2} pr={1}>
-                            <Ages
-                                locationState={props.location.state}
-                                search={_get(props.pageContext, 'appData.search')}/>
-                        </Box>
-                        <Box width={1 / 2} pr={2} pl={1}>
-                            <Categories
-                                locationState={props.location.state}
-                                search={_get(props.pageContext, 'appData.search')}/>
-                        </Box>
-                    </Flex>
-                </Box>
-            </Flex>
-            <Flex flexDirection="column">
-                <Box mt={1}>
-                    <Results
-                        hideLoadMore={false}
-                        searchParams={{
-                        age_from: 0,
-                        age_until: 1200,
-                        q: ''
-                    }}
-                        onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                        state: {
-                            selectedItem: item
-                        }
-                    }))}/>
-                </Box>
-            </Flex>
-        </AppContainer>
+        <WidthContainer>
+            <AppContainer p={0} width={1}>
+                <Flex my={3} width={1} justifyContent="center">
+                    <Box width={1}>
+                        <Flex>
+                            <Box width={1 / 2} pl={2} pr={2}>
+                                <Ages
+                                    locationState={props.location.state}
+                                    search={_get(props.pageContext, 'appData.search')}/>
+                            </Box>
+                            <Box width={1 / 2} pr={2} pl={2}>
+                                <Categories
+                                    locationState={props.location.state}
+                                    search={_get(props.pageContext, 'appData.search')}/>
+                            </Box>
+                        </Flex>
+                    </Box>
+                </Flex>
+                <Flex flexDirection="column">
+                    <Box mt={1}>
+                        <Results
+                            hideLoadMore={false}
+                            searchParams={{
+                            age_from: 0,
+                            age_until: 1200,
+                            q: ''
+                        }}
+                            onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
+                            state: {
+                                selectedItem: item
+                            }
+                        }))}/>
+                    </Box>
+                </Flex>
+            </AppContainer>
+        </WidthContainer>
+
     </HomeLayout>
 )
 

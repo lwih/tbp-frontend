@@ -5,12 +5,15 @@ import _isString from 'lodash/isString'
 import _get from 'lodash/get'
 import {MIN_AGE, MAX_AGE} from './ages';
 import {colors} from '../../design-system/theme';
+import {isMobile} from 'react-device-detect';
 
 const styles = {
     control: (base) => ({
         ...base,
         borderRadius: '4px',
-        minHeight: '40px',
+        minHeight: isMobile
+            ? '40px'
+            : '50px',
         borderColor: colors.sortOfPinkLight
     }),
     container: (base) => ({

@@ -5,8 +5,9 @@ import Button from './button';
 const TernaryButton = styled(Button)`
     background-color: transparent;
     border-radius: ${radii['4']}px;
-    border: none;
+    border: 1px solid white;
     color: ${colors.white};
+    min-width: 100px;
 `
 // const TernaryButton = styled(Button)`     background-color:
 // ${colors.paleGrey};     border-radius: ${radii['4']}px;     border: 1px solid

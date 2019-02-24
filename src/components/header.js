@@ -1,4 +1,5 @@
 import {Link} from 'gatsby'
+import {isMobile} from 'react-device-detect';
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -6,16 +7,9 @@ import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
 import Skeleton from '../design-system/Skeletons/skeleton';
+import WidthContainer from './width-container';
 
-export const HeaderTitle = ({title}) => (
-    <Flex justifyContent="center">
-        <h1 style={{
-            color: colors.white
-        }}>{title}</h1>
-    </Flex>
-)
-
-const HeaderComponent = ({title, className, children}) => (
+const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
         <Flex width={1} className="Header-Background" justifyContent="center">
             <Box className="Header" width={1} p={2}>
@@ -52,17 +46,53 @@ const HeaderComponent = ({title, className, children}) => (
     </Box>
 )
 
-HeaderComponent.propTypes = {
-    title: PropTypes.string,
-    className: PropTypes.string,
-    children: PropTypes.any
-}
+const HeaderComponentDesktop = ({title, className, children}) => (
+    <Box className={className}>
+        <Flex width={1} className="Header-Background" flexDirection="column">
+            <WidthContainer>
+                <Flex width={1} flexDirection="column">
+                    <Box className="Header" width={1}>
+                        <Flex justifyContent="flex-start">
+                            <Box
+                                className="Header-Logo-Container"
+                                style={{
+                                minHeight: '45px'
+                            }}>
+                                <InternalLink to="/">
+                                    <img
+                                        className="Header-Logo"
+                                        src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
+                                        alt={title}/>
+                                </InternalLink>
+                            </Box>
 
-HeaderComponent.defaultProps = {
-    title: 'Inspiration für gutes Spielzeug'
+                        </Flex>
+                    </Box>
+                    <Box>
+                        <Flex flexDirection="column" justifyContent="center" mb={3} px={2}>
+                            <Box className="Header-title" alignSelf="center" p={3}>
+                                {title}
+                            </Box>
+                            {!!children && (
+                                <Box className="Header" width={1} mt={3} mx="auto">
+                                    {!!children
+                                        ? (
+                                            <React.Fragment>{children}</React.Fragment>
+                                        )
+                                        : (<Skeleton height="32px" color="transparent"/>)
 }
+                                </Box>
+                            )}
+                        </Flex>
+                    </Box>
+                </Flex>
+            </WidthContainer>
 
-const Header = styled(HeaderComponent)`
+        </Flex>
+    </Box>
+)
+
+const HeaderMobile = styled(HeaderComponentMobile)`
         background-image: linear-gradient(to top, #ff4572, #2a079b);
         position: relative;
 
@@ -98,5 +128,57 @@ const Header = styled(HeaderComponent)`
         }
     
 `
+
+const HeaderDesktop = styled(HeaderComponentDesktop)`
+    background-image: linear-gradient(to top, #ff4572, #2a079b);
+    position: relative;
+
+    .Header-Background::after {
+        background: url("https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png");
+        background-repeat: repeat;
+        content: "";
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .Header {
+        z-index: 1;
+        position: relative;
+    }
+
+    .Header-Logo-Container {
+        width: 300px;
+    }
+
+    .Header-Logo {
+        margin-bottom: 0;
+    }
+
+    .Header-title {
+        color: ${colors.white};
+        font-size: 36px;
+        font-weight: bold;
+    }
+    
+`
+
+const Header = isMobile
+    ? HeaderMobile
+    : HeaderDesktop;
+
+Header.propTypes = {
+    title: PropTypes.string,
+    className: PropTypes.string,
+    children: PropTypes.any
+}
+
+Header.defaultProps = {
+    title: 'Inspiration für gutes Spielzeug'
+}
 
 export default Header

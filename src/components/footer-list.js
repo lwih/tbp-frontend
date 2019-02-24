@@ -7,13 +7,23 @@ import InternalLink from '../design-system/Links/internal-link'
 import {companyPages, sortPagesByWeight} from '../utils/pageHelpers';
 import {colors} from '../design-system/theme';
 import _get from 'lodash/get'
+import {isMobile} from 'react-device-detect';
 
 const FooterList = ({data}) => {
     return (
-        <Flex flexDirection="column" justifyContent="flex-end">
+        <Flex
+            flexDirection={isMobile
+            ? 'column'
+            : 'row'}
+            justifyContent="flex-end">
+
+            <Box alignSelf="flex-end" pl={2}>
+                <InternalLink color={colors.lightBlue} to={'/contact'}>Kontakt</InternalLink>
+            </Box>
+
             {_get(data, 'allMarkdownRemark.edges') && sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges'))).map((page, index) => {
                 return (
-                    <Box alignSelf="flex-end" key={index}>
+                    <Box alignSelf="flex-end" key={index} pl={2}>
                         <InternalLink
                             color={colors.lightBlue}
                             key={page.node.frontmatter.path + index}
