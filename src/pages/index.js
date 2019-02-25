@@ -3,17 +3,18 @@ import {Link, navigate} from 'gatsby'
 import HomeLayout from '../layouts/home-layout'
 import Header from '../components/header'
 import SEO from '../components/seo'
-import Search from '../app/components/search'
+import Search from '../app/search'
 import {Box, Flex} from '@rebass/grid';
 import AppContainer from '../components/app-container';
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
 import Card from '../design-system/Cards/card';
-import Results from '../app/components/Results'
-import Ages from '../app/components/ages';
-import Categories from '../app/components/categories';
+import Results from '../app/Results'
+import Ages from '../app/ages';
+import Categories from '../app/categories';
 import _get from 'lodash/get'
 import WidthContainer from '../components/width-container';
+import WordCloud from '../app/wordcloud';
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -53,6 +54,20 @@ const AppPage = (props) => (
                                 selectedItem: item
                             }
                         }))}/>
+                    </Box>
+                    <Box>
+                        <Flex justifyContent="center">
+                            <Box
+                                width={[
+                                1, 2 / 3,
+                                1 / 3
+                            ]}
+                                mb={2}p={3} >
+                                <WordCloud
+                                    searchParams={_get(props.location.state, 'search')}
+                                    onClickCloud={category => this.onClickCloud(category)}/>
+                            </Box>
+                        </Flex>
                     </Box>
                 </Flex>
             </AppContainer>

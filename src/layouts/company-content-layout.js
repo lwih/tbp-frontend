@@ -10,9 +10,10 @@ import Header from '../components/header'
 import './layout.css'
 import LinkList from '../components/link-list';
 import Footer from '../components/footer';
-import {Box} from '@rebass/grid';
+import {Box, Flex} from '@rebass/grid';
 import SEO from '../components/seo';
-import Search from '../app/components/search';
+import Search from '../app/search';
+import {colors} from '../design-system/theme';
 
 const companyContentQuery = graphql `
   query CompanyContentPages{
@@ -44,12 +45,9 @@ const CompanyContentLayout = (props) => {
             render={data => {
             return (
                 <React.Fragment>
-                    <div style={{
-                        margin: `0 auto`
-                    }}>
-                        {/* <props.children {...props}/> */}
+                    <Flex my={0} mx="auto" bg={colors.white} flexDirection="column">
                         {props.children}
-                    </div>
+                    </Flex>
                     <LinkList data={data}/>
                     <Footer data={data}/>
                 </React.Fragment>

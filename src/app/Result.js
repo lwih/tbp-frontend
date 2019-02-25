@@ -2,15 +2,15 @@ import React from 'react'
 import Select from 'react-select'
 import {navigate} from 'gatsby'
 import {Flex, Box} from '@rebass/grid'
-import PrimaryButton from '../../design-system/Buttons/primary-button'
+import PrimaryButton from '../design-system/Buttons/primary-button'
 import _get from 'lodash/get'
 import _toArray from 'lodash/toArray'
 import _merge from 'lodash/merge'
-import Card from '../../design-system/Cards/card';
-import Price from '../../design-system/Price/price';
-import Gallery from '../../design-system/Galleries/gallery';
-import ExternalLink from '../../design-system/Links/external-link';
-import Skeleton from '../../design-system/Skeletons/skeleton';
+import Card from '../design-system/Cards/card';
+import Price from '../design-system/Price/price';
+import Gallery from '../design-system/Galleries/gallery';
+import ExternalLink from '../design-system/Links/external-link';
+import Skeleton from '../design-system/Skeletons/skeleton';
 import {isMobile} from 'react-device-detect';
 
 function escapeHTML(data) {

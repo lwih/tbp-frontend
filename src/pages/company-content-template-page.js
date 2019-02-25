@@ -3,10 +3,10 @@ import {Helmet} from "react-helmet"
 import {graphql, navigate} from "gatsby"
 import CompanyContentLayout from '../layouts/company-content-layout'
 import Header, {HeaderTitle} from '../components/header';
-import Search from '../app/components/search';
+import Search from '../app/search';
 import AppContainer from '../components/app-container';
 import {Box, Flex} from '@rebass/grid';
-import Results from '../app/components/Results';
+import Results from '../app/Results';
 import SEO from '../components/seo';
 import Footer from '../components/footer';
 import _get from 'lodash/get'

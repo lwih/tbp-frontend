@@ -7,7 +7,7 @@ import Truncate from 'react-truncate';
 import ProductImage from './product-image';
 import {ExternalLink} from '../Links/external-link';
 import {Flex, Box} from '@rebass/grid';
-import {colors, radii} from '../theme';
+import {colors, radii, sizes} from '../theme';
 import Card from '../Cards/card';
 import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
@@ -48,7 +48,7 @@ export const SkeletonCard = (props) => (
     </Card>
 )
 
-const MobileResultListItemComponent = ({product, onSelect, className}) => {
+const ResultListItemComponentMobile = ({product, onSelect, className}) => {
     return _isEmpty(product)
         ? SkeletonCard({})
         : (
@@ -86,25 +86,47 @@ const MobileResultListItemComponent = ({product, onSelect, className}) => {
         )
 }
 
-const MobileResultListItem = styled(MobileResultListItemComponent)``
+const ResultListItemMobile = styled(ResultListItemComponentMobile)``
 
-const DesktopResultListItem = (product, onSelect) => (
-    <Flex flexDirection="column">
-        <Box>
-            <ProductImage images={product.imageUrls} size="medium" hover={true}/>
-        </Box>
-        <Box>
-            <Truncate lines={2}>
-                {product.name}
-            </Truncate>
-        </Box>
-        <Box>
-            <Price price={product.price.displayPrice}/>
-        </Box>
-        <Box>
-            <PrimaryButton onClick={e => onSelect(product.id)}>Zum Product</PrimaryButton>
-        </Box>
-    </Flex>
-)
+const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
+    return _isEmpty(product)
+        ? SkeletonCard({})
+        : (
+            <Card>
+                <Flex flexDirection="column" className={className}>
 
-export default MobileResultListItem
+                    <Box width={1} alignSelf="center" onClick={e => onSelect(product)}>
+                        <ProductImage images={product.imageUrls} size="tiny" hover={false}/>
+                    </Box>
+                    <Box>
+                        <Flex
+                            flexDirection="column"
+                            style={{
+                            height: '100%'
+                        }}>
+                            <Box>
+                                <Truncate lines={2}>
+                                    {product.name}
+                                </Truncate>
+                            </Box>
+                            <Box my={2} alignSelf="flex-end">
+                                <Price price={product.price.displayPrice} size={sizes.big}/>
+                            </Box>
+                            <Box mt={2}>
+                                <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Product</PrimaryButton>
+                            </Box>
+                        </Flex>
+                    </Box>
+
+                </Flex>
+            </Card>
+        )
+}
+
+const ResultListItemDesktop = styled(ResultListItemComponentDesktop)``
+
+const ResultListItem = isMobile
+    ? ResultListItemMobile
+    : ResultListItemDesktop;
+
+export default ResultListItem

@@ -5,11 +5,11 @@ import Product from './product';
 import {Flex, Box} from '@rebass/grid';
 import _slice from 'lodash/slice'
 import _get from 'lodash/get'
-import PrimaryButton from '../../design-system/Buttons/primary-button';
-import SecondaryButton from '../../design-system/Buttons/secondary-button';
-import Card from '../../design-system/Cards/card';
-import {SkeletonCard} from '../../design-system/Results/result-list-item';
-import WordCloud from '../../components/wordcloud';
+import PrimaryButton from '../design-system/Buttons/primary-button';
+import SecondaryButton from '../design-system/Buttons/secondary-button';
+import Card from '../design-system/Cards/card';
+import {SkeletonCard} from '../design-system/Results/result-list-item';
+import WordCloud from './wordcloud';
 import {MIN_AGE, MAX_AGE} from './ages';
 
 class Results extends React.Component {
@@ -67,16 +67,6 @@ class Results extends React.Component {
                     this.setState({categories: results.categories})
                 })
         }
-    }
-
-    onClickCloud = (category) => {
-        const newState = Object.assign({}, {
-            state: {
-                search: Object.assign({}, this.props.searchParams, {category}),
-                selectedItem: undefined
-            }
-        })
-        navigate('/app/results', newState)
     }
 
     onLoadMore = () => {
@@ -160,7 +150,7 @@ class Results extends React.Component {
                             py={1}
                             width={[
                             1, 1 / 2,
-                            1 / 4
+                            1 / 5
                         ]}>
                             <Product product={result} onSelectItem={this.props.onSelectItem}/>
                         </Box>
@@ -182,18 +172,6 @@ class Results extends React.Component {
                         </Box>
                     )
 }
-                </Flex>
-                <Flex justifyContent="center">
-                    {this.state.categories.length && (
-                        <Box
-                            width={[
-                            1, 2 / 3,
-                            1 / 3
-                        ]}
-                            mb={2}p={3} >
-                            <WordCloud onClickCloud={category => this.onClickCloud(category)}/>
-                        </Box>
-                    )}
                 </Flex>
             </React.Fragment>
         )

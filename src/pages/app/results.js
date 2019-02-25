@@ -2,16 +2,17 @@ import React from 'react'
 import Header from '../../components/header'
 import AppLayout from '../../layouts/app-layout'
 import SEO from '../../components/seo'
-import Search from '../../app/components/search'
+import Search from '../../app/search'
 import {Flex, Box} from '@rebass/grid'
-import Ages from '../../app/components/ages';
-import Categories from '../../app/components/categories';
+import Ages from '../../app/ages';
+import Categories from '../../app/categories';
 import _get from 'lodash/get'
 import {navigate} from 'gatsby';
 import Footer from '../../components/footer';
-import Results from '../../app/components/Results'
-import Result from '../../app/components/Result'
+import Results from '../../app/Results'
+import Result from '../../app/Result'
 import WidthContainer from '../../components/width-container';
+import WordCloud from '../../app/wordcloud';
 
 const ResultsPage = (props) => {
     return (
@@ -52,7 +53,7 @@ const ResultsPage = (props) => {
                             </Flex>
                         </Box>
                     </Flex>
-                    <Flex my={2} width={1} justifyContent="center">
+                    <Flex my={2} width={1} justifyContent="center" flexDirection="column">
                         <Box width={1}>
                             <Results
                                 hideLoadMore={false}
@@ -63,6 +64,20 @@ const ResultsPage = (props) => {
                                     selectedItem: item
                                 }
                             }))}/>
+                        </Box>
+                        <Box>
+                            <Flex justifyContent="center">
+                                <Box
+                                    width={[
+                                    1, 2 / 3,
+                                    1 / 3
+                                ]}
+                                    mb={2}p={3} >
+                                    <WordCloud
+                                        searchParams={_get(props.location.state, 'search')}
+                                        onClickCloud={category => this.onClickCloud(category)}/>
+                                </Box>
+                            </Flex>
                         </Box>
                     </Flex>
                 </WidthContainer>

@@ -5,7 +5,7 @@ import Header from '../components/header'
 import LinkList from '../components/link-list'
 import './layout.css'
 import Footer from '../components/footer';
-import Search from '../app/components/search';
+import Search from '../app/search';
 
 const homeLayoutQuery = graphql `
   query {

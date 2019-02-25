@@ -4,7 +4,7 @@ import {navigate} from 'gatsby'
 import _isString from 'lodash/isString'
 import _get from 'lodash/get'
 import {MIN_AGE, MAX_AGE} from './ages';
-import {colors} from '../../design-system/theme';
+import {colors} from '../design-system/theme';
 import {isMobile} from 'react-device-detect';
 
 const styles = {
@@ -109,7 +109,7 @@ class Search extends React.Component {
 
     promiseOptions = input => {
         const url = `https://api.thebetterplay.com/product/suggest?q=${input === ''
-            ? 'toy'
+            ? 'Spielzeug'
             : input}`
 
         return fetch(url).then((response) => {
@@ -132,8 +132,13 @@ class Search extends React.Component {
     // this is when selecting a product in the list
     onChange = (newValue, actionMeta) => {
         let state = {}
-
-        if (newValue.id === '*') {
+        if (!newValue) {
+            state = {
+                search: Object.assign({}, defaultSearchParams, {q: 'Spielzeug'}),
+                selectedItem: undefined
+            }
+            navigate('/app/results', {state})
+        } else if (newValue.id === '*') {
             state = {
                 search: Object.assign({}, defaultSearchParams, {q: this.state.value}),
                 selectedItem: undefined
@@ -156,7 +161,7 @@ class Search extends React.Component {
             <React.Fragment>
                 <AsyncSelect
                     text=""
-                    noOptionsMessage={'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
+                    noOptionsMessage={() => 'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
                     placeholder={'Was für ein Spielzeug suchst du?'}
                     value={this.state.value}
                     loadOptions={this.promiseOptions}
@@ -166,6 +171,7 @@ class Search extends React.Component {
                     formatGroupLabel={formatGroupLabel}
                     onChange={this.onChange}
                     styles={styles}
+                    isClearable={true}
                     onInputChange={this.onInputChange}/>
             </React.Fragment>
         )

@@ -1,13 +1,14 @@
 import React from 'react'
 import {Flex, Box} from '@rebass/grid';
 import Chip from '../design-system/Chips/chip';
+import {navigate} from 'gatsby';
 
 const clouds = [
     {
         name: 'Bau und Konstruktionsspielzeug',
         id: '03'
     }, {
-        name: 'Holzspielzeug',
+        name: 'Holz',
         id: '01'
     }, {
         name: 'Bauklötze',
@@ -45,14 +46,28 @@ const clouds = [
     }
 ]
 
-const WordCloud = ({onClickCloud}) => (
-    <Flex flexDirection="row" flexWrap="wrap" justifyContent="center">
-        {clouds.map(cloud => (
-            <Box py={1} px={1} key={cloud.id}>
-                <Chip onClick={e => onClickCloud(cloud)}>{cloud.name}</Chip>
-            </Box>
-        ))}
-    </Flex>
-)
+class WordCloud extends React.Component {
+    onClickCloud = (category) => {
+        const newState = Object.assign({}, {
+            state: {
+                search: Object.assign({}, this.props.searchParams, {category}),
+                selectedItem: undefined
+            }
+        })
+        navigate('/app/results', newState)
+    }
+
+    render() {
+        return (
+            <Flex flexDirection="row" flexWrap="wrap" justifyContent="center">
+                {clouds.map(cloud => (
+                    <Box py={1} px={1} key={cloud.id}>
+                        <Chip onClick={e => this.onClickCloud(cloud)}>{cloud.name}</Chip>
+                    </Box>
+                ))}
+            </Flex>
+        )
+    }
+}
 
 export default WordCloud

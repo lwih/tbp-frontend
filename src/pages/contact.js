@@ -1,10 +1,9 @@
 import React from 'react'
-
 import HomeLayout from '../layouts/home-layout'
 import SEO from '../components/seo'
 import Header from '../components/header';
 import AppContainer from '../components/app-container';
-import ContactForm from '../app/components/contact-form';
+import ContactForm from '../app/contact-form';
 import {Flex} from '@rebass/grid';
 import {colors} from '../design-system/theme';
 

@@ -7,7 +7,7 @@ import _find from 'lodash/find'
 import _matches from 'lodash/matches'
 import _isEmpty from 'lodash/isEmpty'
 import {Flex} from '@rebass/grid';
-import {colors} from '../../design-system/theme';
+import {colors} from '../design-system/theme';
 
 const styles = {
     control: (base) => ({

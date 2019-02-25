@@ -3,7 +3,7 @@ import {navigate} from 'gatsby';
 import Select from 'react-select'
 import _get from 'lodash/get'
 import _isEmpty from 'lodash/isEmpty'
-import {colors} from '../../design-system/theme';
+import {colors} from '../design-system/theme';
 import {defaultSearchParams} from './search';
 
 const styles = {

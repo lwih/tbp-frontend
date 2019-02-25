@@ -1,7 +1,7 @@
 import React from 'react'
 import {navigate} from 'gatsby';
 import {Flex, Box} from '@rebass/grid'
-import MobileResultListItem from '../../design-system/Results/result-list-item';
+import MobileResultListItem from '../design-system/Results/result-list-item';
 
 class Product extends React.Component {
     _select() {
