@@ -5,13 +5,15 @@ import Button from './button';
 const TernaryButton = styled(Button)`
     background-color: transparent;
     border-radius: ${radii['4']}px;
-    border: 1px solid white;
+    border: 1px solid ${colors.white};
     color: ${colors.white};
     min-width: 100px;
+
+    &:hover {
+        transition: all .216s;
+        cursor: pointer;
+    }
 `
-// const TernaryButton = styled(Button)`     background-color:
-// ${colors.paleGrey};     border-radius: ${radii['4']}px;     border: 1px solid
-// ${colors.darkGrey};     color: ${colors.darkGrey}; `
 
 TernaryButton.displayName = 'TernaryButton'
 

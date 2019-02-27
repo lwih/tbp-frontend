@@ -22,8 +22,8 @@ const AppPage = (props) => (
         <Header>
             <Search/>
         </Header>
-        <WidthContainer>
-            <AppContainer p={0} width={1}>
+        <AppContainer p={0} width={1}>
+            <WidthContainer>
                 <Flex my={3} width={1} justifyContent="center">
                     <Box width={1}>
                         <Flex>
@@ -60,7 +60,7 @@ const AppPage = (props) => (
                             <Box
                                 width={[
                                 1, 2 / 3,
-                                1 / 3
+                                2 / 3
                             ]}
                                 mb={2}p={3} >
                                 <WordCloud
@@ -70,8 +70,8 @@ const AppPage = (props) => (
                         </Flex>
                     </Box>
                 </Flex>
-            </AppContainer>
-        </WidthContainer>
+            </WidthContainer>
+        </AppContainer>
 
     </HomeLayout>
 )

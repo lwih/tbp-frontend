@@ -8,6 +8,7 @@ import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
 import Skeleton from '../design-system/Skeletons/skeleton';
 import WidthContainer from './width-container';
+import SmallTitle from '../design-system/Typography/small-title';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
@@ -28,7 +29,7 @@ const HeaderComponentMobile = ({title, className, children}) => (
                         </InternalLink>
                     </Box>
                     <Box alignSelf="center" className="Header-title">
-                        {title}
+                        <SmallTitle>{title}</SmallTitle>
                     </Box>
                 </Flex>
                 <Flex>
@@ -51,7 +52,7 @@ const HeaderComponentDesktop = ({title, className, children}) => (
         <Flex width={1} className="Header-Background" flexDirection="column">
             <WidthContainer>
                 <Flex width={1} flexDirection="column">
-                    <Box className="Header" width={1}>
+                    <Box className="Header" width={1} mt={3}>
                         <Flex justifyContent="flex-start">
                             <Box
                                 className="Header-Logo-Container"
@@ -152,7 +153,7 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
     }
 
     .Header-Logo-Container {
-        width: 300px;
+        width: 200px;
     }
 
     .Header-Logo {

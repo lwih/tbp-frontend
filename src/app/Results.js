@@ -24,8 +24,8 @@ class Results extends React.Component {
     componentDidMount() {
         this.setState({isFetching: true})
         if (this.props.searchParams) {
-            const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}&${this.props.searchParams.category
-                ? `c=${_get(this.props.searchParams, 'category.name')}`
+            const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}${this.props.searchParams.category
+                ? `&c=${_get(this.props.searchParams, 'category.name')}`
                 : ''}${this.props.searchParams.q
                     ? `&q=${this.props.searchParams.q}`
                     : ''}&image_sizes=tiny&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
@@ -53,8 +53,8 @@ class Results extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.searchParams && this.props.searchParams !== nextProps.searchParams) {
             this.setState({isFetching: true})
-            const url = `https://api.thebetterplay.com/product/search?offset=${ 0}&${nextProps.searchParams.category
-                ? `c=${_get(nextProps.searchParams, 'category.name')}`
+            const url = `https://api.thebetterplay.com/product/search?offset=${ 0}${nextProps.searchParams.category
+                ? `&c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
                     ? `&q=${nextProps.searchParams.q}`
                     : ''}&image_sizes=tiny&age_until=${nextProps.searchParams.age_until}&age_from=${nextProps.searchParams.age_from}`
@@ -73,8 +73,8 @@ class Results extends React.Component {
         const newOffset = this.state.offset + 1
         this.setState({offset: newOffset})
         this.setState({isFetching: true})
-        const url = `https://api.thebetterplay.com/product/search?offset=${newOffset * 20}&${this.props.searchParams.category
-            ? `c=${_get(this.props.searchParams, 'category.name')}`
+        const url = `https://api.thebetterplay.com/product/search?offset=${newOffset * 20}${this.props.searchParams.category
+            ? `&c=${_get(this.props.searchParams, 'category.name')}`
             : ''}${this.props.searchParams.q
                 ? `&q=${this.props.searchParams.q}`
                 : ''}&image_sizes=tiny&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`

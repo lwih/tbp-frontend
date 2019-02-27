@@ -8,6 +8,13 @@ const PrimaryButton = styled(Button)`
     border: 2px solid ${colors.sortOfPink};
     color: ${colors.white};
     text-decoration: none;
+
+    &:hover {
+        transition: all .216s;
+        background-color: ${colors.sortOfPinkDarker};
+        border: 2px solid ${colors.sortOfPinkDarker};
+        cursor: pointer;
+    }
 `
 
 PrimaryButton.displayName = 'PrimaryButton'

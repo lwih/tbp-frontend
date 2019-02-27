@@ -2,17 +2,15 @@ import React from 'react'
 import {Flex, Box} from '@rebass/grid';
 import Chip from '../design-system/Chips/chip';
 import {navigate} from 'gatsby';
+import {defaultSearchParams} from './search';
 
 const clouds = [
     {
         name: 'Bau und Konstruktionsspielzeug',
         id: '03'
     }, {
-        name: 'Holz',
+        name: 'Holzspielzeug',
         id: '01'
-    }, {
-        name: 'Bauklötze',
-        id: '02'
     }, {
         name: 'Spiele',
         id: '08'
@@ -50,7 +48,7 @@ class WordCloud extends React.Component {
     onClickCloud = (category) => {
         const newState = Object.assign({}, {
             state: {
-                search: Object.assign({}, this.props.searchParams, {category}),
+                search: Object.assign({}, this.props.searchParams || defaultSearchParams, {category}),
                 selectedItem: undefined
             }
         })

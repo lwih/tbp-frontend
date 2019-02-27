@@ -3,9 +3,9 @@ import {colors, radii} from '../theme'
 import Button from './button';
 
 const SecondaryButton = styled(Button)`
-    background-color: ${colors.greenBlue};
+    background-color: ${colors.lightBlue};
     border-radius: ${radii['100']}px;
-    border: 2px solid ${colors.greenBlue};
+    border: 2px solid ${colors.lightBlue};
     height: 48px;
     width: 100%;
     outline: 0;
@@ -18,7 +18,10 @@ const SecondaryButton = styled(Button)`
     -webkit-font-smoothing: antialiased;
 
     &:hover {
-        transition: all .5s;
+        transition: all .216s;
+        background-color: ${colors.greenBlue};
+        border: 2px solid ${colors.greenBlue};
+        cursor: pointer;
     }
 `
 

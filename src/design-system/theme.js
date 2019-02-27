@@ -18,8 +18,9 @@ export const heights = {
 
 export const colors = {
     white: '#ffffff',
-    sortOfPink: '#d74669',
+    sortOfPink: '#ff4572',
     sortOfPinkLight: '#d7466924',
+    sortOfPinkDarker: '#d74669',
     teal: '#20282f',
     darkGrey: darken(0.4, '#f2f3f5'),
     paleGrey: '#f2f3f5',

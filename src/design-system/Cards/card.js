@@ -12,6 +12,10 @@ const Card = styled.div `
     padding: ${spaces['16']}px;
     width: 100%;
     max-width: 100%;
+
+    &:hover {
+        box-shadow: 0px 0px 1px 0px ${colors.sortOfPink};
+    }
 `
 
 export default Card;

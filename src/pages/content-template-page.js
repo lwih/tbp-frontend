@@ -31,8 +31,8 @@ export default function Template(props) {
                 <Search/>
             </Header>
 
-            <WidthContainer>
-                <AppContainer py={2} width={1} justifyContent="center">
+            <AppContainer py={2} width={1} justifyContent="center">
+                <WidthContainer>
                     <Flex my={3} width={1} justifyContent="center">
                         <Box width={1}>
                             <Flex>
@@ -70,7 +70,7 @@ export default function Template(props) {
                                 <Box
                                     width={[
                                     1, 2 / 3,
-                                    1 / 3
+                                    2 / 3
                                 ]}
                                     mb={2}p={3} >
                                     <WordCloud
@@ -80,13 +80,15 @@ export default function Template(props) {
                             </Flex>
                         </Box>
                     </Flex>
-                </AppContainer>
+                </WidthContainer>
+            </AppContainer>
+            <WidthContainer>
                 <Flex
                     flexDirection="column"
                     style={{
                     borderTop: `1px solid ${colors.sortOfPinkLight}`
                 }}>
-                    <Box p={3}>
+                    <Box p={3} mt={4}>
                         <div
                             dangerouslySetInnerHTML={{
                             __html: _get(post, 'html')
@@ -94,7 +96,6 @@ export default function Template(props) {
                     </Box>
                 </Flex>
             </WidthContainer>
-
         </ContentLayout>
     )
 }

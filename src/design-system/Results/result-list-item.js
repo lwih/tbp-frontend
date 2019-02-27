@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {isMobile} from 'mobile-detect'
 import PrimaryButton from '../Buttons/primary-button';
 import Price from '../Price/price';
 import Truncate from 'react-truncate';
@@ -11,6 +10,7 @@ import {colors, radii, sizes} from '../theme';
 import Card from '../Cards/card';
 import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
+import {isMobile} from 'react-device-detect';
 
 export const SkeletonCard = (props) => (
     <Card>
@@ -66,7 +66,6 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                                     height: '100%'
                                 }}>
                                     <Box>
-                                        {/* <Truncate lines={1}> */}
                                         <Truncate width={200}>
                                             {product.name}
                                         </Truncate>
@@ -92,12 +91,9 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
     return _isEmpty(product)
         ? SkeletonCard({})
         : (
-            <Card>
-                <Flex flexDirection="column" className={className}>
+            <Card onClick={e => onSelect(product)}>
+                <Flex flexDirection="column-reverse" className={className}>
 
-                    <Box width={1} alignSelf="center" onClick={e => onSelect(product)}>
-                        <ProductImage images={product.imageUrls} size="tiny" hover={false}/>
-                    </Box>
                     <Box>
                         <Flex
                             flexDirection="column"
@@ -109,7 +105,7 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
                                     {product.name}
                                 </Truncate>
                             </Box>
-                            <Box my={2} alignSelf="flex-end">
+                            <Box mt="auto" mb={2} alignSelf="flex-end">
                                 <Price price={product.price.displayPrice} size={sizes.big}/>
                             </Box>
                             <Box mt={2}>
@@ -117,13 +113,21 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
                             </Box>
                         </Flex>
                     </Box>
-
+                    <Box width={1} alignSelf="center">
+                        <ProductImage images={product.imageUrls} size="tiny" hover={false}/>
+                    </Box>
                 </Flex>
             </Card>
         )
 }
 
-const ResultListItemDesktop = styled(ResultListItemComponentDesktop)``
+const ResultListItemDesktop = styled(ResultListItemComponentDesktop)`
+    min-height: 300px;
+
+    &:hover {
+        cursor: pointer;
+    }
+`
 
 const ResultListItem = isMobile
     ? ResultListItemMobile
