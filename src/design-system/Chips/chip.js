@@ -8,7 +8,7 @@ const Chip = styled.div `
     color: ${colors.lightBlue};
     border-radius: ${radii['16']}px;
     padding: ${spaces['4']}px ${spaces['8']}px;
-    font-size: ${fontSizes['14']}px;
+    font-size: ${fontSizes['16']}px;
 
     &:hover {
         cursor: pointer;

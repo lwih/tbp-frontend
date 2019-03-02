@@ -57,12 +57,7 @@ export default function Template(props) {
                                 age_from: _get(props.pageContext, 'appData.search.age_from'),
                                 age_until: _get(props.pageContext, 'appData.search.age_until'),
                                 q: _get(props.pageContext, 'appData.search.q')
-                            }}
-                                onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                                state: {
-                                    selectedItem: item
-                                }
-                            }))}/>
+                            }}/>
 
                         </Box>
                         <Box>

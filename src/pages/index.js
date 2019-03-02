@@ -48,12 +48,7 @@ const AppPage = (props) => (
                             age_from: 0,
                             age_until: 1200,
                             q: ''
-                        }}
-                            onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                            state: {
-                                selectedItem: item
-                            }
-                        }))}/>
+                        }}/>
                     </Box>
                     <Box>
                         <Flex justifyContent="center">

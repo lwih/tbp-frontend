@@ -74,7 +74,7 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                                         <Price price={product.price.displayPrice}/>
                                     </Box>
                                     <Box mt={2}>
-                                        <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Product</PrimaryButton>
+                                        <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Produkt</PrimaryButton>
                                     </Box>
                                 </Flex>
                             </Box>
@@ -109,7 +109,7 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
                                 <Price price={product.price.displayPrice} size={sizes.big}/>
                             </Box>
                             <Box mt={2}>
-                                <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Product</PrimaryButton>
+                                <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Produkt</PrimaryButton>
                             </Box>
                         </Flex>
                     </Box>

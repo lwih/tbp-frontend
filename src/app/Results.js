@@ -92,6 +92,15 @@ class Results extends React.Component {
             })
     }
 
+    onSelectItem = (item) => {
+        navigate('/app/details', {
+            state: {
+                search: this.props.searchParams,
+                selectedItem: item
+            }
+        })
+    }
+
     render() {
         // debugger
 
@@ -152,7 +161,7 @@ class Results extends React.Component {
                             1, 1 / 2,
                             1 / 5
                         ]}>
-                            <Product product={result} onSelectItem={this.props.onSelectItem}/>
+                            <Product product={result} onSelectItem={this.onSelectItem}/>
                         </Box>
                     ))}
                 </Flex>

@@ -55,7 +55,7 @@ const DetailsPage = (props) => {
                             <Flex>
                                 <Box width={1 / 2} pl={2} pr={2}>
                                     <Ages
-                                        search={_get(props.locationstate, 'search')}
+                                        search={_get(props.location.state, 'search')}
                                         locationState={props.location.state}/>
                                 </Box>
                                 <Box width={1 / 2} pr={2} pl={2}>
@@ -73,13 +73,7 @@ const DetailsPage = (props) => {
                             searchParams={_get(props.location.state, 'search') || {
                             age_from: 0,
                             age_until: 1200
-                        }}
-                            onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                            state: {
-                                search: _get(props.location.state, 'search'),
-                                selectedItem: item
-                            }
-                        }))}/>
+                        }}/>
                     </Box>
                     <Box>
                         <Flex justifyContent="center">

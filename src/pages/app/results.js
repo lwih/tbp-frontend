@@ -57,13 +57,7 @@ const ResultsPage = (props) => {
                         <Box width={1}>
                             <Results
                                 hideLoadMore={false}
-                                searchParams={_get(props.location.state, 'search')}
-                                onSelectItem={(item) => navigate('/app/details', Object.assign({}, props.location.state, {
-                                state: {
-                                    search: _get(props.location.state, 'search'),
-                                    selectedItem: item
-                                }
-                            }))}/>
+                                searchParams={_get(props.location.state, 'search')}/>
                         </Box>
                         <Box>
                             <Flex justifyContent="center">

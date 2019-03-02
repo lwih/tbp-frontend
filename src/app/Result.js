@@ -12,6 +12,7 @@ import Gallery from '../design-system/Galleries/gallery';
 import ExternalLink from '../design-system/Links/external-link';
 import Skeleton from '../design-system/Skeletons/skeleton';
 import {isMobile} from 'react-device-detect';
+import {trackClickout} from '../tracking';
 
 function escapeHTML(data) {
     return {__html: data}
@@ -39,7 +40,7 @@ export const ResultSkeletonComponent = (
     </Card>
 )
 
-const ResultMobile = ({imagesForGallery, result}) => (
+const ResultMobile = ({imagesForGallery, result, onClickout}) => (
     <Flex width={1} flexDirection="column">
         <Box m={2}>
             <b>
@@ -66,7 +67,7 @@ const ResultMobile = ({imagesForGallery, result}) => (
                 </Box>
                 <Box width={2 / 3}>
                     <ExternalLink href={result.deeplinkUrl} target="_blank">
-                        <PrimaryButton size="small">Zum product</PrimaryButton>
+                        <PrimaryButton size="small" onClick={() => onClickout(result)}>Zum Produkt</PrimaryButton>
                     </ExternalLink>
                 </Box>
             </Flex>
@@ -84,7 +85,7 @@ const ResultMobile = ({imagesForGallery, result}) => (
     </Flex>
 )
 
-const ResultDesktop = ({imagesForGallery, result}) => (
+const ResultDesktop = ({imagesForGallery, result, onClickout}) => (
     <Flex p={4}>
         <Box width={1 / 2} alignSelf="center">
             <Gallery images={imagesForGallery}/>
@@ -114,7 +115,7 @@ const ResultDesktop = ({imagesForGallery, result}) => (
                 </Box>
                 <Box width={1} alignSelf="center" mt={3}>
                     <ExternalLink href={result.deeplinkUrl} target="_blank">
-                        <PrimaryButton size="small">Zum product</PrimaryButton>
+                        <PrimaryButton size="small" onClick={() => onClickout(result)}>Zum Produkt</PrimaryButton>
                     </ExternalLink>
                 </Box>
             </Flex>
@@ -151,6 +152,10 @@ class Result extends React.Component {
         }
     }
 
+    onClickout = (item) => {
+        trackClickout(item.price.displayPrice)
+    }
+
     render() {
         let imagesForGallery = []
         if (!!this.state.result) {
@@ -162,8 +167,14 @@ class Result extends React.Component {
             ? (
                 <Card>
                     {isMobile
-                        ? <ResultMobile imagesForGallery={imagesForGallery} result={this.state.result}/>
-                        : <ResultDesktop imagesForGallery={imagesForGallery} result={this.state.result}/>
+                        ? <ResultMobile
+                                imagesForGallery={imagesForGallery}
+                                result={this.state.result}
+                                onClickout={this.onClickout}/>
+                        : <ResultDesktop
+                            imagesForGallery={imagesForGallery}
+                            result={this.state.result}
+                            onClickout={this.onClickout}/>
 }
                 </Card>
             )
