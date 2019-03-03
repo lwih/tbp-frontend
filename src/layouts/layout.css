@@ -7,6 +7,11 @@ body {
   margin: 0;
   background: #f2f3f5;
 }
+
+
+.LandingPage-ImageContainer {
+  text-align: center;
+}
 article,
 aside,
 details,

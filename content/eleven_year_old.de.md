@@ -16,10 +16,12 @@ weight: 11
 
 Mit 11 Jahren zeigen sich bei manchen Mädchen und Jungen die ersten Anzeichen der beginnenden Pubertät. Der Hormonaushalt verändert ich und die Körperkonturen fangen an, sich an jene eines Erwachsenenkörpers anzugleichen. Die kindliche Unbefangenheit mit dem eigenen Körper geht verloren, die Schamgrenzen werden größer und der langsame Abschied von der Kindheit beginnt. Jetzt stellt sich die Frage, ob ein Kind überhaupt noch mit Spielsachen spielen will. Jedoch ist ein Kind mit elf Jahren keineswegs erwachsen, weshalb es selbstverständlich legitim ist, wenn es noch spielt. Allerdings sollte das Spielzeug jetzt an die neue mentale Situation des Kindes angepasst werden. Dinge, die zu “kindlich” sind, wie simpel geformte Plüschtiere oder andere Gegenstände aus früheren Kindertagen sind nun nicht mehr angezeigt. Vielmehr werden mit dem Spielzeug Dinge oder Situationen aus dem Erwachsenenleben simuliert. Auch die Art der Interaktion mit den Gleichaltrigen verändert sich. Die Kinder versuchen sich untereinander über Erwachsenenthemen zu unterhalten und geben gerne damit an, wie schlau sie schon sind. Sie brauchen noch eine gewisse kindliche Geborgenheit, wollen aber, nach Maß ihres Vermögens, selbstständig sein. Darüber hinaus lieben sie Ballspiele und andere Spiele, die sie im Freien ausführen können sowie sportliche Aktivitäten. Sie hören gerne, gemeinsam mit Freunden, die neuesten Popsongs, diskutieren über die Interpreten und tauschen ihre persönlichen Meinungen über deren Musik und Look aus.
 
-![Spielzeug für elfjähriges Kind](https://d33wubrfki0l68.cloudfront.net/f4fc2651d6b81bbc2c5c2a2c618261066f19edd5/57d16/images/spielzeug-elfjaehriges-kind.jpg "")
+<div style="text-align:center">
+<img src="https://d33wubrfki0l68.cloudfront.net/f4fc2651d6b81bbc2c5c2a2c618261066f19edd5/57d16/images/spielzeug-elfjaehriges-kind.jpg" alt="Spielzeug für elfjähriges Kind" />
  <blockquote>
   <p><em>Foto von Maxime Bhm via</em> <a href="https://unsplash.com/photos/6cQHvjzmZOU">unsplash</a></p>
 </blockquote>
+</div>
 
 <h2>Welches Spielzeug ist pädagogisch wertvoll für Kinder in der Vorpubertät?</h2>
 

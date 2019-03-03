@@ -27,10 +27,12 @@ Wenn du bereits eine Idee hast, wonach du suchst, wirst du bei uns genauso fünd
 
 Hier einige Vorschläge, mit denen du an Weihnachten bestimmt nie falsch liegst: Wie wäre es mit Bausteinen oder Baukästen? Aus scheinbar simplen Holzklötzen und -formen können Türme, Boote, Häuser oder ganze Paläste entstehen, Gartenanlage inklusive.. Der kindlichen Phantasie sind hier keine Grenzen gesetzt.. Plüschtiere und Puppen sind auch immer beliebt, genauso wie Brettspiele oder Bücher mit spannenden Geschichten, Je nach Alter zum selber lesen, zum Vorlesen oder zum selbst erkunden und erleben. Ein Evergreen unter den Weihnachtsgeschenken sind natürlich auch Brettspiele und Puzzles. Sie bereiten nicht nur den Kindern Freude, sondern auch den Eltern und Grosseltern.
 
-![Spielzeug für Weihnachtsgeschenk](https://d33wubrfki0l68.cloudfront.net/70e732e7907dcd58ee12076f961713fbdf1282b2/6123a/images/spielzeug-weihnachtsgeschenk.jpg "")
+<div style="text-align:center">
+<img src="https://d33wubrfki0l68.cloudfront.net/70e732e7907dcd58ee12076f961713fbdf1282b2/6123a/images/spielzeug-weihnachtsgeschenk.jpg" alt="Spielzeug für Weihnachtsgeschenk" />
  <blockquote>
   <p><em>Foto von Kari Shea via</em> <a href="https://unsplash.com/photos/VfWkdMue5Jc">unsplash</a></p>
 </blockquote>
+</div>
 
 Wer mit den Kindern gemeinsam aktiv die Umwelt und Natur erkunden möchte, kann überlegen ein Outdoor- oder Sportprodukt zu schenken. Z.B. ein Fahrrad, ein Tretroller oder ein Skateboard sind tolle Geschenke für den Nachwuchs.. In der Winterzeit bieten sich natürlich auch ein Holzschlitten an, für den Schnee-Spass mit der ganzen Familien. Oder wie wäre es mit einer Ausrüstung für den klassischen Wintersport, wie Skifahren oder Snowboarden?
 

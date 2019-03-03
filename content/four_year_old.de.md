@@ -16,10 +16,12 @@ weight: 4
 
 Alle Kinder spielen gern. Daher ist es besonders wichtig, für das Kind ein Spielzeug zu wählen, welches nicht nur Spaß bereitet, sondern auch die Entwicklung fördert. 4-jährige Kinder sind dabei, ihre Feinmotorik und ihre Selbstständigkeit zu entwickeln. Sie entdecken ständig Neues werden sehr kreativ. Es wächst das Interesse, kleine Handreichungen im Haushalt zu machen, sich selbst die Gewürze am Mittagstisch zu reichen und das eigene Bett zu richten. Ob Junge oder Mädchen – jedes Kind findet seinen eigenen Weg, eine Persönlichkeit zu bilden. Das Kind fängt an, Freunde zu suchen, und sich koordinierter zu bewegen wie zum Beispiel zu hüpfen oder zu springen. Diese Faktoren sollten beim Aussuchen eines Spielzeugs für das Kind mit einbezogen werden. Gerade im Alter von vier Jahren fangen Kinder an, neue Fähigkeiten zu entwickeln. Daher sollte ein Spielzeug ausgewählt werden, welches Spaß macht und die sozialen Kompetenzen bei Kindern fördert. So lernt das Kind im Spiel einige Dinge für das spätere Leben.
 
-![Spielzeug für vierjähriges Kind](https://d33wubrfki0l68.cloudfront.net/832076911c6464906d5702d2b24a9c4616e09a77/d88a5/images/spielzeug-vierjaehriges-kind.jpg "")
- <blockquote>
-  <p><em>Foto von Greyson Joralemon via</em> <a href="https://unsplash.com/photos/9IBqihqhuHc">unsplash</a></p>
-</blockquote>
+<div style="text-align:center">
+  <img alt="Spielzeug für vierjähriges Kind" src="https://d33wubrfki0l68.cloudfront.net/832076911c6464906d5702d2b24a9c4616e09a77/d88a5/images/spielzeug-vierjaehriges-kind.jpg">
+  <blockquote>
+    <p><em>Foto von Greyson Joralemon via</em> <a href="https://unsplash.com/photos/9IBqihqhuHc">unsplash</a></p>
+  </blockquote>
+</div>
 
 <h2>Welches Spielzeug ist pädagogisch wertvoll für die Entwicklung eines Kindes in diesem Alter?</h2>
 

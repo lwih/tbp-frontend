@@ -24,7 +24,7 @@ class Results extends React.Component {
     componentDidMount() {
         this.setState({isFetching: true})
         if (this.props.searchParams) {
-            const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}${this.props.searchParams.category
+            const url = `https://api.thebetterplay.com/product/search?offset=${this.state.offset * 20}${this.props.searchParams.category && this.props.searchParams.category.id !== '*'
                 ? `&c=${_get(this.props.searchParams, 'category.name')}`
                 : ''}${this.props.searchParams.q
                     ? `&q=${this.props.searchParams.q}`
@@ -53,7 +53,7 @@ class Results extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.searchParams && this.props.searchParams !== nextProps.searchParams) {
             this.setState({isFetching: true})
-            const url = `https://api.thebetterplay.com/product/search?offset=${ 0}${nextProps.searchParams.category
+            const url = `https://api.thebetterplay.com/product/search?offset=${ 0}${nextProps.searchParams.category && nextProps.searchParams.category.id !== '*'
                 ? `&c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
                     ? `&q=${nextProps.searchParams.q}`
@@ -73,7 +73,7 @@ class Results extends React.Component {
         const newOffset = this.state.offset + 1
         this.setState({offset: newOffset})
         this.setState({isFetching: true})
-        const url = `https://api.thebetterplay.com/product/search?offset=${newOffset * 20}${this.props.searchParams.category
+        const url = `https://api.thebetterplay.com/product/search?offset=${newOffset * 20}${this.props.searchParams.category && this.props.searchParams.category.id !== '*'
             ? `&c=${_get(this.props.searchParams, 'category.name')}`
             : ''}${this.props.searchParams.q
                 ? `&q=${this.props.searchParams.q}`

@@ -43,6 +43,9 @@ const defaultCategory = {
 
 const categories = [
     {
+        id: "*",
+        name: "Alle Kategorien"
+    }, {
         id: "-9109897367476786307",
         name: "Familienspiele"
     }, {

@@ -21,10 +21,12 @@ Im Zeitraum vom ersten vollendeten Lebensjahr bis zu seinem dritten Geburtstag, 
 
 Kleinkinder sind vor allem auch kleine Entdeckerinnen und Entdecker. Sie untersuchen alles was ihnen zwischen die Finger kommt, räumen Schränke aus, experimentieren mit Haushaltsgegenständen und machen gerne auch viel krach, wenn sie z.B. etwas entdecken, was sich scheinbar unendlich oft auf etwas anderes draufhauen lässt; wie eine Holzkelle auf einen Topf. Wer Zeit mit Kleinkindern verbringt, dem ist sicher auch aufgefallen wie gerne die Kleinen sich auf Dinge draufsetzen, anfangen zu schaukeln oder zu ziehen mit dem Wunsch das Gefährt in Bewegung zu bringen. Daher machen beispielsweise Kinderfahrzeuge wie Rutscher oder Roller aus Holz, nicht nur viel Spaß, sondern bieten auch eine Möglichkeit für Kinder, ihre Bewegungslust auszuleben, während sie spielerisch auch ihr Gleichgewicht und allgemeine motorische Fertigkeiten üben.
 
-![Spielzeug für Kleinkind](https://d33wubrfki0l68.cloudfront.net/3955d227cf79f6e087a37c4d725c971589c0442d/11acb/images/spielzeug-fuer-kleinkind.jpg "")
+<div style="text-align:center">
+<img src="https://d33wubrfki0l68.cloudfront.net/3955d227cf79f6e087a37c4d725c971589c0442d/11acb/images/spielzeug-fuer-kleinkind.jpg" alt="Spielzeug für Kleinkind" />
  <blockquote>
   <p><em>Foto von Jelleke Vanooteghem  via</em> <a href="https://unsplash.com/photos/zpQpn5N1na8">unsplash</a></p>
 </blockquote>
+</div>
 
 Spiele die Raum lassen für Kreativität und Phantasie
 

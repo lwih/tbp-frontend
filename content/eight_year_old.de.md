@@ -17,10 +17,12 @@ weight: 8
 
 Die Lust am Spielen ist was alle Kinder umtreibt und etwas von wichtigsten, was es in der Kindheit zu schützen und pflegen gilt. Kinder sollen soviel Raum zum freien Spiel haben wie möglich. Wer spielend lernt, wird das Erlernte so leicht auch nicht vergessen. 8-jährige Kinder spielen immer noch sehr gerne, interessieren sich aber auch zunehmend für die Natur, deren Phänomene und machen sich Gedanken über das Universum. Daher gehen Sie gerne in Zoos, Naturparks und auf Ausstellungen. Diese Interessen spiegeln sich auch im Spielverhalten wieder. Auch im sportlichen Bereich und in der Feinmotorik macht das Kind große Fortschritte, ebenso wie beim textilen Gestalten oder im handwerklichen Bereich. Hier wird gemeinsame Sache gemacht oder es spielt jeder für sich – das Spielzeug und die Anforderungen an dasselbe werden anspruchsvoller. Den Platz der nebeneinander aufgereihte Plüschtiere auf dem Kinderbett nehmen jetzt die selbst gebastelten Kunstwerke oder Holzfiguren als Teil der eigenen Spielwelt, im Spielregal im Kinderzimmer ein. Bei manchen Kindern steht auch das kreative Gestalten im Allgemeinen im Mittelpunkt. Ob beim Entwerfen neuer Kleider, beim Bauen von Skulpturen aus Bausteinen oder beim Modellieren von Figuren – viele Kinder sind wahre Entdecker. Andere Kinder wiederum bevorzugen Gesellschaftsspiele oder für das Tauschen von Stickern und legen den Schwerpunkt auf gemeinsame Aktivitäten mit Spaßfaktor. Wieder andere bevorzugen beides oder fokussieren sich am ehesten auf den sportlichen Bereich.
 
-![Spielzeug für achtjähriges Kind](https://d33wubrfki0l68.cloudfront.net/995a830df671532df17e67a95f0a77ebe69ad2b6/18eab/images/spielzeug-achtjaehriges-kind.jpg "")
+<div style="text-align:center">
+<img src="https://d33wubrfki0l68.cloudfront.net/995a830df671532df17e67a95f0a77ebe69ad2b6/18eab/images/spielzeug-achtjaehriges-kind.jpg" alt="Spielzeug für achtjähriges Kind" />
  <blockquote>
   <p><em>Foto von Daniel Watson via</em> <a href="https://unsplash.com/photos/IEtUye-b28A">unsplash</a></p>
 </blockquote>
+</div>
 
 <h2>Welche Spielsachen und Aktivitäten helfen dem Kind in dieser Entwicklungsphase? Welche Spielsachen bevorzugen sie? </h2>
 
