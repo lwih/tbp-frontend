@@ -1,3 +1,4 @@
+import React from 'react'
 import {Box} from '@rebass/grid'
 import SSRRenderer from './ssr-renderer';
 
