@@ -1,5 +1,5 @@
 import {Link} from 'gatsby'
-import {isMobile} from 'react-device-detect';
+import {isMobile, BrowserView, MobileView} from 'react-device-detect';
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -168,9 +168,17 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
     
 `
 
-const Header = isMobile
-    ? HeaderMobile
-    : HeaderDesktop;
+const Header = (props) => (
+    <React.Fragment>
+        <BrowserView>
+            <HeaderDesktop {...props}/>
+        </BrowserView>
+        <MobileView>
+            <HeaderMobile {...props}/>
+        </MobileView>
+    </React.Fragment>
+
+)
 
 Header.propTypes = {
     title: PropTypes.string,
