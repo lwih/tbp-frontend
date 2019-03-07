@@ -39,7 +39,6 @@ const HeaderComponentMobile = ({title, className, children}) => (
                             )
                             : <Skeleton color="transparent" height="40px" withAnimation={false}/>
 }
-
                     </Box>
                 </Flex>
             </Box>
@@ -76,7 +75,12 @@ const HeaderComponentDesktop = ({title, className, children}) => (
                             </Box>
                             {!!children && (
                                 <Box className="D-Header" width={1} mt={3} mx="auto">
-                                    <React.Fragment>{children}</React.Fragment>
+                                    {(typeof window !== 'undefined') === true
+                                        ? (
+                                            <div>{children}</div>
+                                        )
+                                        : <Skeleton color="transparent" height="50px" withAnimation={false}/>
+}
                                 </Box>
                             )}
                         </Flex>

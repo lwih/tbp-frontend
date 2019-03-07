@@ -8,6 +8,7 @@ import _matches from 'lodash/matches'
 import _isEmpty from 'lodash/isEmpty'
 import {Flex} from '@rebass/grid';
 import {colors} from '../design-system/theme';
+import Skeleton from '../design-system/Skeletons/skeleton';
 
 const styles = {
     control: (base) => ({
@@ -151,15 +152,19 @@ class Ages extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Select
-                    isSearchable={false}
-                    value={this.state.selectedRange}
-                    defaultValue={defaultRange}
-                    options={ageRanges}
-                    getOptionLabel={option => displayFormattedAge(option)}
-                    getOptionValue={option => `${option.age_from}-${option.age_until}`}
-                    onChange={this._updateAges}
-                    styles={styles}/>
+                {(typeof window !== 'undefined') === true
+                    ? (<Select
+                        isSearchable={false}
+                        value={this.state.selectedRange}
+                        defaultValue={defaultRange}
+                        options={ageRanges}
+                        getOptionLabel={option => displayFormattedAge(option)}
+                        getOptionValue={option => `${option.age_from}-${option.age_until}`}
+                        onChange={this._updateAges}
+                        styles={styles}/>)
+                    : <Skeleton color="transparent" height="40px" withAnimation={false}/>
+}
+
             </React.Fragment>
         )
     }

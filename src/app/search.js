@@ -61,18 +61,6 @@ const styles = {
         backgroundColor: state.isSelected
             ? colors.greenBlue
             : colors.white
-    }),
-    dropdownIndicator: (base) => ({
-        ...base,
-        display: (typeof window !== 'undefined') === true
-            ? 'flex'
-            : 'none'
-    }),
-    loadingIndicator: (base) => ({
-        ...base,
-        display: (typeof window !== 'undefined') === true
-            ? 'flex'
-            : 'none'
     })
 }
 

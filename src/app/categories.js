@@ -111,15 +111,19 @@ class Categories extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Select
-                    isSearchable={false}
-                    value={this.state.selectedCategory}
-                    defaultValue={defaultCategory}
-                    options={categories}
-                    getOptionLabel={option => option.name}
-                    getOptionValue={option => option.name}
-                    onChange={this._updateCategories}
-                    styles={styles}/>
+
+                {(typeof window !== 'undefined') === true
+                    ? (<Select
+                        isSearchable={false}
+                        value={this.state.selectedCategory}
+                        defaultValue={defaultCategory}
+                        options={categories}
+                        getOptionLabel={option => option.name}
+                        getOptionValue={option => option.name}
+                        onChange={this._updateCategories}
+                        styles={styles}/>)
+                    : <Skeleton color="transparent" height="40px" withAnimation={false}/>
+}
             </React.Fragment>
         )
     }
