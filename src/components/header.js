@@ -9,6 +9,7 @@ import {colors} from '../design-system/theme';
 import Skeleton from '../design-system/Skeletons/skeleton';
 import WidthContainer from './width-container';
 import SmallTitle from '../design-system/Typography/small-title';
+import SSRRenderer from './ssr-renderer';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
@@ -170,12 +171,13 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
 
 const Header = (props) => (
     <React.Fragment>
-        <BrowserView>
-            <HeaderDesktop {...props}/>
-        </BrowserView>
-        <MobileView>
-            <HeaderMobile {...props}/>
-        </MobileView>
+        <SSRRenderer
+            mobileComponent={< HeaderMobile {
+            ...props
+        } />}
+            desktopComponent={< HeaderDesktop {
+            ...props
+        } />}/>
     </React.Fragment>
 
 )
