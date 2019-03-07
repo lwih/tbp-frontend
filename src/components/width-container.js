@@ -1,13 +1,13 @@
-import styled from 'styled-components'
-import {Flex} from '@rebass/grid'
-import {colors} from '../design-system/theme';
-import {isDesktop} from 'react-device-detect';
+import {Box} from '@rebass/grid'
+import SSRRenderer from './ssr-renderer';
 
-const WidthContainer = styled.div `
-    width: ${isDesktop
-    ? '80%'
-    : '100%'};
-    margin: 0 auto;
-`
+const WidthContainerMobile = (props) => <Box width="1" my={0} mx="auto"/>
+const WidthContainerDesktop = (props) => <Box width="3/4" my={0} mx="auto"/>
+
+const WidthContainer = (props) => (
+    <SSRRenderer
+        mobileComponent={< WidthContainerMobile />}
+        desktopComponent={< WidthContainerDesktop />}/>
+)
 
 export default WidthContainer
