@@ -15,12 +15,15 @@ import Categories from '../app/categories';
 import _get from 'lodash/get'
 import WidthContainer from '../components/width-container';
 import WordCloud from '../app/wordcloud';
+import Skeleton from '../design-system/Skeletons/skeleton';
 
 const AppPage = (props) => (
     <HomeLayout>
         <SEO title="Willkommen"/>
         <Header>
-            {(typeof window !== 'undefined') === true && (<Search/>)
+            {(typeof window !== 'undefined') === true
+                ? (<Search/>)
+                : <Skeleton height="40px"/>
 }
         </Header>
         <AppContainer p={0} width={1}>
