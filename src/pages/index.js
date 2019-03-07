@@ -20,7 +20,8 @@ const AppPage = (props) => (
     <HomeLayout>
         <SEO title="Willkommen"/>
         <Header>
-            <Search/>
+            {(typeof window !== 'undefined') === true && (<Search/>)
+}
         </Header>
         <AppContainer p={0} width={1}>
             <WidthContainer>
