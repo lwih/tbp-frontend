@@ -35,7 +35,7 @@ const HeaderComponentMobile = ({title, className, children}) => (
                     <Box className="Header" width={1} mt={3}>
                         {(typeof window !== 'undefined') === true
                             ? (
-                                <React.Fragment>{children}</React.Fragment>
+                                <div>{children}</div>
                             )
                             : <Skeleton height="40px"/>
 }
