@@ -33,12 +33,7 @@ const HeaderComponentMobile = ({title, className, children}) => (
                 </Flex>
                 <Flex>
                     <Box className="Header" width={1} mt={3}>
-                        {!!children
-                            ? (
-                                <React.Fragment>{children}</React.Fragment>
-                            )
-                            : (<Skeleton height="32px" color="transparent"/>)
-}
+                        <React.Fragment>{children}</React.Fragment>
                     </Box>
                 </Flex>
             </Box>
@@ -75,12 +70,7 @@ const HeaderComponentDesktop = ({title, className, children}) => (
                             </Box>
                             {!!children && (
                                 <Box className="D-Header" width={1} mt={3} mx="auto">
-                                    {!!children
-                                        ? (
-                                            <React.Fragment>{children}</React.Fragment>
-                                        )
-                                        : (<Skeleton height="32px" color="transparent"/>)
-}
+                                    <React.Fragment>{children}</React.Fragment>
                                 </Box>
                             )}
                         </Flex>
