@@ -7,6 +7,7 @@ import {colors} from '../design-system/theme';
 import WidthContainer from './width-container';
 import SmallTitle from '../design-system/Typography/small-title';
 import SSRRenderer from './ssr-renderer';
+import Skeleton from '../design-system/Skeletons/skeleton';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
