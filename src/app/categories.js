@@ -5,6 +5,7 @@ import _get from 'lodash/get'
 import _isEmpty from 'lodash/isEmpty'
 import {colors} from '../design-system/theme';
 import {defaultSearchParams} from './search';
+import Skeleton from '../design-system/Skeletons/skeleton';
 
 const styles = {
     control: (base) => ({
