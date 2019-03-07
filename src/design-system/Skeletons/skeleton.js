@@ -8,7 +8,9 @@ const Skeleton = styled(SkeletonComponent)`
     background: ${props => props.color};
     width: ${props => props.width};
     height: ${props => props.height};
-    animation: react-placeholder-pulse 1.2s infinite;
+    animation: ${props => props.withAnimation
+  ? 'react-placeholder-pulse 1.2s infinite'
+  : 'none'};
 
     @keyframes react-placeholder-pulse {
         0% {
@@ -24,8 +26,9 @@ const Skeleton = styled(SkeletonComponent)`
 `
 
 Skeleton.defaultProps = {
-    color: colors.paleGrey,
-    width: '100%'
+  color: colors.paleGrey,
+  width: '100%',
+  withAnimation: true
 }
 
 export default Skeleton

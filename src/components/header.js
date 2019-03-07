@@ -37,7 +37,7 @@ const HeaderComponentMobile = ({title, className, children}) => (
                             ? (
                                 <div>{children}</div>
                             )
-                            : <Skeleton height="40px"/>
+                            : <Skeleton color="transparent" height="40px" withAnimation={false}/>
 }
 
                     </Box>
