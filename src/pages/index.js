@@ -21,10 +21,7 @@ const AppPage = (props) => (
     <HomeLayout>
         <SEO title="Willkommen"/>
         <Header>
-            {(typeof window !== 'undefined') === true
-                ? (<Search/>)
-                : <Skeleton height="40px"/>
-}
+            <Search/>
         </Header>
         <AppContainer p={0} width={1}>
             <WidthContainer>

@@ -4,40 +4,44 @@ import React from 'react'
 import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link';
 import {colors} from '../design-system/theme';
-import Skeleton from '../design-system/Skeletons/skeleton';
 import WidthContainer from './width-container';
 import SmallTitle from '../design-system/Typography/small-title';
 import SSRRenderer from './ssr-renderer';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
-        <Flex width={1} className="Header-Background" justifyContent="center">
-            <Box className="Header" width={1} p={2}>
-                <Flex flexDirection="column" justifyContent="center">
-                    <Box
-                        alignSelf="center"
-                        className="Header-Logo-Container"
-                        style={{
-                        minHeight: '45px'
-                    }}>
-                        <InternalLink to="/">
-                            <img
-                                className="Header-Logo"
-                                src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
-                                alt={title}/>
-                        </InternalLink>
-                    </Box>
-                    <Box alignSelf="center" className="Header-title">
-                        <SmallTitle>{title}</SmallTitle>
+        {(typeof window !== 'undefined') === true
+            ? (
+                <Flex width={1} className="Header-Background" justifyContent="center">
+                    <Box className="Header" width={1} p={2}>
+                        <Flex flexDirection="column" justifyContent="center">
+                            <Box
+                                alignSelf="center"
+                                className="Header-Logo-Container"
+                                style={{
+                                minHeight: '45px'
+                            }}>
+                                <InternalLink to="/">
+                                    <img
+                                        className="Header-Logo"
+                                        src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
+                                        alt={title}/>
+                                </InternalLink>
+                            </Box>
+                            <Box alignSelf="center" className="Header-title">
+                                <SmallTitle>{title}</SmallTitle>
+                            </Box>
+                        </Flex>
+                        <Flex>
+                            <Box className="Header" width={1} mt={3}>
+                                <React.Fragment>{children}</React.Fragment>
+                            </Box>
+                        </Flex>
                     </Box>
                 </Flex>
-                <Flex>
-                    <Box className="Header" width={1} mt={3}>
-                        <React.Fragment>{children}</React.Fragment>
-                    </Box>
-                </Flex>
-            </Box>
-        </Flex>
+            )
+            : <Skeleton height="40px"/>
+}
     </Box>
 )
 
