@@ -1,6 +1,7 @@
 module.exports = {
   // pathPrefix: 'de',
   siteMetadata: {
+    siteUrl: 'https://www.thebetterplay.com',
     title: `The Better Play`,
     subtitle: `Inspiration für gutes Spielzeug`,
     description: `Pädagogisch wertvolle Spielsachen ♥ Phantasie- und kreativitätsfördernd ♥ Jetzt hier finden!`,
