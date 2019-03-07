@@ -7,14 +7,14 @@ import InternalLink from '../design-system/Links/internal-link'
 import {companyPages, sortPagesByWeight} from '../utils/pageHelpers';
 import {colors} from '../design-system/theme';
 import _get from 'lodash/get'
-import {isMobile} from 'react-device-detect';
+import {isDesktop} from 'react-device-detect';
 
 const FooterList = ({data}) => {
     return (
         <Flex
-            flexDirection={isMobile
-            ? 'column'
-            : 'row'}
+            flexDirection={isDesktop
+            ? 'row'
+            : 'column'}
             justifyContent="flex-end">
 
             <Box alignSelf="flex-end" pl={2}>

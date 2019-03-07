@@ -6,7 +6,7 @@ import {colors} from '../design-system/theme';
 import FooterList from './footer-list';
 import ExternalLink from '../design-system/Links/external-link';
 import WidthContainer from './width-container';
-import {isMobile} from 'react-device-detect';
+import SSRRenderer from './ssr-renderer';
 
 const FooterLogo = styled.img `
     max-width: 300px;
@@ -106,8 +106,14 @@ const FooterDesktop = styled(FooterComponentDesktop)`
     box-shadow: 0px 0px 2px 2px ${colors.darkGrey};
 `
 
-const Footer = isMobile
-    ? FooterMobile
-    : FooterDesktop;
+const Footer = (props) => (
+    <SSRRenderer
+        mobileComponent={< FooterMobile {
+        ...props
+    } />}
+        desktopComponent={< FooterDesktop {
+        ...props
+    } />}/>
+)
 
 export default Footer

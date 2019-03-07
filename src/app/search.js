@@ -9,6 +9,7 @@ import {colors, fontSizes} from '../design-system/theme';
 import {isMobile} from 'react-device-detect';
 import {Flex, Box} from '@rebass/grid';
 import PrimaryButton from '../design-system/Buttons/primary-button';
+import SSRRenderer from '../components/ssr-renderer';
 
 const DesktopSearchBar = styled.div `
     display: flex;
@@ -192,8 +193,9 @@ class Search extends React.Component {
     }
 
     render() {
-        return isMobile
-            ? (
+        return (
+            <SSRRenderer
+                mobileComponent={(
                 <React.Fragment>
                     <AsyncSelect
                         text=""
@@ -210,8 +212,8 @@ class Search extends React.Component {
                         isClearable={true}
                         onInputChange={this.onInputChange}/>
                 </React.Fragment>
-            )
-            : (
+            )}
+                desktopComponent={(
                 <React.Fragment>
                     <DesktopSearchBar>
                         <Box width={1 / 20} alignSelf="center">
@@ -254,7 +256,8 @@ class Search extends React.Component {
                         </Box>
                     </DesktopSearchBar>
                 </React.Fragment>
-            )
+            )}/>
+        )
     }
 }
 

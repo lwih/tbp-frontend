@@ -10,7 +10,7 @@ import {colors, radii, sizes} from '../theme';
 import Card from '../Cards/card';
 import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
-import {isMobile} from 'react-device-detect';
+import SSRRenderer from '../../components/ssr-renderer';
 
 export const SkeletonCard = (props) => (
     <Card>
@@ -129,8 +129,14 @@ const ResultListItemDesktop = styled(ResultListItemComponentDesktop)`
     }
 `
 
-const ResultListItem = isMobile
-    ? ResultListItemMobile
-    : ResultListItemDesktop;
+const ResultListItem = (props) => (
+    <SSRRenderer
+        mobileComponent={< ResultListItemMobile {
+        ...props
+    } />}
+        desktopComponent={< ResultListItemDesktop {
+        ...props
+    } />}/>
+)
 
 export default ResultListItem

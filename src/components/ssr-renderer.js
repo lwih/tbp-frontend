@@ -13,6 +13,8 @@ export const SSRRendererComponent = ({className, mobileComponent, desktopCompone
 )
 
 const SSRRenderer = styled(SSRRendererComponent)`
+    width: 100%;
+    
     .MobileRenderer, .DesktopRenderer {
         display: block;
     }

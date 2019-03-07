@@ -3,7 +3,7 @@ import placeholderImage from '../../images/product-placeholder.jpg'
 import _get from 'lodash/get'
 import _first from 'lodash/first'
 import {Flex, Box} from '@rebass/grid'
-import {isMobile} from 'react-device-detect';
+import {isDesktop} from 'react-device-detect';
 
 const ProductImage = ({images, size, hover}) => {
 
@@ -21,16 +21,16 @@ const ProductImage = ({images, size, hover}) => {
           className="ProductImage-AlignWrapper"
           alignItems="center"
           style={{
-          minHeight: isMobile
-            ? '100px'
-            : '150px'
+          minHeight: isDesktop
+            ? '150px'
+            : '100px'
         }}>
           <Box>
             <img
               style={{
-              maxHeight: isMobile
-                ? '100px'
-                : '150px',
+              maxHeight: isDesktop
+                ? '150px'
+                : '100px',
               width: 'auto'
             }}
               src={imageUrl}

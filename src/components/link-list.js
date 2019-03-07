@@ -46,6 +46,7 @@ const LinkList = ({data}) => {
                             {sortPagesByWeight(seoPages(data.allMarkdownRemark.edges)).map((page, index) => {
                                 return (
                                     <Box
+                                        key={index}
                                         width={[
                                         1, 1 / 2,
                                         1 / 3

@@ -1,5 +1,3 @@
-import {Link} from 'gatsby'
-import {isMobile, BrowserView, MobileView} from 'react-device-detect';
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
