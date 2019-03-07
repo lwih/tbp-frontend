@@ -50,19 +50,19 @@ const HeaderComponentMobile = ({title, className, children}) => (
 
 const HeaderComponentDesktop = ({title, className, children}) => (
     <Box className={className}>
-        <Flex width={1} className="Header-Background" flexDirection="column">
+        <Flex width={1} className="D-Header-Background" flexDirection="column">
             <WidthContainer>
                 <Flex width={1} flexDirection="column">
-                    <Box className="Header" width={1} mt={3}>
+                    <Box className="D-Header" width={1} mt={3}>
                         <Flex justifyContent="flex-start">
                             <Box
-                                className="Header-Logo-Container"
+                                className="D-Header-Logo-Container"
                                 style={{
                                 minHeight: '45px'
                             }}>
                                 <InternalLink to="/">
                                     <img
-                                        className="Header-Logo"
+                                        className="D-Header-Logo"
                                         src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
                                         alt={title}/>
                                 </InternalLink>
@@ -72,11 +72,11 @@ const HeaderComponentDesktop = ({title, className, children}) => (
                     </Box>
                     <Box>
                         <Flex flexDirection="column" justifyContent="center" mb={3} px={2}>
-                            <Box className="Header-title" alignSelf="center" p={3}>
+                            <Box className="D-Header-title" alignSelf="center" p={3}>
                                 {title}
                             </Box>
                             {!!children && (
-                                <Box className="Header" width={1} mt={3} mx="auto">
+                                <Box className="D-Header" width={1} mt={3} mx="auto">
                                     {!!children
                                         ? (
                                             <React.Fragment>{children}</React.Fragment>
@@ -135,7 +135,7 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
     background-image: linear-gradient(to top, #ff4572, #2a079b);
     position: relative;
 
-    .Header-Background::after {
+    .D-Header-Background::after {
         background: url("https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png");
         background-repeat: repeat;
         content: "";
@@ -148,20 +148,20 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
         z-index: 0;
     }
 
-    .Header {
+    .D-Header {
         z-index: 1;
         position: relative;
     }
 
-    .Header-Logo-Container {
+    .D-Header-Logo-Container {
         width: 200px;
     }
 
-    .Header-Logo {
+    .D-Header-Logo {
         margin-bottom: 0;
     }
 
-    .Header-title {
+    .D-Header-title {
         color: ${colors.white};
         font-size: 36px;
         font-weight: bold;
@@ -170,15 +170,13 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
 `
 
 const Header = (props) => (
-    <React.Fragment>
-        <SSRRenderer
-            mobileComponent={< HeaderMobile {
-            ...props
-        } />}
-            desktopComponent={< HeaderDesktop {
-            ...props
-        } />}/>
-    </React.Fragment>
+    <SSRRenderer
+        mobileComponent={< HeaderMobile {
+        ...props
+    } />}
+        desktopComponent={< HeaderDesktop {
+        ...props
+    } />}/>
 
 )
 
