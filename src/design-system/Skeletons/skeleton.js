@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {colors} from '../theme';
 
-const SkeletonComponent = ({width, color, height}) => <div {...props}/>
+const SkeletonComponent = (props) => <div {...props}/>
 
 const Skeleton = styled(SkeletonComponent)`
     position: relative;
