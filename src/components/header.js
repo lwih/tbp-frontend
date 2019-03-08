@@ -8,6 +8,7 @@ import WidthContainer from './width-container';
 import SmallTitle from '../design-system/Typography/small-title';
 import SSRRenderer from './ssr-renderer';
 import Skeleton from '../design-system/Skeletons/skeleton';
+import Search from '../app/search';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
@@ -33,9 +34,9 @@ const HeaderComponentMobile = ({title, className, children}) => (
                 </Flex>
                 <Flex>
                     <Box className="Header" width={1} mt={3}>
-                        {(typeof window !== 'undefined') === true
+                        {(typeof window !== 'undefined')
                             ? (
-                                <div>{children}</div>
+                                <div><Search/></div>
                             )
                             : <Skeleton color="transparent" height="40px" withAnimation={false}/>
 }
@@ -175,7 +176,6 @@ const Header = (props) => (
         desktopComponent={< HeaderDesktop {
         ...props
     } />}/>
-
 )
 
 Header.propTypes = {
