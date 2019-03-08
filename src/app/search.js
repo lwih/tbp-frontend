@@ -196,7 +196,7 @@ class Search extends React.Component {
         return (
             <SSRRenderer
                 mobileComponent={(
-                <React.Fragment>
+                <Box width={1}>
                     <AsyncSelect
                         text=""
                         noOptionsMessage={() => 'Keine Resultate gefunden, bitte versuche es mit einem anderen Stichwort.'}
@@ -211,7 +211,7 @@ class Search extends React.Component {
                         styles={styles}
                         isClearable={true}
                         onInputChange={this.onInputChange}/>
-                </React.Fragment>
+                </Box>
             )}
                 desktopComponent={(
                 <React.Fragment>

@@ -52,7 +52,7 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
     return _isEmpty(product)
         ? SkeletonCard({})
         : (
-            <Card>
+            <Card onClick={(e) => onSelect(product)}>
                 <Flex flexDirection="row" className={className}>
                     <Box width={1}>
                         <Flex width={1}>

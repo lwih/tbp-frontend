@@ -6,7 +6,7 @@ import _last from 'lodash/last'
 import _find from 'lodash/find'
 import _matches from 'lodash/matches'
 import _isEmpty from 'lodash/isEmpty'
-import {Flex} from '@rebass/grid';
+import {Flex, Box} from '@rebass/grid';
 import {colors} from '../design-system/theme';
 import Skeleton from '../design-system/Skeletons/skeleton';
 
@@ -151,21 +151,19 @@ class Ages extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                {(typeof window !== 'undefined') === true
-                    ? (<Select
-                        isSearchable={false}
-                        value={this.state.selectedRange}
-                        defaultValue={defaultRange}
-                        options={ageRanges}
-                        getOptionLabel={option => displayFormattedAge(option)}
-                        getOptionValue={option => `${option.age_from}-${option.age_until}`}
-                        onChange={this._updateAges}
-                        styles={styles}/>)
-                    : <Skeleton color="transparent" height="40px" withAnimation={false}/>
+            <Box width={1} minHeight="40px">
+                {(typeof window !== 'undefined') && (<Select
+                    isSearchable={false}
+                    value={this.state.selectedRange}
+                    defaultValue={defaultRange}
+                    options={ageRanges}
+                    getOptionLabel={option => displayFormattedAge(option)}
+                    getOptionValue={option => `${option.age_from}-${option.age_until}`}
+                    onChange={this._updateAges}
+                    styles={styles}/>)
 }
 
-            </React.Fragment>
+            </Box>
         )
     }
 }

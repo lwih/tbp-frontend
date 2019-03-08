@@ -6,6 +6,7 @@ import _isEmpty from 'lodash/isEmpty'
 import {colors} from '../design-system/theme';
 import {defaultSearchParams} from './search';
 import Skeleton from '../design-system/Skeletons/skeleton';
+import {Box} from '@rebass/grid';
 
 const styles = {
     control: (base) => ({
@@ -111,21 +112,18 @@ class Categories extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-
-                {(typeof window !== 'undefined') === true
-                    ? (<Select
-                        isSearchable={false}
-                        value={this.state.selectedCategory}
-                        defaultValue={defaultCategory}
-                        options={categories}
-                        getOptionLabel={option => option.name}
-                        getOptionValue={option => option.name}
-                        onChange={this._updateCategories}
-                        styles={styles}/>)
-                    : <Skeleton color="transparent" height="40px" withAnimation={false}/>
+            <Box width={1} minHeight="40px">
+                {(typeof window !== 'undefined') && (<Select
+                    isSearchable={false}
+                    value={this.state.selectedCategory}
+                    defaultValue={defaultCategory}
+                    options={categories}
+                    getOptionLabel={option => option.name}
+                    getOptionValue={option => option.name}
+                    onChange={this._updateCategories}
+                    styles={styles}/>)
 }
-            </React.Fragment>
+            </Box>
         )
     }
 }

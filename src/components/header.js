@@ -7,8 +7,6 @@ import {colors} from '../design-system/theme';
 import WidthContainer from './width-container';
 import SmallTitle from '../design-system/Typography/small-title';
 import SSRRenderer from './ssr-renderer';
-import Skeleton from '../design-system/Skeletons/skeleton';
-import Search from '../app/search';
 
 const HeaderComponentMobile = ({title, className, children}) => (
     <Box className={className} justifyContent="center">
@@ -32,15 +30,11 @@ const HeaderComponentMobile = ({title, className, children}) => (
                         <SmallTitle>{title}</SmallTitle>
                     </Box>
                 </Flex>
-                <Flex>
-                    <Box className="Header" width={1} mt={3}>
-                        {(typeof window !== 'undefined')
-                            ? (
-                                <div><Search/></div>
-                            )
-                            : <Skeleton color="transparent" height="40px" withAnimation={false}/>
+                <Flex width={1} mt={3}>
+                    {(typeof window !== 'undefined') && (
+                        <React.Fragment>{children}</React.Fragment>
+                    )
 }
-                    </Box>
                 </Flex>
             </Box>
         </Flex>
@@ -76,11 +70,9 @@ const HeaderComponentDesktop = ({title, className, children}) => (
                             </Box>
                             {!!children && (
                                 <Box className="D-Header" width={1} mt={3} mx="auto">
-                                    {(typeof window !== 'undefined') === true
-                                        ? (
-                                            <div>{children}</div>
-                                        )
-                                        : <Skeleton color="transparent" height="50px" withAnimation={false}/>
+                                    {(typeof window !== 'undefined') === true && (
+                                        <Flex width={1}>{children}</Flex>
+                                    )
 }
                                 </Box>
                             )}
@@ -94,6 +86,7 @@ const HeaderComponentDesktop = ({title, className, children}) => (
 )
 
 const HeaderMobile = styled(HeaderComponentMobile)`
+        min-height: 132px;
         background-image: linear-gradient(to top, #ff4572, #2a079b);
         position: relative;
 

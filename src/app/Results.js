@@ -102,8 +102,6 @@ class Results extends React.Component {
     }
 
     render() {
-        // debugger
-
         const {itemsAmount} = this.props
         let results = [
             {},

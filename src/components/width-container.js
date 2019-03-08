@@ -2,17 +2,15 @@ import React from 'react'
 import {Box} from '@rebass/grid'
 import SSRRenderer from './ssr-renderer';
 
-const WidthContainerMobile = (props) => <Box width="1" my={0} mx="auto" {...props}/>
-const WidthContainerDesktop = (props) => <Box width="3/4" my={0} mx="auto" {...props}/>
+const WidthContainerMobile = ({children}) => <Box width={1} my={0} mx="auto" children={children}/>
+const WidthContainerDesktop = ({children}) => <Box width={3 / 4} my={0} mx="auto" children={children}/>
 
-const WidthContainer = (props) => (
+const WidthContainer = ({children}) => (
     <SSRRenderer
-        mobileComponent={< WidthContainerMobile {
-        ...props
-    } />}
-        desktopComponent={< WidthContainerDesktop {
-        ...props
-    } />}/>
+        mobileComponent={(<WidthContainerMobile children={children}/>)}
+        desktopComponent={(<WidthContainerDesktop children={children}/>)}/>
 )
+
+WidthContainer.displayName = 'WidthContainer'
 
 export default WidthContainer
