@@ -112,7 +112,9 @@ class Categories extends React.Component {
 
     render() {
         return (
-            <Box width={1} minHeight="40px">
+            <Box width={1} style={{
+                minHeight: "40px"
+            }}>
                 {(typeof window !== 'undefined') && (<Select
                     isSearchable={false}
                     value={this.state.selectedCategory}
