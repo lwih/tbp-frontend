@@ -8,9 +8,10 @@ import _get from 'lodash/get'
 import PrimaryButton from '../design-system/Buttons/primary-button';
 import SecondaryButton from '../design-system/Buttons/secondary-button';
 import Card from '../design-system/Cards/card';
-import {SkeletonCard} from '../design-system/Results/result-list-item';
+import {SkeletonCardMobile, SkeletonCardDesktop} from '../design-system/Results/result-list-item';
 import WordCloud from './wordcloud';
 import {MIN_AGE, MAX_AGE} from './ages';
+import {isMobile} from 'react-device-detect';
 
 class Results extends React.Component {
 
@@ -112,9 +113,12 @@ class Results extends React.Component {
                             py={1}
                             width={[
                             1, 1 / 2,
-                            1 / 4
+                            1 / 5
                         ]}>
-                            <SkeletonCard/>
+                            {isMobile
+                                ? <SkeletonCardMobile/>
+                                : <SkeletonCardDesktop/>
+}
                         </Box>
                     ))}
                 </Flex>

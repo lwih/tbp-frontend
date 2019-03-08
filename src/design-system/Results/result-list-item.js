@@ -13,7 +13,7 @@ import Skeleton from '../Skeletons/skeleton';
 import SSRRenderer from '../../components/ssr-renderer';
 import {isMobile} from 'react-device-detect';
 
-export const SkeletonCard = (props) => (
+export const SkeletonCardMobile = (props) => (
     <Card>
         <Flex flexDirection="row">
             <Box width={1}>
@@ -49,9 +49,36 @@ export const SkeletonCard = (props) => (
     </Card>
 )
 
+export const SkeletonCardDesktop = (props) => (
+    <Card >
+        <Flex flexDirection="column-reverse">
+            <Box>
+                <Flex
+                    flexDirection="column"
+                    style={{
+                    height: '100%'
+                }}>
+                    <Box py={2}>
+                        <Skeleton height="50px" width="100%"/>
+                    </Box>
+                    <Box mt="auto" mb={2} alignSelf="flex-end">
+                        <Skeleton height="24px" width="100%"/>
+                    </Box>
+                    <Box mt={2}>
+                        <Skeleton height="44px" width="100%"/>
+                    </Box>
+                </Flex>
+            </Box>
+            <Box width={1} alignSelf="center">
+                <Skeleton height="150px" width="100%"/>
+            </Box>
+        </Flex>
+    </Card>
+)
+
 const ResultListItemComponentMobile = ({product, onSelect, className}) => {
     return _isEmpty(product)
-        ? SkeletonCard({})
+        ? SkeletonCardMobile({})
         : (
             <Card onClick={(e) => onSelect(product)}>
                 <Flex flexDirection="row" className={className}>
@@ -90,7 +117,7 @@ const ResultListItemMobile = styled(ResultListItemComponentMobile)``
 
 const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
     return _isEmpty(product)
-        ? SkeletonCard({})
+        ? SkeletonCardDesktop({})
         : (
             <Card onClick={e => onSelect(product)}>
                 <Flex flexDirection="column-reverse" className={className}>
