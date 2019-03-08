@@ -11,13 +11,13 @@ import {Box} from '@rebass/grid';
 const styles = {
     control: (base) => ({
         ...base,
-        borderRadius: '4px',
+        borderRadius: '8px',
         minHeight: '30px',
         borderColor: colors.sortOfPinkLight
     }),
     container: (base) => ({
         ...base,
-        borderRadius: '4px',
+        borderRadius: '8px',
         background: colors.white
     }),
     input: (base) => ({

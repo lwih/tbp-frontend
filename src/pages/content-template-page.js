@@ -33,7 +33,7 @@ export default function Template(props) {
 
             <AppContainer py={2} width={1} justifyContent="center">
                 <WidthContainer>
-                    <Flex my={3} width={1} justifyContent="center">
+                    <Flex mt={3} mb={2} width={1} justifyContent="center">
                         <Box width={1}>
                             <Flex>
                                 <Box width={1 / 2} pl={2} pr={2}>
