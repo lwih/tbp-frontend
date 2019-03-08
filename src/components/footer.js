@@ -14,7 +14,7 @@ const FooterLogo = styled.img `
 
 const FooterComponentMobile = (props) => (
     <WidthContainer className={props.className}>
-        <Flex p={4} flexDirection="column">
+        <Flex p={4} flexDirection="column" bg={colors.teal}>
             <Box alignSelf="center">
                 <InternalLink to="/">
                     <FooterLogo
@@ -54,7 +54,11 @@ const FooterMobile = styled(FooterComponentMobile)`
 `
 
 const FooterComponentDesktop = (props) => (
-    <Flex className={props.className} justifyContent="center" p={4}>
+    <Flex
+        className={props.className}
+        justifyContent="center"
+        p={4}
+        bg={colors.teal}>
         <WidthContainer>
             <Flex>
                 <Box width={4 / 10}>
