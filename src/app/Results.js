@@ -133,7 +133,7 @@ class Results extends React.Component {
             results = itemsAmount
                 ? _slice(this.state.results, 0, itemsAmount)
                 : this.state.results
-        } else {
+        } else if (!this.state.isFetching) {
             return (
                 <Box p={2}>
                     <Card>
