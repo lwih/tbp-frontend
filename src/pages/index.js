@@ -42,7 +42,7 @@ const AppPage = (props) => (
                     </Box>
                 </Flex>
                 <Flex flexDirection="column">
-                    <Box mt={1}>
+                    <Box mt={0}>
                         <Results
                             hideLoadMore={false}
                             searchParams={{

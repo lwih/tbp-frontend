@@ -18,7 +18,8 @@ class Results extends React.Component {
         results: [],
         categories: [],
         offset: 0,
-        isFetching: false
+        isFetching: false,
+        hasStartedFetchingOnce: false
     }
 
     componentDidMount() {
@@ -32,20 +33,14 @@ class Results extends React.Component {
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
-                    // debugger
-                    this.setState({isFetching: false})
-                    this.setState({results: results.products})
-                    this.setState({categories: results.categories})
+                    this.setState({isFetching: false, hasStartedFetchingOnce: true, results: results.products, categories: results.categories})
                 })
         } else {
             const url = `https://api.thebetterplay.com/product/search?&image_sizes=tiny&age_until=1200&age_from=0`
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
-                    // debugger
-                    this.setState({results: results.products})
-                    this.setState({categories: results.categories})
-                    this.setState({isFetching: false})
+                    this.setState({isFetching: false, hasStartedFetchingOnce: true, results: results.products, categories: results.categories})
                 })
         }
     }
@@ -61,10 +56,7 @@ class Results extends React.Component {
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
-                    // debugger
-                    this.setState({isFetching: false})
-                    this.setState({results: results.products})
-                    this.setState({categories: results.categories})
+                    this.setState({isFetching: false, hasStartedFetchingOnce: true, results: results.products, categories: results.categories})
                 })
         }
     }
@@ -133,7 +125,7 @@ class Results extends React.Component {
             results = itemsAmount
                 ? _slice(this.state.results, 0, itemsAmount)
                 : this.state.results
-        } else if (!this.state.isFetching) {
+        } else if (!this.state.isFetching && this.state.hasStartedFetchingOnce) {
             return (
                 <Box p={2}>
                     <Card>
