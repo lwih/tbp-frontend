@@ -11,6 +11,7 @@ import Card from '../Cards/card';
 import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
 import SSRRenderer from '../../components/ssr-renderer';
+import {isMobile} from 'react-device-detect';
 
 export const SkeletonCard = (props) => (
     <Card>
@@ -125,7 +126,9 @@ const ResultListItemDesktop = styled(ResultListItemComponentDesktop)`
     min-height: 300px;
 
     &:hover {
-        cursor: pointer;
+        cursor: ${isMobile
+    ? 'none'
+    : 'pointer'};
     }
 `
 
