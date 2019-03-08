@@ -25,12 +25,12 @@ const SSRRenderer = styled(SSRRendererComponent)`
         display: block;
     }
 
-    @media only screen and (max-device-width: 480px) {
+    @media only screen and (max-device-width: 768px) {
         .DesktopRenderer {
             display: none;
         }   
     }
-    @media only screen and (min-device-width: 481px) {
+    @media only screen and (min-device-width: 769px) {
         .MobileRenderer {
             display: none;
         }   

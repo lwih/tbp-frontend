@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+require('./src/font/font-face.css')
+
 exports.onRouteUpdate = ({location, prevLocation}) => {
     // Track pageview with google analytics
     if (window.ga) {
