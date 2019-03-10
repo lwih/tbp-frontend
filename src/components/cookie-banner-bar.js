@@ -5,6 +5,7 @@ const CookieBannerBar = ({}) => (
   <CookieBanner
     styles={{
       banner: { position: 'fixed', bottom: 0, left: 0 },
+      button: { background: 'white', width: '50px' },
     }}
     message={
       'Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.'
