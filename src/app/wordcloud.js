@@ -7,48 +7,70 @@ import {defaultSearchParams} from './search';
 const clouds = [
     {
         name: 'Bau und Konstruktionsspielzeug',
-        id: '03'
+        id: '03',
+        searchParamToUse: 'c'
     }, {
         name: 'Holzspielzeug',
-        id: '01'
+        id: '01',
+        searchParamToUse: 'q'
     }, {
         name: 'Spiele',
-        id: '08'
+        id: '08',
+        searchParamToUse: 'c'
     }, {
         name: 'Musikinstrumente',
-        id: '04'
+        id: '04',
+        searchParamToUse: 'c'
     }, {
         name: 'Plüschtiere',
-        id: '05'
+        id: '05',
+        searchParamToUse: 'c'
     }, {
         name: 'Puppen',
-        id: '06'
+        id: '06',
+        searchParamToUse: 'c'
     }, {
         name: 'Puzzles',
-        id: '07'
+        id: '07',
+        searchParamToUse: 'c'
     }, {
         name: 'Elektronisches Spielzeug',
-        id: '09'
+        id: '09',
+        searchParamToUse: 'c'
     }, {
         name: 'Basteln und Malen',
-        id: '10'
+        id: '10',
+        searchParamToUse: 'c'
     }, {
         name: 'Sport und Outdoor',
-        id: '12'
+        id: '12',
+        searchParamToUse: 'c'
     }, {
         name: 'Fahrzeuge',
-        id: '13'
+        id: '13',
+        searchParamToUse: 'q'
     }, {
         name: 'Experimentieren und Forschen',
-        id: '11'
+        id: '11',
+        searchParamToUse: 'c'
     }
 ]
 
 class WordCloud extends React.Component {
     onClickCloud = (category) => {
+        const newSearchFilter = category.searchParamToUse === 'c'
+            ? {
+                category,
+                q: ''
+            }
+            : {
+                q: category.name,
+                category: undefined
+            }
+
         const newState = Object.assign({}, {
             state: {
-                search: Object.assign({}, this.props.searchParams || defaultSearchParams, {category}),
+                search: Object.assign({}, this.props.searchParams || defaultSearchParams, newSearchFilter),
                 selectedItem: undefined
             }
         })
