@@ -14,6 +14,7 @@ import Card from '../design-system/Cards/card';
 import WidthContainer from '../components/width-container';
 import WordCloud from '../app/wordcloud';
 import {colors} from '../design-system/theme';
+import CookieBannerBar from '../components/cookie-banner-bar';
 
 export default function Template(props) {
     const {markdownRemark: post} = props.data
@@ -91,6 +92,8 @@ export default function Template(props) {
                     </Box>
                 </Flex>
             </WidthContainer>
+
+            <CookieBannerBar/>
         </ContentLayout>
     )
 }

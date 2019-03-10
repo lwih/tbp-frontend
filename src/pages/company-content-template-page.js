@@ -11,6 +11,7 @@ import SEO from '../components/seo';
 import Footer from '../components/footer';
 import _get from 'lodash/get'
 import WidthContainer from '../components/width-container';
+import CookieBannerBar from '../components/cookie-banner-bar';
 
 export default function Template(props) {
     const {markdownRemark: post} = props.data
@@ -37,6 +38,8 @@ export default function Template(props) {
                     </Box>
                 </Flex>
             </WidthContainer>
+
+            <CookieBannerBar/>
         </CompanyContentLayout>
     )
 }

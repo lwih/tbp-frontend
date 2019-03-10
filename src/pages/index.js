@@ -16,6 +16,7 @@ import _get from 'lodash/get'
 import WidthContainer from '../components/width-container';
 import WordCloud from '../app/wordcloud';
 import Skeleton from '../design-system/Skeletons/skeleton';
+import CookieBannerBar from '../components/cookie-banner-bar';
 
 const AppPage = (props) => (
     <HomeLayout>
@@ -68,6 +69,8 @@ const AppPage = (props) => (
                 </Flex>
             </WidthContainer>
         </AppContainer>
+
+        <CookieBannerBar/>
 
     </HomeLayout>
 )
