@@ -85,7 +85,7 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                     <Box width={1}>
                         <Flex width={1}>
                             <Box width={1 / 3} alignSelf="center" onClick={e => onSelect(product)}>
-                                <ProductImage images={product.imageUrls} size="tiny" hover={false}/>
+                                <ProductImage images={product.imageUrls} size="medium" hover={false}/>
                             </Box>
                             <Box width={2 / 3} pl={3}>
                                 <Flex
@@ -142,7 +142,7 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
                         </Flex>
                     </Box>
                     <Box width={1} alignSelf="center">
-                        <ProductImage images={product.imageUrls} size="tiny" hover={false}/>
+                        <ProductImage images={product.imageUrls} size="medium" hover={false}/>
                     </Box>
                 </Flex>
             </Card>

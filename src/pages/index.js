@@ -1,24 +1,30 @@
 import React from 'react'
-import {Link, navigate} from 'gatsby'
+import {navigate} from 'gatsby'
 import HomeLayout from '../layouts/home-layout'
 import Header from '../components/header'
 import SEO from '../components/seo'
 import Search from '../app/search'
 import {Box, Flex} from '@rebass/grid';
 import AppContainer from '../components/app-container';
-import LinkList from '../components/link-list';
-import Footer from '../components/footer';
-import Card from '../design-system/Cards/card';
 import Results from '../app/Results'
 import Ages from '../app/ages';
 import Categories from '../app/categories';
 import _get from 'lodash/get'
 import WidthContainer from '../components/width-container';
 import WordCloud from '../app/wordcloud';
-import Skeleton from '../design-system/Skeletons/skeleton';
 import CookieBannerBar from '../components/cookie-banner-bar';
 
-const AppPage = (props) => (
+class AppPage extends React.Component {
+    componentDidMount() {
+        navigate('/de')
+    }
+
+    render() {
+        return (<AppPageContent {...this.props}/>)
+    }
+}
+
+export const AppPageContent = (props) => (
     <HomeLayout>
         <SEO title="Willkommen"/>
         <Header>
@@ -69,9 +75,7 @@ const AppPage = (props) => (
                 </Flex>
             </WidthContainer>
         </AppContainer>
-
         <CookieBannerBar/>
-
     </HomeLayout>
 )
 

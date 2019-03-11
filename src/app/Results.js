@@ -30,14 +30,14 @@ class Results extends React.Component {
                 ? `&c=${_get(this.props.searchParams, 'category.name')}`
                 : ''}${this.props.searchParams.q
                     ? `&q=${this.props.searchParams.q}`
-                    : ''}&image_sizes=tiny&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
+                    : ''}&image_sizes=medium&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
                     this.setState({isFetching: false, hasStartedFetchingOnce: true, results: results.products, categories: results.categories})
                 })
         } else {
-            const url = `https://api.thebetterplay.com/product/search?&image_sizes=tiny&age_until=1200&age_from=0`
+            const url = `https://api.thebetterplay.com/product/search?&image_sizes=medium&age_until=1200&age_from=0`
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
@@ -53,7 +53,7 @@ class Results extends React.Component {
                 ? `&c=${_get(nextProps.searchParams, 'category.name')}`
                 : ''}${nextProps.searchParams.q
                     ? `&q=${nextProps.searchParams.q}`
-                    : ''}&image_sizes=tiny&age_until=${nextProps.searchParams.age_until}&age_from=${nextProps.searchParams.age_from}`
+                    : ''}&image_sizes=medium&age_until=${nextProps.searchParams.age_until}&age_from=${nextProps.searchParams.age_from}`
             fetch(url)
                 .then(response => response.json())
                 .then(results => {
@@ -70,7 +70,7 @@ class Results extends React.Component {
             ? `&c=${_get(this.props.searchParams, 'category.name')}`
             : ''}${this.props.searchParams.q
                 ? `&q=${this.props.searchParams.q}`
-                : ''}&image_sizes=tiny&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
+                : ''}&image_sizes=medium&age_until=${this.props.searchParams.age_until}&age_from=${this.props.searchParams.age_from}`
         fetch(url)
             .then(response => response.json())
             .then(results => {
@@ -86,7 +86,7 @@ class Results extends React.Component {
     }
 
     onSelectItem = (item) => {
-        navigate('/app/details', {
+        navigate(`/app/details`, {
             state: {
                 search: this.props.searchParams,
                 selectedItem: item

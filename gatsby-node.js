@@ -1,6 +1,6 @@
 const path = require("path")
 
-exports.createPages = ({actions, graphql}) => {
+exports.createPages = ({actions, graphql, page}) => {
     const {createPage} = actions
 
     const ContentPageTemplate = path.resolve(`src/pages/content-template-page.js`)
@@ -30,6 +30,7 @@ exports.createPages = ({actions, graphql}) => {
             return Promise.reject(result.errors)
         }
 
+        // SEO pages
         result
             .data
             .allMarkdownRemark
@@ -47,6 +48,8 @@ exports.createPages = ({actions, graphql}) => {
                     }
                 })
             })
+
+        // STATIC pages (about-us...)
         result
             .data
             .allMarkdownRemark
@@ -61,5 +64,6 @@ exports.createPages = ({actions, graphql}) => {
                     }
                 })
             })
+
     })
 }
