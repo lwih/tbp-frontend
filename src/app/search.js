@@ -218,7 +218,7 @@ class Search extends React.Component {
                     <DesktopSearchBar>
                         <Box width={1 / 20} alignSelf="center">
                             <Flex justifyContent="center">
-                                <img src="https://www.thebetterplay.com/images/icon-search.svg"/>
+                                <img src="/images/icon-search.svg"/>
                             </Flex>
                         </Box>
                         <Box width={15 / 20}>
