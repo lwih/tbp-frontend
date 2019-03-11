@@ -10,6 +10,8 @@ import {isMobile} from 'react-device-detect';
 import {Flex, Box} from '@rebass/grid';
 import PrimaryButton from '../design-system/Buttons/primary-button';
 import SSRRenderer from '../components/ssr-renderer';
+import Img from "gatsby-image"
+import SearchIcon from '../images/icon-search.svg'
 
 const DesktopSearchBar = styled.div `
     display: flex;
@@ -218,7 +220,7 @@ class Search extends React.Component {
                     <DesktopSearchBar>
                         <Box width={1 / 20} alignSelf="center">
                             <Flex justifyContent="center">
-                                <img src="/images/icon-search.svg"/>
+                                <SearchIcon/>
                             </Flex>
                         </Box>
                         <Box width={15 / 20}>

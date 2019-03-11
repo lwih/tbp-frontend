@@ -1,5 +1,4 @@
 import React from 'react';
-import placeholderImage from '../../images/product-placeholder.jpg'
 import _get from 'lodash/get'
 import _first from 'lodash/first'
 import {Flex, Box} from '@rebass/grid'
@@ -7,9 +6,6 @@ import {isDesktop} from 'react-device-detect';
 
 const ProductImage = ({images, size, hover}) => {
 
-  const imageUrl = images
-    ? _first(_get(images, size))
-    : placeholderImage
   const withHover = hover && 'ProductImageContainer-HoverCover';
 
   return (
@@ -33,7 +29,7 @@ const ProductImage = ({images, size, hover}) => {
                 : '100px',
               width: 'auto'
             }}
-              src={imageUrl}
+              src={_first(_get(images, size))}
               alt=""
               className="ProductImage"/>
           </Box>

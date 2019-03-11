@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   // pathPrefix: 'de',
   siteMetadata: {
@@ -18,7 +20,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: path.join(__dirname, `src`, `images`)
+      }
+    }, {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/
+        }
       }
     },
     `gatsby-transformer-sharp`,

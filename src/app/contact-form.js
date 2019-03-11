@@ -4,7 +4,12 @@ import {Flex, Box} from '@rebass/grid';
 
 const ContactFormComponent = ({className}) => (
     <Flex className={className}>
-        <form className="ContactForm" method="post" action="/company/contact-success">
+        <form
+            name="contact"
+            className="ContactForm"
+            method="post"
+            action="/company/contact-success"
+            data-netlify="true">
             <Flex flexDirection="column" px={4} py={3}>
                 <Box width={1}>
                     <input

@@ -4,23 +4,34 @@ import SEO from '../components/seo'
 import Header from '../components/header';
 import AppContainer from '../components/app-container';
 import ContactForm from '../app/contact-form';
-import {Flex} from '@rebass/grid';
+import {Flex, Box} from '@rebass/grid';
 import {colors} from '../design-system/theme';
 
 const ContactPage = () => (
     <HomeLayout>
         <SEO robots={[`noindex`, `nofollow`]}/>
-        <Header>
-            <Flex justifyContent="center">
-                <h2
-                    style={{
-                    color: colors.white,
-                    marginBottom: '10px'
-                }}>Nachrichtenformular</h2>
-            </Flex>
-        </Header>
+        <Header></Header>
         <AppContainer p={0} width={1}>
-            <ContactForm/>
+            <Flex justifyContent="center" flexDirection="column" mt={3}>
+                <Box
+                    width={[
+                    1, 1 / 2,
+                    2 / 5
+                ]}
+                    alignSelf="center">
+                    <Flex justifyContent="center" flexDirection="column">
+                        <Box my={3} mx="auto">
+                            <h2
+                                style={{
+                                color: colors.teal
+                            }}>Nachrichtenformular</h2>
+                        </Box>
+                        <Box>
+                            <ContactForm/>
+                        </Box>
+                    </Flex>
+                </Box>
+            </Flex>
         </AppContainer>
 
     </HomeLayout>
