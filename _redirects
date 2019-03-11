@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://tbp-frontend.netlify.com/* https://www.thebetterplay.com/:splat 301!
