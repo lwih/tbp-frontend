@@ -2,7 +2,7 @@
   "name": "tbp",
   "private": true,
   "description": "CMS + app for The Better Play",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Louis Hache",
   "dependencies": {
     "@ghostgroup/grid-styled": "^4.0.0",
