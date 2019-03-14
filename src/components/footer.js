@@ -24,7 +24,7 @@ const FooterComponentMobile = (props) => (
                 </InternalLink>
             </Box>
             <Box>
-                Inspiration fur gutes spielzeug
+                Inspiration fur gutes Spielzeug
             </Box>
             <Box>
                 Copyright © {new Date().getFullYear()}
