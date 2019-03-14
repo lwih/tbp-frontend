@@ -72,7 +72,7 @@ const FooterComponentDesktop = (props) => (
                             </InternalLink>
                         </Box>
                         <Box>
-                            Inspiration fur gutes spielzeug
+                            Inspiration fur gutes Spielzeug
                         </Box>
                     </Flex>
                 </Box>
