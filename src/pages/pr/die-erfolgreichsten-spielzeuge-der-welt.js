@@ -1,15 +1,17 @@
 import React from 'react'
-import HomeLayout from '../../layouts/home-layout';
+import PRLayout from '../../layouts/pr-layout';
 import Header from '../../components/header';
 import SEO from '../../components/seo';
 import './pr.css'
+import WidthContainer from '../../components/width-container';
 
 const DieErfolgreichstenSpielzeugeDerWelt = ({}) => (
-    <HomeLayout>
-        <Header/>
+    <PRLayout>
+        <Header
+            title={'Von damals bis heute: Die erfolgreichsten Spielzeuge der Welt'}/>
         <SEO robots={[`noindex`, `nofollow`]}/>
-        <div>
 
+        <WidthContainer>
             <article
                 style={{
                 padding: '1em',
@@ -26,7 +28,7 @@ const DieErfolgreichstenSpielzeugeDerWelt = ({}) => (
                         style={{
                         marginBottom: '92px'
                     }}>
-                        <h2>Von damals bis heute: Die erfolgreichsten Spielzeuge der Welt</h2>
+                        <h2></h2>
                         <div
                             style={{
                             paddingTop: '16px'
@@ -956,8 +958,8 @@ const DieErfolgreichstenSpielzeugeDerWelt = ({}) => (
 
                 </div>
             </article>
-        </div>
-    </HomeLayout>
+        </WidthContainer>
+    </PRLayout>
 )
 
 export default DieErfolgreichstenSpielzeugeDerWelt

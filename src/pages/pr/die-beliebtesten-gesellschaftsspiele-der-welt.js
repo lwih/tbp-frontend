@@ -1,14 +1,16 @@
 import React from 'react'
-import HomeLayout from '../../layouts/home-layout';
+import PRLayout from '../../layouts/pr-layout';
 import Header from '../../components/header';
 import SEO from '../../components/seo';
 import './pr.css'
+import WidthContainer from '../../components/width-container';
 
 const DieBeliebtestenGesellschaftsspieleDerWelt = ({}) => (
-    <HomeLayout>
-        <Header/>
+    <PRLayout>
+        <Header
+            title="Von damals bis heute: Die beliebtesten Gesellschaftsspiele der Welt"/>
         <SEO robots={[`noindex`, `nofollow`]}/>
-        <div className="">
+        <WidthContainer>
             <article
                 className=""
                 style={{
@@ -26,7 +28,6 @@ const DieBeliebtestenGesellschaftsspieleDerWelt = ({}) => (
                         style={{
                         marginBottom: '92px'
                     }}>
-                        <h2>Von damals bis heute: Die beliebtesten Gesellschaftsspiele der Welt</h2>
                         <div
                             style={{
                             paddingTop: '16px'
@@ -1575,8 +1576,8 @@ const DieBeliebtestenGesellschaftsspieleDerWelt = ({}) => (
 
                 </div>
             </article>
-        </div>
-    </HomeLayout>
+        </WidthContainer>
+    </PRLayout>
 )
 
 export default DieBeliebtestenGesellschaftsspieleDerWelt
