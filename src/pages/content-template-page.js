@@ -68,10 +68,8 @@ export default function Template(props) {
                                     1, 2 / 3,
                                     2 / 3
                                 ]}
-                                    mb={2}p={3} >
-                                    <WordCloud
-                                        searchParams={_get(props.location.state, 'search')}
-                                        onClickCloud={category => this.onClickCloud(category)}/>
+                                    mb={2}py={3} >
+                                    <WordCloud searchParams={_get(props.location.state, 'search')}/>
                                 </Box>
                             </Flex>
                         </Box>

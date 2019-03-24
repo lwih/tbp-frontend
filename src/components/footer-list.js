@@ -1,7 +1,4 @@
 import React from "react"
-import styled from 'styled-components'
-import {StaticQuery, graphql, Link} from 'gatsby'
-import {routeWithLanguage} from '../utils/routeHelper'
 import {Flex, Box} from '@rebass/grid'
 import InternalLink from '../design-system/Links/internal-link'
 import {companyPages, sortPagesByWeight} from '../utils/pageHelpers';

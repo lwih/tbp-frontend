@@ -12,6 +12,7 @@ import _isEmpty from 'lodash/isEmpty'
 import Skeleton from '../Skeletons/skeleton';
 import SSRRenderer from '../../components/ssr-renderer';
 import {isMobile} from 'react-device-detect';
+import ChevronRightIcon from '../Icons/chevron-right';
 
 export const SkeletonCardMobile = (props) => (
     <Card>
@@ -19,7 +20,7 @@ export const SkeletonCardMobile = (props) => (
             <Box width={1}>
                 <Flex width={1}>
                     <Box width={1 / 3} alignSelf="center">
-                        <Skeleton height="96px" width="100%"/>
+                        <Skeleton height="107px" width="100%"/>
                     </Box>
                     <Box width={2 / 3} pl={3}>
                         <Flex
@@ -94,15 +95,15 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                                     height: '100%'
                                 }}>
                                     <Box>
-                                        <Truncate width={200}>
+                                        <Truncate lines={3}>
                                             {product.name}
                                         </Truncate>
                                     </Box>
                                     <Box mt="auto" alignSelf="flex-end">
-                                        <Price price={product.price.displayPrice}/>
-                                    </Box>
-                                    <Box mt={2}>
-                                        <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Produkt</PrimaryButton>
+                                        <Flex flexDirection="row">
+                                            <Box><Price price={product.price.displayPrice}/></Box>
+                                            <Box ml={3}><ChevronRightIcon color={colors.sortOfPink}/></Box>
+                                        </Flex>
                                     </Box>
                                 </Flex>
                             </Box>

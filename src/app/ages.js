@@ -34,9 +34,20 @@ const styles = {
     }),
     option: (base, state) => ({
         ...base,
+        fontSize: '10px',
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        wordBreak: 'break-all',
         backgroundColor: state.isSelected
             ? colors.greenBlue
             : colors.white
+    }),
+    singleValue: (base, state) => ({
+        ...base,
+        fontSize: '12px',
+        textTransform: 'uppercase',
+        color: '#848484',
+        fontWeight: 'bold'
     })
 }
 
