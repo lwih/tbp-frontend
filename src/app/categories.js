@@ -32,9 +32,20 @@ const styles = {
     }),
     option: (base, state) => ({
         ...base,
+        fontSize: '10px',
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        wordBreak: 'break-all',
         backgroundColor: state.isSelected
             ? colors.greenBlue
             : colors.white
+    }),
+    singleValue: (base, state) => ({
+        ...base,
+        fontSize: '12px',
+        textTransform: 'uppercase',
+        color: '#848484',
+        fontWeight: 'bold'
     })
 }
 
@@ -86,7 +97,7 @@ const categories = [
 class Categories extends React.Component {
 
     state = {
-        selectedCategory: _get(this.props.search, 'category')
+        selectedCategory: _get(this.props.search, 'category') || defaultCategory
     }
 
     componentWillReceiveProps(nextProps) {
