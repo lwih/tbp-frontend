@@ -6,10 +6,10 @@
 
 require('./src/font/font-face.css')
 
-exports.onRouteUpdate = ({location, prevLocation}) => {
-    // Track pageview with google analytics
-    if (window.ga) {
-        window.ga(`set`, `page`, location.pathname + location.search + location.hash,)
-        window.ga(`send`, `pageview`)
-    }
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+  // Track pageview with google analytics
+  if (window.ga) {
+    // window.ga(`set`, `page`, location.pathname + location.search + location.hash)
+    window.ga(`send`, `pageview`)
+  }
 }
