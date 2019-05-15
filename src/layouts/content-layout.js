@@ -1,25 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {StaticQuery, graphql} from 'gatsby'
-// import Root from '../app/components/Root' import Results from
-// '../app/components/connected/Results' import Search from
-// '../app/components/connected/Search'
-
-import Header from '../components/header'
+import { StaticQuery, graphql } from 'gatsby'
+import LinkList from '../components/link-list'
+import Footer from '../components/footer'
 import './layout.css'
-import LinkList from '../components/link-list';
-import Footer from '../components/footer';
 
-const contentQuery = graphql `
+const contentQuery = graphql`
   query ContentLayoutQuery {
-    site { 
-        siteMetadata { 
-            title 
-        } 
+    site {
+      siteMetadata {
+        title
+      }
     }
     allMarkdownRemark {
       edges {
-        node{
+        node {
           frontmatter {
             title
             path
@@ -33,25 +28,31 @@ const contentQuery = graphql `
   }
 `
 
-const ContentLayout = (props) => (
+const ContentLayout = (props) => {
+  return (
     <StaticQuery
-        query={contentQuery}
-        render={data => (
-        <React.Fragment>
-            <div style={{
-                margin: `0 auto`
-            }}>
-                {/* <props.children {...props}/> */}
-                {props.children}
+      query={contentQuery}
+      render={(data) => {
+        return (
+          <React.Fragment>
+            <div
+              style={{
+                margin: `0 auto`,
+              }}
+            >
+              {props.children}
             </div>
-            <LinkList data={data}/>
-            <Footer data={data}/>
-        </React.Fragment>
-    )}/>
-)
+            <LinkList data={data} />
+            <Footer data={data} />
+          </React.Fragment>
+        )
+      }}
+    />
+  )
+}
 
 ContentLayout.propTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default ContentLayout
