@@ -3,7 +3,7 @@ pageType: "company"
 title: Über uns
 slug: ueber-uns
 path: "/de/company/ueber-uns"
-weight: 1
+weight: 2
 ---
 
 # Ein gutes Spielzeug finden -  einfach, schnell, ohne langes Suchen.

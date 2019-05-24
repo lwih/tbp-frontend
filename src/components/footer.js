@@ -29,7 +29,7 @@ const FooterComponentMobile = (props) => (
             <Box>
                 Copyright © {new Date().getFullYear()}
             </Box>
-            <Box alignSelf="flex-end" mt={3}>
+            <Box alignSelf="flex-start" mt={3}>
                 <ExternalLink
                     href="https://www.facebook.com/THE-BETTER-PLAY-311913689294308/"
                     target="_blank">

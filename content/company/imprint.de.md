@@ -3,7 +3,7 @@ pageType: "company"
 title: Impressum
 slug: impressum
 path: "/de/company/impressum"
-weight: 2
+weight: 1
 ---
 
 <h2>Angaben gemäß § 5 TMG</h2>

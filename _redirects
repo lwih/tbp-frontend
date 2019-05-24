@@ -1,4 +1,1 @@
-# Redirect default Netlify subdomain to primary domain
-https://tbp-frontend.netlify.com/* https://www.thebetterplay.com/:splat 301!
-https://www.thebetterplay.com/de/spiel/die-beliebtesten-gesellschaftsspiele-der-welt/ https://www.thebetterplay.com/pr/die-beliebtesten-gesellschaftsspiele-der-welt/ 301!
-https://www.thebetterplay.com/de/spielzeuge/die-erfolgreichsten-spielzeuge-der-welt/ https://www.thebetterplay.com/pr/die-erfolgreichsten-spielzeuge-der-welt/ 301!
+https://tbp-frontend.netlify.com/* https://www.thebetterplay.com/:splat 301! # Redirect default Netlify subdomain to primary domain

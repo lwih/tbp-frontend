@@ -14,20 +14,30 @@ const FooterList = ({data}) => {
             : 'column'}
             justifyContent="flex-end">
 
-            <Box alignSelf="flex-end" pl={2}>
-                <InternalLink color={colors.lightBlue} to={'/contact'}>Kontakt</InternalLink>
-            </Box>
-
-            {_get(data, 'allMarkdownRemark.edges') && sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges'))).map((page, index) => {
-                return (
-                    <Box alignSelf="flex-end" key={index} pl={2}>
-                        <InternalLink
-                            color={colors.lightBlue}
-                            key={page.node.frontmatter.path + index}
-                            to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
+            <Box>
+                <Flex flexDirection="row" flexWrap="wrap">
+                    <Box alignSelf="flex-start" width={4 / 10}>
+                        <InternalLink color={colors.lightBlue} to={'/contact'}>Kontakt</InternalLink>
                     </Box>
-                )
-            })}
+                    {_get(data, 'allMarkdownRemark.edges') && sortPagesByWeight(companyPages(_get(data, 'allMarkdownRemark.edges'))).map((page, index) => {
+                        return (
+                            <Box
+                                alignSelf={index % 2 === 0
+                                ? "flex-end"
+                                : "flex-start"}
+                                key={index}
+                                width={index % 2 === 0
+                                ? 6 / 10
+                                : 4 / 10}>
+                                <InternalLink
+                                    color={colors.lightBlue}
+                                    key={page.node.frontmatter.path + index}
+                                    to={page.node.frontmatter.path}>{page.node.frontmatter.title}</InternalLink>
+                            </Box>
+                        )
+                    })}
+                </Flex>
+            </Box>
         </Flex>
     )
 }
