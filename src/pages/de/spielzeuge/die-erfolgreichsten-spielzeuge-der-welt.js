@@ -10,7 +10,7 @@ const DieErfolgreichstenSpielzeugeDerWelt = ({}) => (
     <Header
       title={'Von damals bis heute: Die erfolgreichsten Spielzeuge der Welt'}
     />
-    <SEO robots={[`noindex`, `nofollow`]} />
+    <SEO robots={[`index`, `follow`]} />
 
     <WidthContainer>
       <article
