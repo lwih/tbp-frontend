@@ -8,10 +8,8 @@ import {MIN_AGE, MAX_AGE} from './ages';
 import {colors, fontSizes} from '../design-system/theme';
 import {isMobile} from 'react-device-detect';
 import {Flex, Box} from '@rebass/grid';
-import PrimaryButton from '../design-system/Buttons/primary-button';
 import SSRRenderer from '../components/ssr-renderer';
-import Img from "gatsby-image"
-import SearchIcon from '../images/icon-search.svg'
+import SearchIcon from '../../static/images/icons/icon-search.svg'
 
 const DesktopSearchBar = styled.div `
     display: flex;

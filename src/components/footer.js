@@ -19,7 +19,7 @@ const FooterComponentMobile = (props) => (
                 <InternalLink to="/">
                     <FooterLogo
                         className="Header-Logo"
-                        src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
+                        src="/images/logo.svg"
                         alt="the better play"/>
                 </InternalLink>
             </Box>
@@ -33,10 +33,7 @@ const FooterComponentMobile = (props) => (
                 <ExternalLink
                     href="https://www.facebook.com/THE-BETTER-PLAY-311913689294308/"
                     target="_blank">
-                    <img
-                        src="https://d33wubrfki0l68.cloudfront.net/5fda456dd840cf150471834ff9f39e7c2a8c0fcd/b4de1/images/icon-f.svg"
-                        alt="Facebook"
-                        width="20px"/>
+                    <img src="/images/icons/icon-f.svg" alt="Facebook" width="20px"/>
                 </ExternalLink>
             </Box>
             <Box alignSelf="flex-end">
@@ -67,7 +64,7 @@ const FooterComponentDesktop = (props) => (
                             <InternalLink to="/">
                                 <FooterLogo
                                     className="Header-Logo"
-                                    src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
+                                    src="/images/logo.svg"
                                     alt="the better play"/>
                             </InternalLink>
                         </Box>
@@ -82,10 +79,7 @@ const FooterComponentDesktop = (props) => (
                             <ExternalLink
                                 href="https://www.facebook.com/THE-BETTER-PLAY-311913689294308/"
                                 target="_blank">
-                                <img
-                                    src="https://d33wubrfki0l68.cloudfront.net/5fda456dd840cf150471834ff9f39e7c2a8c0fcd/b4de1/images/icon-f.svg"
-                                    alt="Facebook"
-                                    width="20px"/>
+                                <img src="/images/icons/icon-f.svg" alt="Facebook" width="20px"/>
                             </ExternalLink>
 
                         </Box>

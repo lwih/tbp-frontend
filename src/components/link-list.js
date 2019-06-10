@@ -16,7 +16,7 @@ const LinkListBackground = styled.div `
 `
 const LinkListBackgroundImage = styled.div `
   &::after {
-    background: url(https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png);
+    background: url(/images/pattern-confetti.png);
       background-repeat: repeat;
       content: "";
       opacity: 0.4;

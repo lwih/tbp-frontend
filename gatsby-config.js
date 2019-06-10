@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
+        path: path.join(__dirname, `static`, `images`)
       }
     }, {
       resolve: 'gatsby-plugin-react-svg',
@@ -41,7 +41,7 @@ module.exports = {
         background_color: `#2a079b`,
         theme_color: `#2a079b`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `static/images/favicon.png`, // This path is relative to the root of the site.
       }
     }, {
       resolve: `gatsby-transformer-remark`,

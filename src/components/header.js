@@ -20,10 +20,7 @@ const HeaderComponentMobile = ({title, className, children}) => (
                         minHeight: '45px'
                     }}>
                         <InternalLink to="/">
-                            <img
-                                className="Header-Logo"
-                                src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
-                                alt={title}/>
+                            <img className="Header-Logo" src="/images/logo.svg" alt={title}/>
                         </InternalLink>
                     </Box>
                     <Box alignSelf="center" className="Header-title">
@@ -54,10 +51,7 @@ const HeaderComponentDesktop = ({title, className, children}) => (
                                 minHeight: '45px'
                             }}>
                                 <InternalLink to="/">
-                                    <img
-                                        className="D-Header-Logo"
-                                        src="https://d33wubrfki0l68.cloudfront.net/77b847097eaca9fc5eb348ab810903d0ef4f38f1/a6826/images/logo.svg"
-                                        alt={title}/>
+                                    <img className="D-Header-Logo" src="/images/logo.svg" alt={title}/>
                                 </InternalLink>
                             </Box>
 
@@ -91,7 +85,7 @@ const HeaderMobile = styled(HeaderComponentMobile)`
         position: relative;
 
         .Header-Background::after {
-            background: url("https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png");
+            background: url("/images/pattern-confetti.png");
             background-repeat: repeat;
             content: "";
             opacity: 0.4;
@@ -128,7 +122,7 @@ const HeaderDesktop = styled(HeaderComponentDesktop)`
     position: relative;
 
     .D-Header-Background::after {
-        background: url("https://d33wubrfki0l68.cloudfront.net/592a39a61bc0f12077ac2d2801584b34444184f2/c035a/images/pattern-confetti.png");
+        background: url("/images/pattern-confetti.png");
         background-repeat: repeat;
         content: "";
         opacity: 0.4;
