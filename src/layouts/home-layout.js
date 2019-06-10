@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {StaticQuery, graphql} from 'gatsby'
-import Header from '../components/header'
 import LinkList from '../components/link-list'
 import './layout.css'
 import Footer from '../components/footer';
-import Search from '../app/search';
 
 const homeLayoutQuery = graphql `
   query {
