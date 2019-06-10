@@ -1,2 +1,2 @@
-src/images/partners/** filter=lfs diff=lfs merge=lfs -text
 memories/** filter=lfs diff=lfs merge=lfs -text
+static/images/partners/** filter=lfs diff=lfs merge=lfs -text
