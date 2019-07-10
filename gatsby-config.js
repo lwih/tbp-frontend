@@ -91,6 +91,15 @@ module.exports = {
         respectDNT: true
       }
     }, {
+      resolve: "gatsby-plugin-sentry",
+      options: {
+        dsn: "https://cfec07a58fc64becba4d7eed4cce269a@sentry.io/1501815",
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        environment: process.env.NODE_ENV,
+        enabled: (() => true)()
+      }
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
