@@ -23,6 +23,7 @@
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-react-svg": "^2.1.0",
     "gatsby-plugin-segment-js": "^2.0.1",
+    "gatsby-plugin-sentry": "^1.0.1",
     "gatsby-plugin-sharp": "^2.0.18",
     "gatsby-plugin-sitemap": "^2.0.6",
     "gatsby-plugin-styled-components": "^3.0.4",
