@@ -12,7 +12,8 @@ const FooterList = ({data}) => {
             flexDirection={isDesktop
             ? 'row'
             : 'column'}
-            justifyContent="flex-end">
+            justifyContent="flex-end"
+        >
 
             <Box>
                 <Flex flexDirection="row" flexWrap="wrap">
