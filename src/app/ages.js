@@ -137,11 +137,11 @@ class Ages extends React.Component {
         }))
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (_get(this.props, 'locationState.search') !== _get(nextProps, 'locationState.search') && !_isEmpty(nextProps.locationState)) {
+    componentDidUpdate(prevProps) {
+        if (_get(prevProps, 'locationState.search') !== _get(this.props, 'locationState.search') && !_isEmpty(this.props.locationState)) {
             this.setState({
-                age_from: parseInt(_get(nextProps.search, 'age_from'), 10),
-                age_until: parseInt(_get(nextProps.search, 'age_until'), 10)
+                age_from: parseInt(_get(this.props.search, 'age_from'), 10),
+                age_until: parseInt(_get(this.props.search, 'age_until'), 10)
             })
         }
     }

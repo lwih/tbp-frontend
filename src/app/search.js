@@ -124,10 +124,10 @@ class Search extends React.Component {
         value: setValueInState(this.props.value)
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.value !== nextProps.value) {
+    componentDidUpdate(prevProps) {
+        if (prevProps.value !== this.props.value) {
             this.setState({
-                value: setValueInState(nextProps.value)
+                value: setValueInState(this.props.value)
             })
         }
     }

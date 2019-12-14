@@ -142,9 +142,9 @@ class Result extends React.Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.item && this.props.item !== nextProps.item) {
-            fetch(`https://api.thebetterplay.com/product/${_get(nextProps.item, 'id')}?image_sizes=tiny,large`)
+    componentDidUpdate(prevProps) {
+        if (prevProps.item && prevProps.item !== this.props.item) {
+            fetch(`https://api.thebetterplay.com/product/${_get(this.props.item, 'id')}?image_sizes=tiny,large`)
                 .then(response => response.json())
                 .then(result => {
                     this.setState({result})

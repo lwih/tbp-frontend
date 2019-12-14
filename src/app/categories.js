@@ -100,10 +100,10 @@ class Categories extends React.Component {
         selectedCategory: _get(this.props.search, 'category') || defaultCategory
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (_get(this.props, 'locationState.search') !== _get(nextProps, 'locationState.search') && !_isEmpty(nextProps.locationState)) {
+    componentDidUpdate(prevProps) {
+        if (_get(prevProps, 'locationState.search') !== _get(this.props, 'locationState.search') && !_isEmpty(this.props.locationState)) {
             this.setState({
-                selectedCategory: _get(nextProps, 'locationState.search.category')
+                selectedCategory: _get(this.props, 'locationState.search.category')
             })
         }
     }

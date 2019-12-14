@@ -67,13 +67,13 @@ class Results extends React.Component {
       })
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     if (
-      this.props.searchParams &&
-      this.props.searchParams !== nextProps.searchParams
+      prevProps.searchParams &&
+      prevProps.searchParams !== this.props.searchParams
     ) {
       this.setState({ isFetching: true })
-      const url = resultsRequest(nextProps.searchParams, this.state.offset)
+      const url = resultsRequest(this.props.searchParams, this.state.offset)
       fetch(url)
         .then((response) => response.json())
         .then((results) => {
