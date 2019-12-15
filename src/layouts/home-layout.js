@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import LinkList from '../components/link-list'
 import './layout.css'
-import Footer from '../components/footer';
+import Footer from '../components/footer'
 
-const homeLayoutQuery = graphql `
+const homeLayoutQuery = graphql`
   query {
-    site { 
-        siteMetadata { 
-            title 
-        } 
+    site {
+      siteMetadata {
+        title
+      }
     }
     allMarkdownRemark {
       edges {
-        node{
+        node {
           frontmatter {
             title
             path
@@ -28,24 +28,27 @@ const homeLayoutQuery = graphql `
   }
 `
 
-const HomeLayout = ({children}) => (
+const HomeLayout = ({ children }) => (
   <StaticQuery
     query={homeLayoutQuery}
-    render={data => (
-    <React.Fragment>
-      <div style={{
-        margin: `0 auto`
-      }}>
-        {children}
-      </div>
-      <LinkList data={data}/>
-      <Footer data={data}/>
-    </React.Fragment>
-  )}/>
+    render={(data) => (
+      <React.Fragment>
+        <div
+          style={{
+            margin: `0 auto`,
+          }}
+        >
+          {children}
+        </div>
+        <LinkList data={data} />
+        <Footer data={data} />
+      </React.Fragment>
+    )}
+  />
 )
 
 HomeLayout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default HomeLayout

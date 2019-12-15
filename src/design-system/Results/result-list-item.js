@@ -1,80 +1,82 @@
 import React from 'react'
 import styled from 'styled-components'
-import PrimaryButton from '../Buttons/primary-button';
-import Price from '../Price/price';
-import Truncate from 'react-truncate';
-import ProductImage from './product-image';
-import {ExternalLink} from '../Links/external-link';
-import {Flex, Box} from '@rebass/grid';
-import {colors, radii, sizes} from '../theme';
-import Card from '../Cards/card';
+import PrimaryButton from '../Buttons/primary-button'
+import Price from '../Price/price'
+import Truncate from 'react-truncate'
+import ProductImage from './product-image'
+import { ExternalLink } from '../Links/external-link'
+import { Flex, Box } from '@rebass/grid'
+import { colors, radii, sizes } from '../theme'
+import Card from '../Cards/card'
 import _isEmpty from 'lodash/isEmpty'
-import Skeleton from '../Skeletons/skeleton';
-import SSRRenderer from '../../components/ssr-renderer';
-import {isMobile} from 'react-device-detect';
-import ChevronRightIcon from '../Icons/chevron-right';
+import Skeleton from '../Skeletons/skeleton'
+import SSRRenderer from '../../components/ssr-renderer'
+import { isMobile } from 'react-device-detect'
+import ChevronRightIcon from '../Icons/chevron-right'
 
 export const SkeletonCardMobile = (props) => (
-    <Card>
-        <Flex flexDirection="row">
-            <Box width={1}>
-                <Flex width={1}>
-                    <Box width={1 / 3} alignSelf="center">
-                        <Skeleton height="107px" width="100%"/>
-                    </Box>
-                    <Box width={2 / 3} pl={3}>
-                        <Flex
-                            flexDirection="column"
-                            style={{
-                            height: '100%'
-                        }}>
-                            <Box>
-                                <Skeleton height="22px" width="100%"/>
-                            </Box>
+  <Card>
+    <Flex flexDirection="row">
+      <Box width={1}>
+        <Flex width={1}>
+          <Box width={1 / 3} alignSelf="center">
+            <Skeleton height="107px" width="100%" />
+          </Box>
+          <Box width={2 / 3} pl={3}>
+            <Flex
+              flexDirection="column"
+              style={{
+                height: '100%',
+              }}
+            >
+              <Box>
+                <Skeleton height="22px" width="100%" />
+              </Box>
 
-                            <Box mt={3} width={1}>
-                                <Flex width={1} flexDirection="column">
-                                    <Box alignSelf="flex-end">
-                                        <Skeleton height="22px" width="40px"/>
-                                    </Box>
-                                    <Box width={1} mt={1}>
-                                        <Skeleton height="32px" width="100%"/>
-                                    </Box>
-                                </Flex>
-                            </Box>
-                        </Flex>
-                    </Box>
+              <Box mt={3} width={1}>
+                <Flex width={1} flexDirection="column">
+                  <Box alignSelf="flex-end">
+                    <Skeleton height="22px" width="40px" />
+                  </Box>
+                  <Box width={1} mt={1}>
+                    <Skeleton height="32px" width="100%" />
+                  </Box>
                 </Flex>
-            </Box>
+              </Box>
+            </Flex>
+          </Box>
         </Flex>
-    </Card>
+      </Box>
+    </Flex>
+  </Card>
 )
 
 export const SkeletonCardDesktop = (props) => (
-    <Card >
-        <Flex flexDirection="column-reverse">
-            <Box>
-                <Flex
-                    flexDirection="column"
-                    style={{
-                    height: '100%'
-                }}>
-                    <Box py={2}>
-                        <Skeleton height="50px" width="100%"/>
-                    </Box>
-                    <Box mt="auto" mb={2} alignSelf="flex-end">
-                        <Skeleton height="24px" width="100%"/>
-                    </Box>
-                    <Box mt={2}>
-                        <Skeleton height="44px" width="100%"/>
-                    </Box>
-                </Flex>
-            </Box>
-            <Box width={1} alignSelf="center">
-                <Skeleton height="150px" width="100%"/>
-            </Box>
+  <Card>
+    <Flex flexDirection="column-reverse">
+      <Box>
+        <Flex
+          flexDirection="column"
+          style={{
+            height: '100%',
+          }}
+        >
+          <Box py={2}>
+            <Skeleton height="50px" width="100%" />
+          </Box>
+          <Box mt="auto" mb={2} alignSelf="flex-end">
+            <Skeleton height="24px" width="100%" />
+          </Box>
+          <Box mt={2}>
+            <Skeleton height="44px" width="100%" />
+          </Box>
         </Flex>
-    </Card>
+      </Box>
+      <Box width={1} alignSelf="center">
+        <Skeleton height="150px" width="100%" />
+      </Box>
+    </Flex>
+  </Card>
 )
 
 const ResultListItemComponentMobile = ({product, onSelect, className}) => {
@@ -109,9 +111,18 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                             </Box>
                         </Flex>
                     </Box>
-                </Flex>
-            </Card>
-        )
+                    <Box ml={3}>
+                      <ChevronRightIcon color={colors.sortOfPink} />
+                    </Box>
+                  </Flex>
+                </Box>
+              </Flex>
+            </Box>
+          </Flex>
+        </Box>
+      </Flex>
+    </Card>
+  )
 }
 
 const ResultListItemMobile = styled(ResultListItemComponentMobile)``
@@ -151,23 +162,18 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
 }
 
 const ResultListItemDesktop = styled(ResultListItemComponentDesktop)`
-    min-height: 300px;
+  min-height: 300px;
 
-    &:hover {
-        cursor: ${isMobile
-    ? 'none'
-    : 'pointer'};
-    }
+  &:hover {
+    cursor: ${isMobile ? 'none' : 'pointer'};
+  }
 `
 
 const ResultListItem = (props) => (
-    <SSRRenderer
-        mobileComponent={< ResultListItemMobile {
-        ...props
-    } />}
-        desktopComponent={< ResultListItemDesktop {
-        ...props
-    } />}/>
+  <SSRRenderer
+    mobileComponent={<ResultListItemMobile {...props} />}
+    desktopComponent={<ResultListItemDesktop {...props} />}
+  />
 )
 
 export default ResultListItem

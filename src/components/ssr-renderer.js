@@ -7,34 +7,35 @@ import styled from 'styled-components'
 // desktop version so instead, let's render the two components and add in some
 // css media queries to display/hide
 
-export const SSRRendererComponent = ({className, mobileComponent, desktopComponent}) => (
-    <div className={className}>
-        <div className="MobileRenderer">
-            {mobileComponent}
-        </div>
-        <div className="DesktopRenderer">
-            {desktopComponent}
-        </div>
-    </div>
+export const SSRRendererComponent = ({
+  className,
+  mobileComponent,
+  desktopComponent,
+}) => (
+  <div className={className}>
+    <div className="MobileRenderer">{mobileComponent}</div>
+    <div className="DesktopRenderer">{desktopComponent}</div>
+  </div>
 )
 
 const SSRRenderer = styled(SSRRendererComponent)`
-    width: 100%;
-    
-    .MobileRenderer, .DesktopRenderer {
-        display: block;
-    }
+  width: 100%;
 
-    @media only screen and (max-device-width: 768px) {
-        .DesktopRenderer {
-            display: none;
-        }   
+  .MobileRenderer,
+  .DesktopRenderer {
+    display: block;
+  }
+
+  @media only screen and (max-device-width: 768px) {
+    .DesktopRenderer {
+      display: none;
     }
-    @media only screen and (min-device-width: 769px) {
-        .MobileRenderer {
-            display: none;
-        }   
+  }
+  @media only screen and (min-device-width: 769px) {
+    .MobileRenderer {
+      display: none;
     }
+  }
 `
 
 export default SSRRenderer
