@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import _get from 'lodash/get'
 // import Root from '../app/components/Root' import Results from
 // '../app/components/connected/Results' import Search from
@@ -8,23 +8,23 @@ import _get from 'lodash/get'
 
 import Header from '../components/header'
 import './layout.css'
-import LinkList from '../components/link-list';
-import Footer from '../components/footer';
-import {Box, Flex} from '@rebass/grid';
-import SEO from '../components/seo';
-import Search from '../app/search';
-import {colors} from '../design-system/theme';
+import LinkList from '../components/link-list'
+import Footer from '../components/footer'
+import { Box, Flex } from '@rebass/grid'
+import SEO from '../components/seo'
+import Search from '../app/search'
+import { colors } from '../design-system/theme'
 
-const companyContentQuery = graphql `
-  query CompanyContentPages{
-    site { 
-        siteMetadata { 
-            title 
-        } 
+const companyContentQuery = graphql`
+  query CompanyContentPages {
+    site {
+      siteMetadata {
+        title
+      }
     }
     allMarkdownRemark {
       edges {
-        node{
+        node {
           frontmatter {
             title
             path
@@ -39,25 +39,26 @@ const companyContentQuery = graphql `
 `
 
 const CompanyContentLayout = (props) => {
-    return (
-        <StaticQuery
-            query={companyContentQuery}
-            render={data => {
-            return (
-                <React.Fragment>
-                    <Flex my={0} mx="auto" bg={colors.white} flexDirection="column">
-                        {props.children}
-                    </Flex>
-                    <LinkList data={data}/>
-                    <Footer data={data}/>
-                </React.Fragment>
-            )
-        }}/>
-    )
+  return (
+    <StaticQuery
+      query={companyContentQuery}
+      render={(data) => {
+        return (
+          <React.Fragment>
+            <Flex my={0} mx="auto" bg={colors.white} flexDirection="column">
+              {props.children}
+            </Flex>
+            <LinkList data={data} />
+            <Footer data={data} />
+          </React.Fragment>
+        )
+      }}
+    />
+  )
 }
 
 CompanyContentLayout.propTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default CompanyContentLayout

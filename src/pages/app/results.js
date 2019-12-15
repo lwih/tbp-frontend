@@ -8,7 +8,7 @@ import Ages from '../../app/ages'
 import Categories from '../../app/categories'
 import _get from 'lodash/get'
 import Results from '../../app/Results'
-import Result from '../../app/Result'
+import Result from '../../app/result'
 import WidthContainer from '../../components/width-container'
 import WordCloud from '../../app/wordcloud'
 
@@ -64,9 +64,9 @@ const ResultsPage = (props) => {
             <Box>
               <Flex justifyContent="center">
                 <Box width={[1, 2 / 3, 2 / 3]} mb={2} py={3}>
-                  <WordCloud
+                  {/* <WordCloud
                     searchParams={_get(props.location.state, 'search')}
-                  />
+                  /> */}
                 </Box>
               </Flex>
             </Box>
