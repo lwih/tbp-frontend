@@ -101,7 +101,7 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
                                     </Box>
                                     <Box mt="auto" alignSelf="flex-end">
                                         <Flex flexDirection="row">
-                                            <Box><Price price={product.price.displayPrice}/></Box>
+                                            <Box><Price price={product.price?.displayPrice}/></Box>
                                             <Box ml={3}><ChevronRightIcon color={colors.sortOfPink}/></Box>
                                         </Flex>
                                     </Box>
@@ -135,7 +135,7 @@ const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
                                 </Truncate>
                             </Box>
                             <Box mt="auto" mb={2} alignSelf="flex-end">
-                                <Price price={product.price.displayPrice} size={sizes.big}/>
+                                <Price price={product.price?.displayPrice} size={sizes.big}/>
                             </Box>
                             <Box mt={2}>
                                 <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Produkt</PrimaryButton>
