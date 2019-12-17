@@ -113,7 +113,7 @@ function Categories({ search, locationState }) {
   }, [locationState])
 
   const updateCategories = (selectedCategory) => {
-    this.setState({ selectedCategory })
+    setSelectedCategory(selectedCategory)
     const newSearch = Object.assign({}, defaultSearchParams, search, {
       category: selectedCategory,
       id: undefined,
