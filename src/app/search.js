@@ -94,15 +94,13 @@ const groupedOptions = (term, options) => [
   },
 ]
 
-const formatGroupLabel = (data) => {
-  return (
-    <div>
-      <span>{data.label}</span>
-    </div>
-  )
-}
+const formatGroupLabel = (data) => (
+  <div>
+    <span>{data.label}</span>
+  </div>
+)
 
-const setValueInState = (value) => {
+export const setValueInState = (value) => {
   if (value) {
     if (_isString(value)) {
       return { id: '', name: value }

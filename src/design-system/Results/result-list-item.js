@@ -79,37 +79,39 @@ export const SkeletonCardDesktop = (props) => (
   </Card>
 )
 
-const ResultListItemComponentMobile = ({product, onSelect, className}) => {
-    return _isEmpty(product)
-        ? SkeletonCardMobile({})
-        : (
-            <Card onClick={(e) => onSelect(product)}>
-                <Flex flexDirection="row" className={className}>
-                    <Box width={1}>
-                        <Flex width={1}>
-                            <Box width={1 / 3} alignSelf="center" onClick={e => onSelect(product)}>
-                                <ProductImage images={product.imageUrls} size="medium" hover={false}/>
-                            </Box>
-                            <Box width={2 / 3} pl={3}>
-                                <Flex
-                                    flexDirection="column"
-                                    style={{
-                                    height: '100%'
-                                }}>
-                                    <Box>
-                                        <Truncate lines={3}>
-                                            {product.name}
-                                        </Truncate>
-                                    </Box>
-                                    <Box mt="auto" alignSelf="flex-end">
-                                        <Flex flexDirection="row">
-                                            <Box><Price price={product.price?.displayPrice}/></Box>
-                                            <Box ml={3}><ChevronRightIcon color={colors.sortOfPink}/></Box>
-                                        </Flex>
-                                    </Box>
-                                </Flex>
-                            </Box>
-                        </Flex>
+const ResultListItemComponentMobile = ({ product, onSelect, className }) => {
+  return _isEmpty(product) ? (
+    SkeletonCardMobile({})
+  ) : (
+    <Card onClick={(e) => onSelect(product)}>
+      <Flex flexDirection="row" className={className}>
+        <Box width={1}>
+          <Flex width={1}>
+            <Box
+              width={1 / 3}
+              alignSelf="center"
+              onClick={(e) => onSelect(product)}
+            >
+              <ProductImage
+                images={product.imageUrls}
+                size="medium"
+                hover={false}
+              />
+            </Box>
+            <Box width={2 / 3} pl={3}>
+              <Flex
+                flexDirection="column"
+                style={{
+                  height: '100%',
+                }}
+              >
+                <Box>
+                  <Truncate lines={3}>{product.name}</Truncate>
+                </Box>
+                <Box mt="auto" alignSelf="flex-end">
+                  <Flex flexDirection="row">
+                    <Box>
+                      <Price price={product.price?.displayPrice} />
                     </Box>
                     <Box ml={3}>
                       <ChevronRightIcon color={colors.sortOfPink} />
@@ -120,6 +122,9 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
             </Box>
           </Flex>
         </Box>
+        <Box ml={3}>
+          <ChevronRightIcon color={colors.sortOfPink} />
+        </Box>
       </Flex>
     </Card>
   )
@@ -127,38 +132,42 @@ const ResultListItemComponentMobile = ({product, onSelect, className}) => {
 
 const ResultListItemMobile = styled(ResultListItemComponentMobile)``
 
-const ResultListItemComponentDesktop = ({product, onSelect, className}) => {
-    return _isEmpty(product)
-        ? SkeletonCardDesktop({})
-        : (
-            <Card onClick={e => onSelect(product)}>
-                <Flex flexDirection="column-reverse" className={className}>
-
-                    <Box>
-                        <Flex
-                            flexDirection="column"
-                            style={{
-                            height: '100%'
-                        }}>
-                            <Box>
-                                <Truncate lines={2}>
-                                    {product.name}
-                                </Truncate>
-                            </Box>
-                            <Box mt="auto" mb={2} alignSelf="flex-end">
-                                <Price price={product.price?.displayPrice} size={sizes.big}/>
-                            </Box>
-                            <Box mt={2}>
-                                <PrimaryButton onClick={e => onSelect(product)} size="small">Zum Produkt</PrimaryButton>
-                            </Box>
-                        </Flex>
-                    </Box>
-                    <Box width={1} alignSelf="center">
-                        <ProductImage images={product.imageUrls} size="medium" hover={false}/>
-                    </Box>
-                </Flex>
-            </Card>
-        )
+const ResultListItemComponentDesktop = ({ product, onSelect, className }) => {
+  return _isEmpty(product) ? (
+    SkeletonCardDesktop({})
+  ) : (
+    <Card onClick={(e) => onSelect(product)}>
+      <Flex flexDirection="column-reverse" className={className}>
+        <Box>
+          <Flex
+            flexDirection="column"
+            style={{
+              height: '100%',
+            }}
+          >
+            <Box>
+              <Truncate lines={2}>{product.name}</Truncate>
+            </Box>
+            <Box mt="auto" mb={2} alignSelf="flex-end">
+              <Price price={product.price?.displayPrice} size={sizes.big} />
+            </Box>
+            <Box mt={2}>
+              <PrimaryButton onClick={(e) => onSelect(product)} size="small">
+                Zum Produkt
+              </PrimaryButton>
+            </Box>
+          </Flex>
+        </Box>
+        <Box width={1} alignSelf="center">
+          <ProductImage
+            images={product.imageUrls}
+            size="medium"
+            hover={false}
+          />
+        </Box>
+      </Flex>
+    </Card>
+  )
 }
 
 const ResultListItemDesktop = styled(ResultListItemComponentDesktop)`
