@@ -11,6 +11,19 @@ const appLayoutQuery = graphql`
         title
       }
     }
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            language
+            weight
+            pageType
+          }
+        }
+      }
+    }
   }
 `
 
