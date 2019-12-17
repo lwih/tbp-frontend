@@ -151,7 +151,6 @@ function Ages({ search, locationState }) {
   }, [search])
 
   const updateAges = (selectedRange) => {
-    console.log('REDIRECTEW SFSDF DSF SD')
     setSelectedRange(selectedRange)
     const newSearch = Object.assign({}, search, {
       ...selectedRange,
@@ -161,7 +160,6 @@ function Ages({ search, locationState }) {
       search: newSearch,
       selectedItem: undefined,
     })
-
     navigate('/app/results', { state })
   }
 
