@@ -64,9 +64,9 @@ const ResultsPage = (props) => {
             <Box>
               <Flex justifyContent="center">
                 <Box width={[1, 2 / 3, 2 / 3]} mb={2} py={3}>
-                  {/* <WordCloud
+                  <WordCloud
                     searchParams={_get(props.location.state, 'search')}
-                  /> */}
+                  />
                 </Box>
               </Flex>
             </Box>
