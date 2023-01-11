@@ -28,7 +28,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.0.1",
     "gatsby-source-filesystem": "^2.1.42",
-    "gatsby-transformer-remark": "^2.1.17",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.9",
     "git-rev-sync": "^1.12.0",
     "glamor": "^2.20.40",
